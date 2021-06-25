@@ -1,0 +1,134 @@
+{
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "workbench.statusBar.visible": false,
+    "gitlens.blame.heatmap.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.currentLine.scrollable": false,
+    "gitlens.hovers.annotations.changes": false,
+    "gitlens.hovers.annotations.details": false,
+    "gitlens.hovers.annotations.enabled": false,
+    "gitlens.hovers.currentLine.changes": false,
+    "gitlens.hovers.currentLine.details": false,
+    "gitlens.hovers.currentLine.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "editor.rulers": [
+
+    ],
+    "[python]": {
+        "editor.rulers": [
+            80,
+        ]
+    },
+    "python.pythonPath": "/Library/Frameworks/Python.framework/Versions/3.9/bin/python3",
+    "workbench.tree.renderIndentGuides": "none",
+    "workbench.tips.enabled": false,
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/*.egg-info": true
+    },
+    "files.watcherExclude": {
+        "**/.dolt/noms/**": true,
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/.hg/store/**": true,
+        "**/node_modules/**": true
+    },
+    "python.linting.pylintArgs": [
+        "--disable=no-self-use,protected-access,invalid-name,logging-not-lazy,broad-except,missing-function-docstring,import-outside-toplevel,missing-module-docstring,missing-class-docstring,fixme,relative-beyond-top-level,wildcard-import,line-too-long,anomalous-backslash-in-string,too-many-arguments,too-few-public-methods,useless-super-delegation,too-many-lines,unnecessary-pass,wrong-import-order,redefined-outer-name,expression-not-assigned,dangerous-default-value,arguments-differ,abstract-method,too-many-locals,too-many-statements,wrong-import-position,too-many-instance-attributes,too-many-public-methods,too-many-nested-blocks,logging-fstring-interpolation,too-many-return-statements,too-many-ancestors,too-many-branches,inconsistent-return-statements",
+    ],
+    "python.linting.pylintEnabled": true,
+    "explorer.confirmDelete": false,
+    "git.enableSmartCommit": true,
+    "diffEditor.wordWrap": "off",
+    "editor.renderWhitespace": "none",
+    "files.trimTrailingWhitespace": true,
+    "explorer.confirmDragAndDrop": false,
+    "editor.folding": false,
+    "search.smartCase": true,
+    "debug.showInlineBreakpointCandidates": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.find.autoFindInSelection": "multiline",
+    "python.showStartPage": false,
+    "python.linting.flake8Args": [
+        "--ignore W191, E117, E402"
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "githubPullRequests.queries": [
+
+        // This is the default value of this setting:
+        // {
+        //     "label": "Waiting For My Review",
+        //     "query": "is:open review-requested:${user}"
+        // },
+        // {
+        //     "label": "Assigned To Me",
+        //     "query": "is:open assignee:${user}"
+        // },
+        // {
+        //     "label": "Created By Me",
+        //     "query": "is:open author:${user}"
+        // }
+
+        // But I don't care about any of these categories and they're just
+        // clutter, so I've removed them.
+    ],
+    "githubIssues.queries": [
+        // A similar story here. Here's the default:
+        // {
+        //     "label": "My Issues",
+        //     "query": "default"
+        // },
+        // {
+        //     "label": "Created Issues",
+        //     "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+        // }
+
+        // But I only care about the list of all open issues.
+        {
+            "label": "Created Issues",
+            "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+        }
+    ],
+    "githubPullRequests.fileListLayout": "tree",
+    "githubIssues.assignWhenWorking": false,
+    "workbench.editor.decorations.badges": false,
+    "workbench.editor.decorations.colors": false,
+    "ruby.lint": {
+        "rubocop": true
+    },
+    "markdownlint.config": {
+        // disable "MD025/single-title/single-h1: Multiple top-level headings in the same document (MD025)"
+        "single-h1": false,
+        // disable MD041/first-line-heading/first-line-h1: First line in a file should be a top-level (MD041)
+        "first-line-h1": false,
+        // disable MD033/no-inline-html: Inline HTML (MD033)
+        "no-inline-html": false
+    },
+    "workbench.editor.untitled.hint": "hidden",
+    "python.languageServer": "Default",
+    // the python extension changed their default language server to pylance recently (05/10/2021), which applies
+    // semantic highlighting *on top of* my normal theme. I don't like this so I've disabled it globally here, since
+    // I frustratingly can't find any way to disable it for only pylance or for only my particular theme (which is
+    // "default dark +" I think?).
+    // I may decide later that I actually like some of the semantic highlighting pylance provides and want to selectively
+    // enable those highlightings. This will be a process since I believe I will need to manually override pylance's
+    // highlightings to reset them back to what my theme provides for highlights I don't want changed. Or it may not
+    // be possible at all. Not sure yet. But will take some time to play aroumnd with, so not doing it right now.
+    "editor.semanticHighlighting.enabled": false,
+    "terminal.integrated.scrollback": 10000,
+    "git.confirmSync": false,
+    "editor.find.seedSearchStringFromSelection": false,
+    "security.workspace.trust.enabled": false,
+    "python.defaultInterpreterPath": "/Library/Frameworks/Python.framework/Versions/3.9/bin/python3"
+}
