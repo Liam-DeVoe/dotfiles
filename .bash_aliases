@@ -1,0 +1,5 @@
+\alias '1=ls'
+\alias 'comfy=cd /Users/tybug/Desktop/Liam/Music/comfy'
+\alias 'uid=echo REDACTED | pbcopy'
+\alias 'singles=cd /Users/tybug/Desktop/Liam/Music/singles'
+\alias 'trance=cd /Users/tybug/Desktop/Liam/Music/Singles\ \(Touhou\ Trance\) '
