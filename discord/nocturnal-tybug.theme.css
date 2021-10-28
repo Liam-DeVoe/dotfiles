@@ -2625,10 +2625,12 @@ List of likely defunct selectors (used to work but now the elements no longer ex
 */
 
 .scroller-1Bvpku, /* left side server list */
-.container-lRFx4q /* "now playing" column in friends list */
+.container-lRFx4q, /* "now playing" / "active now" column in friends list */
+.section-2gLsgF /* subareas in individual "now playing" sections (eg showing a specific voice channel or game) */
 {
     background-color: var(--backgroundDark) !important;
 }
+
 
 /*
 remove "explore public servers" at bottom of server list. I tried a lot of different things but it doesn't look like
@@ -2641,5 +2643,10 @@ that *is* uniquely identifiable is good enough.
 }
 
 .header-2RyJ0Y ~ div[aria-label="Discord Nitro"] {
+    display: none;
+}
+
+/* remove "wave to say hi" buttons (thanks for the useless and screen-clogging feature, discord) */
+.welcomeCTAButtonOuter-2VwxSF {
     display: none;
 }
