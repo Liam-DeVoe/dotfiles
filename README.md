@@ -1,5 +1,8 @@
 # dotfiles
 
-This repo holds various config files on my system. Most notably, my bash_profile and vscode settings. 
+This repo holds various config files on my system, including:
 
-I've redacted sensitive information where relevant (mostly for api keys and such).
+* my betterdiscord theme
+* my gitconfig
+* my bash_profile and bash_aliases
+* my vscode settings and keybindings
