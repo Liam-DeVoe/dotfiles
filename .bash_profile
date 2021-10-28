@@ -55,11 +55,6 @@ export PATH=/Applications/Coq.app/Contents/Resources/bin:$PATH
 ## Environment Variables ##
 ###########################
 
-# for circleguard test cases
-export OSU_API_KEY='3248d8edf474e919e775f184c1c0f7c868f1e95d'
-# for ossapi test cases
-export OSU_API_CLIENT_ID='3762'
-export OSU_API_CLIENT_SECRET='XDjSKqIKWfO74ts95guVpuXYzoUlZoriF7cQiTnF'
 # see https://stackoverflow.com/a/17886334/12164878 and https://stackoverflow.com/a/1348940/12164878.
 # Change if you want to use java 11 instead of 8
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home"
