@@ -1,10 +1,8 @@
 {
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
+        "*.ipynb": "jupyter-notebook"
     },
-    "breadcrumbs.enabled": false,
     "editor.minimap.enabled": false,
-    "workbench.statusBar.visible": false,
     "gitlens.blame.heatmap.enabled": false,
     "gitlens.codeLens.enabled": false,
     "gitlens.codeLens.authors.enabled": false,
@@ -33,7 +31,11 @@
     "files.exclude": {
         "**/__pycache__": true,
         "**/*.pyc": true,
-        "**/*.egg-info": true
+        "**/*.egg-info": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
     },
     "files.watcherExclude": {
         "**/.dolt/noms/**": true,
@@ -43,14 +45,13 @@
         "**/node_modules/**": true
     },
     "python.linting.pylintArgs": [
-        "--disable=no-self-use,protected-access,invalid-name,logging-not-lazy,broad-except,missing-function-docstring,import-outside-toplevel,missing-module-docstring,missing-class-docstring,fixme,relative-beyond-top-level,wildcard-import,line-too-long,anomalous-backslash-in-string,too-many-arguments,too-few-public-methods,useless-super-delegation,too-many-lines,unnecessary-pass,wrong-import-order,redefined-outer-name,expression-not-assigned,dangerous-default-value,arguments-differ,abstract-method,too-many-locals,too-many-statements,wrong-import-position,too-many-instance-attributes,too-many-public-methods,too-many-nested-blocks,logging-fstring-interpolation,too-many-return-statements,too-many-ancestors,too-many-branches,inconsistent-return-statements",
+        "--disable=no-self-use,protected-access,invalid-name,logging-not-lazy,broad-except,missing-function-docstring,import-outside-toplevel,missing-module-docstring,missing-class-docstring,fixme,relative-beyond-top-level,wildcard-import,line-too-long,anomalous-backslash-in-string,too-many-arguments,too-few-public-methods,useless-super-delegation,too-many-lines,unnecessary-pass,wrong-import-order,redefined-outer-name,expression-not-assigned,dangerous-default-value,arguments-differ,abstract-method,too-many-locals,too-many-statements,wrong-import-position,too-many-instance-attributes,too-many-public-methods,too-many-nested-blocks,logging-fstring-interpolation,too-many-return-statements,too-many-ancestors,too-many-branches,inconsistent-return-statements,subprocess-run-check",
     ],
     "python.linting.pylintEnabled": true,
     "explorer.confirmDelete": false,
     "git.enableSmartCommit": true,
     "diffEditor.wordWrap": "off",
     "editor.renderWhitespace": "none",
-    "files.trimTrailingWhitespace": true,
     "explorer.confirmDragAndDrop": false,
     "editor.folding": false,
     "search.smartCase": true,
@@ -113,7 +114,9 @@
         // disable MD041/first-line-heading/first-line-h1: First line in a file should be a top-level (MD041)
         "first-line-h1": false,
         // disable MD033/no-inline-html: Inline HTML (MD033)
-        "no-inline-html": false
+        "no-inline-html": false,
+        // disable MD001/heading-increment/header-increment: Heading levels should only increment by one level at a time (MD001)
+        "header-increment": false
     },
     "workbench.editor.untitled.hint": "hidden",
     "python.languageServer": "Default",
@@ -124,11 +127,38 @@
     // I may decide later that I actually like some of the semantic highlighting pylance provides and want to selectively
     // enable those highlightings. This will be a process since I believe I will need to manually override pylance's
     // highlightings to reset them back to what my theme provides for highlights I don't want changed. Or it may not
-    // be possible at all. Not sure yet. But will take some time to play aroumnd with, so not doing it right now.
+    // be possible at all. Not sure yet. But will take some time to play around with, so not doing it right now.
     "editor.semanticHighlighting.enabled": false,
     "terminal.integrated.scrollback": 10000,
     "git.confirmSync": false,
-    "editor.find.seedSearchStringFromSelection": false,
+    "editor.find.seedSearchStringFromSelection": "never",
     "security.workspace.trust.enabled": false,
-    "python.defaultInterpreterPath": "/Library/Frameworks/Python.framework/Versions/3.9/bin/python3"
+    "python.defaultInterpreterPath": "/Library/Frameworks/Python.framework/Versions/3.9/bin/python3",
+    "files.associations": {
+        "*.rst": "restructuredtext"
+    },
+    "[restructuredtext]": {
+        "editor.suggestOnTriggerCharacters": false,
+    },
+    "workbench.statusBar.visible": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+    "files.trimTrailingWhitespace": true,
+    "gitlens.views.searchAndCompare.files.layout": "tree",
+    "git.enableStatusBarSync": false,
+
+    // going to give only accepting quick suggestions on tab a try, since
+    // I get very annoyed by having to press escape and then enter when I just
+    // want to type a new line.
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false
+    },
+    "breadcrumbs.enabled": false,
+    // "editor.acceptSuggestionOnEnter": "off"
 }
