@@ -1,0 +1,36 @@
+[
+    {
+        "key": "cmd+d",
+        "command": "editor.action.deleteLines",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-jupyter.execSelectionInteractive",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.ownsSelection && !findInputFocussed && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.execSelectionInTerminal",
+        "when": "editorTextFocus && !findInputFocussed && !python.datascience.ownsSelection && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "key": "cmd+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "shift+cmd+right",
+        "command": "extension.coq.interpretToPoint",
+        "when": "editorTextFocus && editorLangId == 'coq'"
+    },
+    {
+        "key": "shift+cmd+.",
+        "command": "-breadcrumbs.toggleToOn",
+        "when": "!config.breadcrumbs.enabled"
+    },
+]
