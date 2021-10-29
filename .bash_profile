@@ -94,7 +94,7 @@ if [[ $PWD/ = $HOME/ ]]; then
 	cd Desktop/
 fi
 
-# thefuck (https://github.com/nvbn/thefuck) won't work unless I do this unfortunately
+# set up thefuck https://github.com/nvbn/thefuc
 eval "$(thefuck --alias)"
 
 # https://apple.stackexchange.com/a/55886
