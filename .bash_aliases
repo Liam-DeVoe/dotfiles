@@ -8,7 +8,7 @@ alias f='open -a Finder ./'
 alias ..='cd ../'
 
 # cd shortcuts
-alias comfy='cd /Users/tybug/Desktop/Liam/Music/comfy'
+alias comfy='cd /Users/tybug/Desktop/Liam/Music/singles\ \(comfy\)'
 alias singles='cd /Users/tybug/Desktop/Liam/Music/singles'
 alias trance='cd /Users/tybug/Desktop/Liam/Music/singles\ \(trance\)'
 
