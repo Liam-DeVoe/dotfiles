@@ -299,7 +299,6 @@
 .header-39GIC8,
 .headerBar-UHpsPw,
 .memberListItem-31QoHj:not(.popoutDisabled-2RK7MF):hover,
-.members-1998pB,
 .messagesWrapper-3lZDfY,
 .nowPlayingColumn-2sl4cE,
 .peopleList-3c4jOR,
@@ -2626,11 +2625,25 @@ List of likely defunct selectors (used to work but now the elements no longer ex
 
 .scroller-1Bvpku, /* left side server list */
 .container-lRFx4q, /* "now playing" / "active now" column in friends list */
-.section-2gLsgF /* subareas in individual "now playing" sections (eg showing a specific voice channel or game) */
+.section-2gLsgF, /* subareas in individual "now playing" sections (eg showing a specific voice channel or game) */
+.container-2wlB3z /* right side members list */
 {
     background-color: var(--backgroundDark) !important;
 }
 
+.scroller-1Bvpku, /* left side server list */
+.container-lRFx4q, /* "now playing" / "active now" column in friends list */
+.section-2gLsgF, /* subareas in individual "now playing" sections (eg showing a specific voice channel or game) */
+.container-2wlB3z /* right side members list */
+{
+    background-color: var(--backgroundDark) !important;
+}
+
+.searchResult-9tQ1uo, /* individual search results */
+.searchHeader-2XoQg7 /* search header (contains "x results ..." etc) at the top of the search bar */
+{
+    background-color: var(--backgroundDarker) !important;
+}
 
 /*
 remove "explore public servers" at bottom of server list. I tried a lot of different things but it doesn't look like
