@@ -2631,14 +2631,6 @@ List of likely defunct selectors (used to work but now the elements no longer ex
     background-color: var(--backgroundDark) !important;
 }
 
-.scroller-1Bvpku, /* left side server list */
-.container-lRFx4q, /* "now playing" / "active now" column in friends list */
-.section-2gLsgF, /* subareas in individual "now playing" sections (eg showing a specific voice channel or game) */
-.container-2wlB3z /* right side members list */
-{
-    background-color: var(--backgroundDark) !important;
-}
-
 .searchResult-9tQ1uo, /* individual search results */
 .searchHeader-2XoQg7 /* search header (contains "x results ..." etc) at the top of the search bar */
 {
