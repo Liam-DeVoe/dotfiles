@@ -2632,9 +2632,16 @@ List of likely defunct selectors (used to work but now the elements no longer ex
 }
 
 .searchResult-9tQ1uo, /* individual search results */
-.searchHeader-2XoQg7 /* search header (contains "x results ..." etc) at the top of the search bar */
+.searchHeader-2XoQg7, /* search header (contains "x results ..." etc) at the top of the search bar */
+.circleIconButton-hZmpE8
 {
     background-color: var(--backgroundDarker) !important;
+}
+
+.folderIconWrapper-1Ml_1q,
+.expandedFolderBackground-3ZDF05
+{
+    background-color: rgb(20, 20, 20) !important;
 }
 
 /*
