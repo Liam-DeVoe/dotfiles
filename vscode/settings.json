@@ -160,5 +160,9 @@
         "strings": false
     },
     "breadcrumbs.enabled": false,
+    // I was getting an annoying error every time I opened vscode without this option enabled,
+    // something about the language server not supporting multi-root workspaces. I don't
+    // really care about rst intellisense so I've just disabled it to silence the error.
+    "restructuredtext.languageServer.disabled": true,
     // "editor.acceptSuggestionOnEnter": "off"
 }
