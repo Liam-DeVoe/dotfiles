@@ -129,7 +129,6 @@
     // highlightings to reset them back to what my theme provides for highlights I don't want changed. Or it may not
     // be possible at all. Not sure yet. But will take some time to play around with, so not doing it right now.
     "editor.semanticHighlighting.enabled": false,
-    "terminal.integrated.scrollback": 10000,
     "git.confirmSync": false,
     "editor.find.seedSearchStringFromSelection": "never",
     "security.workspace.trust.enabled": false,
@@ -164,5 +163,6 @@
     // something about the language server not supporting multi-root workspaces. I don't
     // really care about rst intellisense so I've just disabled it to silence the error.
     "restructuredtext.languageServer.disabled": true,
+    "terminal.integrated.scrollback": 5000,
     // "editor.acceptSuggestionOnEnter": "off"
 }
