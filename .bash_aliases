@@ -15,16 +15,21 @@ alias singles='cd /Users/tybug/Desktop/Liam/Music/singles'
 alias trance='cd /Users/tybug/Desktop/Liam/Music/singles\ \(trance\)'
 
 # git shortcuts
-alias p='git push'
-alias pu='git pull'
-alias gst='git status'
-alias gb='git branch'
-alias lg='git lg'
-alias gl='git lg'
-alias gt='git tag'
-alias gc='git checkout'
-alias gs='git switch'
+function _git_alias {
+	alias $1="git ${2}"
+	# set up autocomplete
+	__git_complete $1 _git_$2
+} 
 
+_git_alias p push
+_git_alias pu pull
+_git_alias gst status
+_git_alias gb branch
+_git_alias lg lg
+_git_alias gl lg
+_git_alias gt tag
+_git_alias gc checkout
+_git_alias gs switch
 
 
 ##########################

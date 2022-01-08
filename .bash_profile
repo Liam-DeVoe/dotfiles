@@ -64,26 +64,6 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 
 
-#############
-## Aliases ##
-#############
-
-# I store all my aliases in a separate file, so add them now
-if [ -f ~/.bash_aliases ]; then
-  source ~/.bash_aliases
-fi
-
-# sensitive / private aliases go in a separate file; I publicize everything else
-if [ -f ~/.bash_aliases_private ]; then
-  source ~/.bash_aliases_private
-fi
-
-# use our current shell for this script so we can immediately add our new alias to our shell when we call this
-# https://stackoverflow.com/a/44122806
-# alias alias='. alias-permanent'
-
-
-
 ##########
 ## Misc ##
 ##########
@@ -101,3 +81,24 @@ eval "$(thefuck --alias)"
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
+
+
+#############
+## Aliases ##
+#############
+
+# I store all my aliases in a separate file, so add them now.
+# NOTE: this depends on git-completion.bash being sourced, as we use the __git_complete function defined theirin.
+if [ -f ~/.bash_aliases ]; then
+  source ~/.bash_aliases
+fi
+
+# sensitive / private aliases go in a separate file; I publicize everything else
+if [ -f ~/.bash_aliases_private ]; then
+  source ~/.bash_aliases_private
+fi
+
+# use our current shell for this script so we can immediately add our new alias to our shell when we call this
+# https://stackoverflow.com/a/44122806
+# alias alias='. alias-permanent'
