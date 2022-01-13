@@ -3,6 +3,7 @@
 #####################
 
 alias t='python3 -m unittest'
+alias run='python3 manage.py runserver'
 alias d='open -a Finder /Users/tybug/Desktop/Liam/coding/tybug/data/ok'
 alias f='open -a Finder ./'
 alias bashrc='open -a Finder /Users/tybug/.bash_profile'
