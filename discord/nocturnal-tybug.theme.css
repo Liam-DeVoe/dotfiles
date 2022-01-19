@@ -8,6 +8,7 @@
 :root {
     --backgroundDark: rgb(24, 28, 37);
     --backgroundDarker: rgb(20, 23, 31);
+    --backgroundDarkest: rgb(20, 20, 20);
     --primary: #008ae6;
     --primaryGradient1: var(--primary);
     --primaryGradient2: #00e68a;
@@ -2618,17 +2619,42 @@ svg.slider-32CRPX svg {
 
 /* major personal edits beyond this point */
 
-.scroller-3X7KbA, /* left side server list */
-.container-1oAagU, /* "now playing" / "active now" column in friends list */
-.section-3G9aLW, /* subareas in individual "now playing" sections (eg showing a specific voice channel or game) */
-.container-2o3qEW /* right side members list */
+/* left side server list */
+.scroller-3X7KbA,
+/* "now playing" / "active now" column in friends list */
+.container-1oAagU,
+/* subareas in individual "now playing" sections (eg showing a specific voice channel or game) */
+.section-3G9aLW,
+/* right side members list */
+.container-2o3qEW,
+/* thread list body */
+.container-2c4_8A,
+/* "private" thread list body */
+.list-1uSVgu,
+/* "new thread" sidebar popout contents */
+.container-3XgAHv
 {
     background-color: var(--backgroundDark) !important;
 }
 
-.searchResult-O9NDji, /* individual search results */
-.searchHeader-1r_ZSh, /* search header (contains "x results ..." etc) at the top of the search bar */
-.circleIconButton-1VxDrg
+/* individual search results */
+.searchResult-O9NDji,
+/* search header (contains "x results ..." etc) at the top of the search bar */
+.searchHeader-1r_ZSh,
+.circleIconButton-1VxDrg,
+/* thread list header */
+.header-3_zmOb,
+/* "new thread" sidebar popout icon */
+.iconWrapper-3plkqh,
+/* "new thread" sidebar popout "archive after inactivity" button */
+.select-1Ia3hD,
+.bd-addon-card,
+.bd-addon-header,
+.bd-search-wrapper,
+/* "my account" preview in settings */
+.accountProfileCard-lbN7n-,
+/* radio bar in settings (eg settings -> privacy and safety -> direct message scanning settings */
+.radioBar-3w9XY-
 {
     background-color: var(--backgroundDarker) !important;
 }
@@ -2636,35 +2662,30 @@ svg.slider-32CRPX svg {
 .folderIconWrapper-1oRIZr,
 .expandedFolderBackground-1kSAf6
 {
-    background-color: rgb(20, 20, 20) !important;
+    background-color: var(--backgroundDarkest) !important;
 }
 
-/*
-remove "explore public servers" at bottom of server list. I tried a lot of different things but it doesn't look like
+.bd-settings-title {
+    color: white;
+}
+
+/* remove "explore public servers" at bottom of server list. I tried a lot of different things but it doesn't look like
 the public servers element actually has any unique classes until we're too far down in the hierarchy to matter (I
 can remove the icon but it would still show a popover on hover, for instance). So a sibling selector from an element
-that *is* uniquely identifiable is good enough.
-*/
-.tutorialContainer-2jwoiB + div {
-    display: none;
-}
-
-.header-2Kx1US ~ div[aria-label="Discord Nitro"] {
-    display: none;
-}
-
+that *is* uniquely identifiable is good enough. */
+.tutorialContainer-2jwoiB + div,
+.header-2Kx1US ~ div[aria-label="Discord Nitro"],
 /* remove "wave to say hi" buttons (thanks for the useless and screen-clogging feature, discord) */
-.welcomeCTAButtonOuter-3pJkMq {
-    display: none;
-}
-
+.welcomeCTAButtonOuter-3pJkMq,
 /* remove notification bell icon on the top bar for channels, you can change a channel's notifications from here
 but I never use it, I always right click the channel and edit from there */
-.iconWrapper-2awDjA.clickable-ZD7xvu[aria-label="Notification Settings"] {
-    display: none;
-}
-
+.iconWrapper-2awDjA.clickable-ZD7xvu[aria-label="Notification Settings"],
 /* "help" icon on the top bar */
-.iconWrapper-2awDjA.clickable-ZD7xvu[aria-label="Help"] {
+.iconWrapper-2awDjA.clickable-ZD7xvu[aria-label="Help"],
+/* "buy nitro" button in settings -> user profile, and probably other places too */
+.shinyButton-2Q9MDB,
+/* "try animated banners with nitro" banner on settings -> user profile */
+.premiumInlineNotice-eSBKv7
+{
     display: none;
 }
