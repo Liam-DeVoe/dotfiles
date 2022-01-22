@@ -164,5 +164,6 @@
     // really care about rst intellisense so I've just disabled it to silence the error.
     "restructuredtext.languageServer.disabled": true,
     "terminal.integrated.scrollback": 5000,
+    "coqtop.binPath": "/Applications/Coq.app/Contents/Resources/bin/",
     // "editor.acceptSuggestionOnEnter": "off"
 }
