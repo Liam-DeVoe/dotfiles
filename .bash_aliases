@@ -10,7 +10,7 @@ alias bashrc='open -a Finder /Users/tybug/.bash_profile'
 alias aliases='open -a Finder /Users/tybug/.bash_aliases'
 alias ..='cd ../'
 # cd to the path of the currently open finder window
-alias cd='cd "$(current_finder_path)"'
+alias c='cd "$(current_finder_path)"'
 
 # cd shortcuts
 alias comfy='cd /Users/tybug/Desktop/Liam/Music/singles\ \(comfy\)'
