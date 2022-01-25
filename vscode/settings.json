@@ -165,5 +165,6 @@
     "restructuredtext.languageServer.disabled": true,
     "terminal.integrated.scrollback": 5000,
     "coqtop.binPath": "/Applications/Coq.app/Contents/Resources/bin/",
+    "editor.unicodeHighlight.nonBasicASCII": false,
     // "editor.acceptSuggestionOnEnter": "off"
 }
