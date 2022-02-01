@@ -17,3 +17,5 @@ find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
 	rebase = false
 [core]
 	excludesfile = /Users/tybug/.gitignore
+[init]
+	defaultBranch = master
