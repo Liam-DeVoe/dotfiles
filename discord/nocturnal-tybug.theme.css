@@ -2685,7 +2685,13 @@ but I never use it, I always right click the channel and edit from there */
 /* "buy nitro" button in settings -> user profile, and probably other places too */
 .shinyButton-2Q9MDB,
 /* "try animated banners with nitro" banner on settings -> user profile */
-.premiumInlineNotice-eSBKv7
+.premiumInlineNotice-eSBKv7,
+/* nitro button in message box */
+.buttons-uaqb-5 button[aria-label="Send a gift"],
+/* gif button in nitro box */
+.buttons-uaqb-5 button[aria-label="Open GIF picker"],
+/* sticker button in message box */
+.buttons-uaqb-5 button[aria-label="Open sticker picker"]
 {
     display: none;
 }
