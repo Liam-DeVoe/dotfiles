@@ -11,6 +11,8 @@ alias aliases='open -a Finder /Users/tybug/.bash_aliases'
 alias ..='cd ../'
 # cd to the path of the currently open finder window
 alias c='cd "$(current_finder_path)"'
+# download the current chrome url
+alias dlac='dla $(current_chrome_url)'
 
 # cd shortcuts
 alias comfy='cd /Users/tybug/Desktop/Liam/Music/singles\ \(comfy\)'
