@@ -1,0 +1,5 @@
+#!/usr/bin/env osascript
+
+tell application "Google Chrome"
+	return URL of active tab of first window
+end tell
