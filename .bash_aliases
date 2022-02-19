@@ -10,7 +10,8 @@ alias bashrc='open -a Finder /Users/tybug/.bash_profile'
 alias aliases='open -a Finder /Users/tybug/.bash_aliases'
 alias ..='cd ../'
 # cd to the path of the currently open finder window
-alias c='cd "$(current_finder_path)"'
+alias cdc='cd "$(current_finder_path)"'
+alias c='cdc'
 # download the current chrome url
 alias dlac='dla $(current_chrome_url)'
 
