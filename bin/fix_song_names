@@ -13,6 +13,8 @@ for extension in SONG_EXTENSIONS:
 class Fix:
     def __init__(self, find, replace):
         self.find_re = re.compile(find)
+        # the "replace" argument to `re.sub` can't be a compiled regex
+        # object apparently
         self.replace_re = replace
 
     def matches(self, song):
