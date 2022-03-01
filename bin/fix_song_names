@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+
+from pathlib import Path
+import re
+
+SONG_EXTENSIONS = ["mp3", "flac", "wav", "ogg"]
+pwd = Path.cwd()
+
+songs = []
+for extension in SONG_EXTENSIONS:
+    songs += pwd.glob(f"*.{extension}")
+
+class Fix:
+    def __init__(self, find, replace):
+        self.find_re = re.compile(find)
+        self.replace_re = replace
+
+    def matches(self, song):
+        return re.match(self.find_re, song.name)
+
+    def apply(self, song):
+        new_name = re.sub(self.find_re, self.replace_re, song.name)
+        song.rename(new_name)
+
+fixes = [
+    # missing dot after name, eg
+    # 03 S.C.K. -> 03. S.C.K.
+    Fix(r"^(\d+) (.*)", r"\1. \2"),
+]
+
+for fix in fixes:
+    # only apply the fix (ie rename the songs) if every song matches the
+    # prerequisites of the fix
+    if all(fix.matches(song) for song in songs):
+        for song in songs:
+            fix.apply(song)
