@@ -84,6 +84,9 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+# makes autocomplete (tab) consider case insensitive options (https://askubuntu.com/q/87061).
+# Mostly useful for cd'ing to folders which I can't remember whether I capitalized them or not
+bind 'set completion-ignore-case on'
 
 
 #############
