@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+from pathlib import Path
+from argparse import ArgumentParser
+import os
+import shutil
+
+power_actual = Path("/System/Library/CoreServices/PowerChime.app/Contents/Resources/connect_power.aif")
+power_custom = Path("/Users/tybug/Desktop/Liam/Personal/customizations/connect_power_2.aif")
+power_original = Path("/Users/tybug/Desktop/Liam/Personal/customizations/connect_power_original.aif")
+
+parser = ArgumentParser(description="toggle custom PowerChime mp3 on or off")
+parser.add_argument("to", choices=["on", "off"])
+args = parser.parse_args()
+
+power_new = power_custom if args.to == "on" else power_original
+# can't use pathlib's `#rename` function because it doesn't work across
+# filesystems apparently
+shutil.copy(power_new, power_actual)
+# restart so the new file takes effect. Powerchime should restart on its own
+# a few seconds after we kill it
+os.system("killall PowerChime")
