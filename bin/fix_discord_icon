@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+
+from pathlib import Path
+import os
+import shutil
+
+# Replace discord's icon with the older, better-looking version. Will take
+# effect when discord is next opened.
+# See also https://www.sethvargo.com/replace-icons-osx
+
+icon_current = Path("/Applications/Discord.app/Contents/Resources/electron.icns")
+icon_new = Path("/Users/tybug/Desktop/Liam/Personal/customizations/old_discord_logo.icns")
+shutil.copy(icon_new, icon_current)
+
+# app icons are cached, this apparently busts the cache and allows the new icon
+# to be applied
+os.system("touch /Applications/Discord.app")
