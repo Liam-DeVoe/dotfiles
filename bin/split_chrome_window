@@ -1,0 +1,26 @@
+#!/usr/bin/env osascript
+
+# splits the current chrome window (which contains at least, and ideally exactly, two tabs)
+# into two side-by-side-windows. Intended to be used when I need to compare or copy information across
+# tabs, and would benefit from seeing the two tabs side by side as separate windows.
+
+tell application "System Events" to ¬
+	tell application process "Dock" to ¬
+		set {dockWidth, dockHeight} to ¬
+			the size of list 1
+
+tell application "Finder" to ¬
+	set {topLeftX, topLeftY, bottomRightX, bottomRightY} to bounds of window of desktop
+
+tell application "Google Chrome"
+	set newURL to URL of tab 2 of window 1
+	close tab 2 of window 1
+	set windowWidth to ((bottomRightX - dockWidth) / 2) + dockWidth
+	tell window 1
+		set bounds to {dockWidth, 0, windowWidth, bottomRightY}
+	end tell
+	tell (make new window)
+		set URL of active tab to newURL
+		set bounds to {windowWidth, 0, bottomRightX, bottomRightY}
+	end tell
+end tell
