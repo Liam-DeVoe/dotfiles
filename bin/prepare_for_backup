@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
 # I use git as my backup system, by keeping a git repository on my backup
-# harddrive and adding a new commit . This means I get differential backups for
-# free, without needing to learn a new backup tool or special syntax. It also
-# lets me rest easy knowing that the "backup software" of my choice (in this
-# case, git) will still be around in 50 years: if git isn't maintained in 50
-# years, I have bigger problems to worry about.
+# harddrive and adding a new commit for every backup. This means I get
+# differential backups for free, without needing to learn a new backup tool or
+# special syntax. It also lets me rest easy knowing that the "backup software"
+# of my choice (in this case, git) will still be around in 50 years: if git
+# isn't maintained in 50 years, I have bigger things to worry about.
 #
 # There's a reason most people don't use git as their backup system: you can't
 # nest git repositories. Yes, you can if you count gitmodules, but those are
