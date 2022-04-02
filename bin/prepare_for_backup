@@ -1,0 +1,91 @@
+#!/usr/bin/env python3
+
+# I use git as my backup system, by keeping a git repository on my backup
+# harddrive and adding a new commit . This means I get differential backups for
+# free, without needing to learn a new backup tool or special syntax. It also
+# lets me rest easy knowing that the "backup software" of my choice (in this
+# case, git) will still be around in 50 years: if git isn't maintained in 50
+# years, I have bigger problems to worry about.
+#
+# There's a reason most people don't use git as their backup system: you can't
+# nest git repositories. Yes, you can if you count gitmodules, but those are
+# not sufficient for my purposes because they track changes on a true per-repo
+# basis. I need a single repository for my entire backup storage system so that
+# the incremental diffs play nicely.
+#
+# To get around this, we'll rename every special git-related file or folder to a
+# version which git doesn't recognize, so to git the file system will look like
+# a single git repository (initialized only once, at the top level). By
+# "renaming", I just mean prepending an underscore, eg `.git` -> `._git`.
+#
+# This does restrict the filenames I can choose on my computer, but I find that
+# to be an acceptable tradeoff. This script will abort if a file or folder by
+# the name we want already exists.
+#
+# workflow for backing up:
+# * (only on initial setup) initialize a git repository on your empty backup
+#   harddrive. We'll call this folder the "backup root".
+# * copy the folders you want from your computer to the harddrive. Do *not*
+#   change the file structure: this is just a straight copy over. It's ok to
+#   leave off particular directories or files you don't want to back up, though
+#   I personally back up literally everything under my ~/Desktop, and a few
+#   select items from my ~/. We'll call the root folder of these folders the
+#   "snapshot root".
+# * do not move the snapshot root into the backup root yet; keep it in some
+#   other directory not contained in the backup root, perhaps a sibling of the
+#   backup root.
+# * cd into the snapshot root and run this script. It's very important to only
+#   run the script on this step and no other. You don't want to run the script
+#   on your own computer (ie, before copying over the dirs you want to back up
+#   to the backup harddrive) because then you'll rename git-related items
+#   (eg `.git`) that you actually wanted to keep on your main computer. You
+#   don't want to run this script after moving the snapshot root into the backup
+#   root, or you'll try to overwrite existing renamed git-related items which
+#   were already renamed by a previous backup (eg `._git`). This latter bit
+#   would actually probably be ok and result in the same outcome (just
+#   overwriting slightly earlier than it otherwise would have) but I prefer to
+#   make sure this script applies cleanly before moving the snapshot root into
+#   the backup root. This move will overwrite any existing renamed git-related
+#   items in the backup root, which is good, because those items are tracked by
+#   the backup root git repository, exactly as desired.
+# * move the snapshot root into the backup root. If this isn't the first time
+#   you've backed up to the backup harddrive, then you're about to overwrite
+#   every single directory and file which was also present in the previous
+#   backup. Let this happen; the whole point of using git as our backup system
+#   is that we get differential backups for free. Even if you mess anything up,
+#   you'll still be able to restore from the backup root git repo. Just make
+#   absolutely sure that you don't overwrite the backup root .git folder!
+# * check everything looks good, and run `git commit -a -m "backup mm/dd/yyyy"`.
+
+# TODO a bunch of the above steps can probably be automated (and sanity-checked
+# to make sure we're not doing anything outrageouosly stupid like overwriting
+# the backup root .git foldler) by this script
+
+
+from pathlib import Path
+import sys
+
+root = Path(".")
+answer = input(f"Prepare {root.absolute()} for backup? y/n ")
+if answer.lower() not in ["y", "yes"]:
+    print("Aborting")
+    sys.exit(0)
+
+# https://stackoverflow.com/a/12719247/12164878
+SPECIAL_FILES = [".gitignore", ".gitattributes", ".gitmodules", ".mailmap"]
+
+def rename_path(p):
+    # move `.path_name` to `._path_name`
+    new_path = p.parent / ("._" + p.name[1:])
+    if new_path.exists():
+        raise Exception(f"tried to move {p} to {new_path}, but found an "
+            f"existing item at {new_path}. Aborting")
+    print(f"moving {p} to {new_path}")
+    p.rename(new_path)
+
+for p in root.rglob("*"):
+    if p.is_dir() and p.name == ".git":
+        rename_path(p)
+
+    if p.is_file() and p.name in SPECIAL_FILES:
+        rename_path(p)
