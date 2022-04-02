@@ -38,11 +38,11 @@
 #   run the script on this step and no other. You don't want to run the script
 #   on your own computer (ie, before copying over the dirs you want to back up
 #   to the backup harddrive) because then you'll rename git-related items
-#   (eg `.git`) that you actually wanted to keep on your main computer. You
-#   don't want to run this script after moving the snapshot root into the backup
-#   root, or you'll try to overwrite existing renamed git-related items which
-#   were already renamed by a previous backup (eg `._git`). This latter bit
-#   would actually probably be ok and result in the same outcome (just
+#   (eg `.git`) that you actually wanted to keep as-is on your main computer.
+#   You don't want to run this script after moving the snapshot root into the
+#   backup root, or you'll try to overwrite existing renamed git-related items
+#   which were already renamed by a previous backup (eg `._git`). This latter
+#   bit would actually probably be ok and result in the same outcome (just
 #   overwriting slightly earlier than it otherwise would have) but I prefer to
 #   make sure this script applies cleanly before moving the snapshot root into
 #   the backup root. This move will overwrite any existing renamed git-related
