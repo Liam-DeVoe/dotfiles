@@ -165,5 +165,9 @@
     "restructuredtext.languageServer.disabled": true,
     "terminal.integrated.scrollback": 5000,
     "coqtop.binPath": "/Applications/Coq.app/Contents/Resources/bin/",
+    "editor.bracketPairColorization.enabled": false,
+    "scm.diffDecorationsGutterPattern": {
+        "modified": false
+    },
     // "editor.acceptSuggestionOnEnter": "off"
 }
