@@ -71,3 +71,5 @@ alias dott='dot -o output.png -T png'
 # https://raspberrypi.stackexchange.com/a/34594/110108
 alias findpi='arp -na | grep -i b8:27:eb'
 alias fuck='fuck --yeah'
+# always print output when running pytest https://stackoverflow.com/a/14414325/12164878
+alias pytest='pytest -s'
