@@ -169,5 +169,6 @@
         "modified": false
     },
     "editor.bracketPairColorization.enabled": false,
+    "extensions.ignoreRecommendations": true,
     // "editor.acceptSuggestionOnEnter": "off"
 }
