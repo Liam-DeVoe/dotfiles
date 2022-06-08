@@ -33,19 +33,19 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 ## Path Modifications ##
 ########################
 
-# scripts in .local/bin
-export PATH=/Users/tybug/.local/bin:$PATH
 # python 3.7
 export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 # python 3.9
 export PATH=/Library/Frameworks/Python.framework/Versions/3.9/bin:$PATH
+# python 3.10
+export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
 # racket + racket tools
 export PATH=/Applications/Racket\ v7.8/bin:$PATH
 # prolog + prolog tools
 export PATH=/Applications/SWI-Prolog.app/Contents/MacOS:$PATH
-# ruby
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
+# use brew ruby
+# (or maybe not...causing issues with pacify needing ruby 2.x. TODO) 
+# export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 # coq
 export PATH=/Applications/Coq.app/Contents/Resources/bin:$PATH
 # personal scripts
@@ -76,6 +76,9 @@ if [[ $PWD/ = $HOME/ ]]; then
 	cd Desktop/
 fi
 
+# add homebrew paths to PATH
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # set up thefuck https://github.com/nvbn/thefuck
 eval "$(thefuck --alias)"
 
@@ -87,6 +90,9 @@ fi
 # makes autocomplete (tab) consider case insensitive options (https://askubuntu.com/q/87061).
 # Mostly useful for cd'ing to folders which I can't remember whether I capitalized them or not
 bind 'set completion-ignore-case on'
+
+# activate z (https://github.com/rupa/z)
+. /Users/tybug/bin/z.sh
 
 
 #############
