@@ -169,5 +169,6 @@
         "modified": false
     },
     "files.trimTrailingWhitespace": true,
+    "html.completion.attributeDefaultValue": "empty",
     // "editor.acceptSuggestionOnEnter": "off"
 }
