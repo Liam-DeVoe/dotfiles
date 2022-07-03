@@ -39,18 +39,21 @@ export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 export PATH=/Library/Frameworks/Python.framework/Versions/3.9/bin:$PATH
 # python 3.10
 export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
+# java (currently java 18)
+# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# java 17
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 # racket + racket tools
 export PATH=/Applications/Racket\ v7.8/bin:$PATH
 # prolog + prolog tools
 export PATH=/Applications/SWI-Prolog.app/Contents/MacOS:$PATH
 # use brew ruby
-# (or maybe not...causing issues with pacify needing ruby 2.x. TODO) 
+# (or maybe not...causing issues with pacify needing ruby 2.x. TODO)
 # export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 # coq
 export PATH=/Applications/Coq.app/Contents/Resources/bin:$PATH
 # personal scripts
 export PATH=$HOME/bin:$PATH
-
 
 
 ###########################
@@ -77,10 +80,35 @@ if [[ $PWD/ = $HOME/ ]]; then
 fi
 
 # add homebrew paths to PATH
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# I used to run `eval "$(/opt/homebrew/bin/brew shellenv)"``, but that takes ~20ms to run on every
+# shell startup, which is not that bad but still much slower than I would like. The following is
+# the output of the above command.
+# May need to be updated in the future if/when I update brew.
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 
 # set up thefuck https://github.com/nvbn/thefuck
-eval "$(thefuck --alias)"
+# I used to run `eval "$(thefuck --alias)"`, but that takes ~135ms to run on every shell
+# startup, which I found unnaceptable. So the following is just the output of `thefuck --alias`.
+# May need to be updated in the future if I ever update thefuck.
+function fuck () {
+  TF_PYTHONIOENCODING=$PYTHONIOENCODING;
+  export TF_SHELL=bash;
+  export TF_ALIAS=fuck;
+  export TF_SHELL_ALIASES=$(alias);
+  export TF_HISTORY=$(fc -ln -10);
+  export PYTHONIOENCODING=utf-8;
+  TF_CMD=$(
+      thefuck THEFUCK_ARGUMENT_PLACEHOLDER "$@"
+  ) && eval "$TF_CMD";
+  unset TF_HISTORY;
+  export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
+  history -s $TF_CMD;
+}
 
 # https://apple.stackexchange.com/a/55886
 if [ -f ~/.git-completion.bash ]; then
@@ -113,3 +141,8 @@ fi
 # use our current shell for this script so we can immediately add our new alias to our shell when we call this
 # https://stackoverflow.com/a/44122806
 # alias alias='. alias-permanent'
+
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+export PATH
