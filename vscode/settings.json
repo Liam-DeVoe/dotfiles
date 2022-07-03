@@ -170,5 +170,6 @@
     },
     "files.trimTrailingWhitespace": true,
     "html.completion.attributeDefaultValue": "empty",
+    "java.import.gradle.java.home": "/opt/homebrew/Cellar/openjdk@17/17.0.3/libexec/openjdk.jdk/Contents/Home",
     // "editor.acceptSuggestionOnEnter": "off"
 }
