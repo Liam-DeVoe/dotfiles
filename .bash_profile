@@ -146,3 +146,8 @@ fi
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 export PATH
+
+
+
+# node 14 (remove this export to use node 18)
+export PATH="/opt/homebrew/opt/node@14/bin:$PATH" 
