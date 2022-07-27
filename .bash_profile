@@ -61,8 +61,8 @@ export PATH=$HOME/bin:$PATH
 ###########################
 
 # see https://stackoverflow.com/a/17886334/12164878 and https://stackoverflow.com/a/1348940/12164878.
-# Change if you want to use java 11 instead of 8
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home"
+# TODO is this the right path??
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
 # remove annoying "please change to zsh" warning (I should probably switch to zsh at some point,
 # but a task for another day)
 export BASH_SILENCE_DEPRECATION_WARNING=1
