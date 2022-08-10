@@ -14,7 +14,6 @@
     "gitlens.hovers.currentLine.changes": false,
     "gitlens.hovers.currentLine.details": false,
     "gitlens.hovers.currentLine.enabled": false,
-    "gitlens.currentLine.enabled": false,
     "files.trimFinalNewlines": true,
     "editor.rulers": [
 
@@ -52,10 +51,8 @@
     "diffEditor.wordWrap": "off",
     "editor.renderWhitespace": "none",
     "explorer.confirmDragAndDrop": false,
-    "editor.folding": false,
     "search.smartCase": true,
     "debug.showInlineBreakpointCandidates": false,
-    "diffEditor.ignoreTrimWhitespace": false,
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.startupEditor": "newUntitledFile",
     "editor.find.autoFindInSelection": "multiline",
@@ -102,8 +99,6 @@
     ],
     "githubPullRequests.fileListLayout": "tree",
     "githubIssues.assignWhenWorking": false,
-    "workbench.editor.decorations.badges": false,
-    "workbench.editor.decorations.colors": false,
     "ruby.lint": {
         "rubocop": true
     },
@@ -162,10 +157,6 @@
     "restructuredtext.languageServer.disabled": true,
     "terminal.integrated.scrollback": 5000,
     "coqtop.binPath": "/Applications/Coq.app/Contents/Resources/bin/",
-    "editor.bracketPairColorization.enabled": false,
-    "scm.diffDecorationsGutterPattern": {
-        "modified": false
-    },
     "files.trimTrailingWhitespace": true,
     "html.completion.attributeDefaultValue": "empty",
     "java.import.gradle.java.home": "/opt/homebrew/Cellar/openjdk@17/17.0.3/libexec/openjdk.jdk/Contents/Home",
@@ -175,5 +166,36 @@
         "publish": false,
         "sync": false
     },
+    "workbench.editor.decorations.colors": false,
+    "workbench.editor.decorations.badges": false,
+    "scm.diffDecorationsGutterPattern": {
+        "modified": false
+    },
+    "gitlens.currentLine.enabled": false,
+    "diffEditor.ignoreTrimWhitespace": false,
     // "editor.acceptSuggestionOnEnter": "off"
+
+    "workbench.colorCustomizations": {
+        // TODO I'm 98% sure they made the red color for diff comparisons brighter
+        // in the most recent update (as of 08/04/2022). I'd really like to revert
+        // it to what it was, but there's annoying alpha channels I have to deal
+        // with here and it makes finding the correct color that was used previously
+        // very difficult...
+        // https://stackoverflow.com/a/71176424
+
+        // not perfect, but at least it's not the blinding brightness it was before.
+        // TODO check in on this in the next release to see if this was a bug, perhaps
+        // with my theme.
+        // (edit later that day: here's the PR that made this change
+        // https://github.com/microsoft/vscode/pull/155344)
+        // - liam 08/04/2022
+        "diffEditor.removedTextBackground": "#ff0d002f",
+        "diffEditor.insertedTextBackground": "#80a52833"
+
+
+    },
+    "editor.folding": false,
+    "editor.bracketPairColorization.enabled": false,
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+    "workbench.settings.enableNaturalLanguageSearch": false
 }
