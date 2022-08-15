@@ -15,6 +15,7 @@ alias cdc='cd "$(current_finder_path)"'
 alias c='cdc'
 # download the current chrome url
 alias dlac='dla $(current_chrome_url)'
+alias dlc='dl $(current_chrome_url)'
 alias lazer='python3 /Users/tybug/Desktop/Liam/coding/scrape_lazer_market_share/scrape_lazer_market_share.py'
 
 # cd shortcuts
