@@ -48,8 +48,7 @@ export PATH=/Applications/Racket\ v7.8/bin:$PATH
 # prolog + prolog tools
 export PATH=/Applications/SWI-Prolog.app/Contents/MacOS:$PATH
 # use brew ruby
-# (or maybe not...causing issues with pacify needing ruby 2.x. TODO)
-# export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 # coq
 export PATH=/Applications/Coq.app/Contents/Resources/bin:$PATH
 # personal scripts
