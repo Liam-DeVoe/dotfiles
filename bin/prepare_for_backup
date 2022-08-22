@@ -22,54 +22,42 @@
 # to be an acceptable tradeoff. This script will abort if a file or folder by
 # the name we want already exists.
 #
-# workflow for backing up:
-# * (only on initial setup) initialize a git repository on your empty backup
-#   harddrive. We'll call this folder the "backup root".
-# * copy the folders you want from your computer to the harddrive. Do *not*
-#   change the file structure: this is just a straight copy over. It's ok to
-#   leave off particular directories or files you don't want to back up, though
-#   I personally back up literally everything under my ~/Desktop, and a few
-#   select items from my ~/. We'll call the root folder of these folders the
-#   "snapshot root".
-# * do not move the snapshot root into the backup root yet; keep it in some
-#   other directory not contained in the backup root, perhaps a sibling of the
-#   backup root.
-# * cd into the snapshot root and run this script. It's very important to only
-#   run the script on this step and no other. You don't want to run the script
-#   on your own computer (ie, before copying over the dirs you want to back up
-#   to the backup harddrive) because then you'll rename git-related items
-#   (eg `.git`) that you actually wanted to keep as-is on your main computer.
-#   You don't want to run this script after moving the snapshot root into the
-#   backup root, or you'll try to overwrite existing renamed git-related items
-#   which were already renamed by a previous backup (eg `._git`). This latter
-#   bit would actually probably be ok and result in the same outcome (just
-#   overwriting slightly earlier than it otherwise would have) but I prefer to
-#   make sure this script applies cleanly before moving the snapshot root into
-#   the backup root. This move will overwrite any existing renamed git-related
-#   items in the backup root, which is good, because those items are tracked by
-#   the backup root git repository, exactly as desired.
-# * move the snapshot root into the backup root. If this isn't the first time
-#   you've backed up to the backup harddrive, then you're about to overwrite
-#   every single directory and file which was also present in the previous
-#   backup. Let this happen; the whole point of using git as our backup system
-#   is that we get differential backups for free. Even if you mess anything up,
-#   you'll still be able to restore from the backup root git repo. Just make
-#   absolutely sure that you don't overwrite the backup root .git folder!
-# * check everything looks good, and run `git commit -a -m "backup mm/dd/yyyy"`.
-
-# TODO a bunch of the above steps can probably be automated (and sanity-checked
-# to make sure we're not doing anything outrageouosly stupid like overwriting
-# the backup root .git foldler) by this script
+# To set up backups:
+# * initialize a git repository somehwere on your backup harddrive. We'll call
+#   this folder the "backup root".
+# * cd into the backup root and make a new folder which will be the parent for
+#   the contents of your backups. It's easier to do this than dealing with
+#   trying to ignore the master .git folder at the top level when committing new
+#   backups. We'll call this folder the "backup container". Your directory
+#   structure should look like "backuproot/backupcontainer" (you can name them
+#   anything you want, of course).
+#
+# To take a new backup:
+# * We'll call the directory you want to back up the "snapshot root". Your
+#   snapshot root folder itself won't be copied, but everyhting in it will.
+#   If you already have such a folder on your working drive which is the
+#   entirety of what you want to back up, great - that suffices for your
+#   snapshot root. If you have a directory where you want to back up some parts
+#   of it, but not everything, you'll need to copy that to a new location -
+#   either somewhere on your working drive or somewhere on your backup drive,
+#   not including inside your backup root. Personally I like copying it my
+#   backup drive and then deleting it entirely once I'm done.
+#   For instance, I want to back up some files in my ~/, but not all of them.
+#   So I copy ~/ to my backup drive and delete the files I don't want, and
+#   that's my snapshot root.
+# * To take the backup, cd into your backup container and run
+#   `backup /path/to/snapshot/root`. You'll be prompted to confirm this is
+#   really what you want to do and where you want to do it, as well as some
+#   sanity checks to make sure you're not overwriting your master git repo.
+#   The backup command will take care of everything else for you, including
+#   renaming git files before committing and actually committing.
+#   This command will probably take a long time to run fully.
 
 
+from datetime import datetime
 from pathlib import Path
 import sys
-
-root = Path(".")
-answer = input(f"Prepare {root.absolute()} for backup? y/n ")
-if answer.lower() not in ["y", "yes"]:
-    print("Aborting")
-    sys.exit(0)
+import os
 
 # https://stackoverflow.com/a/12719247/12164878
 SPECIAL_FILES = [".gitignore", ".gitattributes", ".gitmodules", ".mailmap"]
@@ -83,9 +71,63 @@ def rename_path(p):
     print(f"moving {p} to {new_path}")
     p.rename(new_path)
 
+
+if len(sys.argv) < 2:
+    print("positional argument 'directory-to-backup' is required.")
+    sys.exit(0)
+
+to_backup = Path(sys.argv[1])
+root = Path(".")
+
+# sanity check our working directory to make sure we're not going to overwrite
+# a git repository
+for p in root.glob("*"):
+    if p.name == ".git":
+        print(f"There is an existing git repository in {root.absolute()}, "
+            "which might be "
+            "the master git repository for all backups. This dir would get "
+            "deleted if we continued. Aborting for safety.")
+        sys.exit(0)
+
+answer = input(f"Backup {to_backup.absolute()} to {root.absolute()}? y/n ")
+if answer.lower() not in ["y", "yes"]:
+    print("Aborting")
+    sys.exit(0)
+
+
+print(f"removing all files in {root.absolute()} ...")
+# /{*,.*} ensures that hidden files are also deleted, but not the main directory
+# https://askubuntu.com/a/60433
+os.system(f"rm -rf \"{root.absolute()}\"/{{*,.*}}")
+print(f"removing all files in {root.absolute()} ... done")
+
+print(f"copying all files in {to_backup.absolute()} to {root} ...")
+# \ avoids using aliased cp, which for me uses the prompt-for-overwrite -i flag,
+# which we don't want here.
+# you may wonder why this is even necessary - we just wiped the directory, so
+# what could possibly be duplicated? well, our copying takes so long that macos
+# inserts some .DS_Store files in directories we've created but not finished
+# copying over yet. Then when we do get to the .DS_Store file in the original
+# folder and copy it over, it clashes with the newly created .DS_Store file.
+# We want to overwrite in such cases.
+os.system(f"\cp -va \"{to_backup.absolute()}\"/. {root}")
+print(f"copying all files in {to_backup.absolute()} to {root} ... done")
+
+print(f"prefixing git files in {root.absolute()} with underscores ...")
 for p in root.rglob("*"):
     if p.is_dir() and p.name == ".git":
         rename_path(p)
-
     if p.is_file() and p.name in SPECIAL_FILES:
         rename_path(p)
+print(f"prefixing git files in {root.absolute()} with underscores ... done")
+
+print("adding all files to git (git add .) ...")
+# make sure all files are tracked before committing, or we'll only commit some
+# of the files.
+os.system(f"git -C \"{root.absolute()}\" add .")
+print("adding all files to git (git add .) ... done")
+
+date_str = datetime.now().strftime("%m/%d/%Y")
+print(f"committing backup {date_str} ... ")
+os.system(f"git -C \"{root.absolute()}\" commit -a -m \"backup {date_str}\"")
+print(f"committing backup {date_str} ... done")
