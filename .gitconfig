@@ -17,7 +17,12 @@ find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
 	rebase = false
 [core]
 	excludesfile = /Users/tybug/.gitignore
+	autocrlf = input
 [init]
 	defaultBranch = master
 [merge]
 	conflictstyle = zdiff3
+[safe]
+	directory = /Volumes/Backup/computer backups
+[feature]
+	manyFiles = true

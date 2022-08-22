@@ -197,5 +197,6 @@
     "editor.folding": false,
     "editor.bracketPairColorization.enabled": false,
     "terminal.integrated.shellIntegration.decorationsEnabled": "never",
-    "workbench.settings.enableNaturalLanguageSearch": false
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "extensions.ignoreRecommendations": true
 }
