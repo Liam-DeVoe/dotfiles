@@ -198,5 +198,6 @@
     "editor.bracketPairColorization.enabled": false,
     "terminal.integrated.shellIntegration.decorationsEnabled": "never",
     "workbench.settings.enableNaturalLanguageSearch": false,
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false
 }
