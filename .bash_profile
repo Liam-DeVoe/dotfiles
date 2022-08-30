@@ -50,7 +50,7 @@ export PATH=/Applications/SWI-Prolog.app/Contents/MacOS:$PATH
 # use brew ruby
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 # coq
-export PATH=/Applications/Coq.app/Contents/Resources/bin:$PATH
+export PATH=/opt/homebrew/Cellar/coq/8.15.2/bin:$PATH
 # personal scripts
 export PATH=$HOME/bin:$PATH
 
