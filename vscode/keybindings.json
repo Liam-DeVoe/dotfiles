@@ -73,4 +73,34 @@
         "command": "-editor.action.insertCursorBelow",
         "when": "editorTextFocus"
     },
+    {
+        "key": "ctrl+alt+down",
+        "command": "-extension.coq.stepForward",
+        "when": "resourceScheme == 'coq-view'"
+    },
+    {
+        "key": "ctrl+alt+up",
+        "command": "-extension.coq.stepBackward",
+        "when": "resourceScheme == 'coq-view'"
+    },
+    {
+        "key": "alt+up",
+        "command": "extension.coq.stepBackward",
+        "when": "editorTextFocus && editorLangId == 'coq'"
+    },
+    {
+        "key": "ctrl+alt+up",
+        "command": "-extension.coq.stepBackward",
+        "when": "editorTextFocus && editorLangId == 'coq'"
+    },
+    {
+        "key": "alt+down",
+        "command": "extension.coq.stepForward",
+        "when": "editorTextFocus && editorLangId == 'coq'"
+    },
+    {
+        "key": "ctrl+alt+down",
+        "command": "-extension.coq.stepForward",
+        "when": "editorTextFocus && editorLangId == 'coq'"
+    },
 ]
