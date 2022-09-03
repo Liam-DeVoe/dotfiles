@@ -206,5 +206,17 @@
     {
         "key": "ctrl+9",
         "command": "-workbench.action.openEditorAtIndex9"
+    },
+    {
+        "key": "cmd+,",
+        "command": "terminal.focus"
+    },
+    {
+        "key": "cmd+,",
+        "command": "-workbench.action.openSettings"
+    },
+    {
+        "key": "cmd+.",
+        "command": "workbench.action.focusActiveEditorGroup"
     }
 ]
