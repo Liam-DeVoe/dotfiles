@@ -218,5 +218,9 @@
     {
         "key": "cmd+,",
         "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+        "key": "cmd+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
     }
 ]
