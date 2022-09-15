@@ -155,7 +155,7 @@
     // something about the language server not supporting multi-root workspaces. I don't
     // really care about rst intellisense so I've just disabled it to silence the error.
     "restructuredtext.languageServer.disabled": true,
-    "terminal.integrated.scrollback": 5000,
+    "terminal.integrated.scrollback": 20000,
     "coqtop.binPath": "/opt/homebrew/Cellar/coq/8.15.2/bin",
     "files.trimTrailingWhitespace": true,
     "html.completion.attributeDefaultValue": "empty",
