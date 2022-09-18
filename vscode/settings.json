@@ -155,7 +155,6 @@
     // something about the language server not supporting multi-root workspaces. I don't
     // really care about rst intellisense so I've just disabled it to silence the error.
     "restructuredtext.languageServer.disabled": true,
-    "terminal.integrated.scrollback": 20000,
     "coqtop.binPath": "/opt/homebrew/Cellar/coq/8.15.2/bin",
     "files.trimTrailingWhitespace": true,
     "html.completion.attributeDefaultValue": "empty",
@@ -199,5 +198,23 @@
     "terminal.integrated.shellIntegration.decorationsEnabled": "never",
     "workbench.settings.enableNaturalLanguageSearch": false,
     "extensions.ignoreRecommendations": true,
-    "terminal.integrated.enableMultiLinePasteWarning": false
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.scrollback": 5000,
+
+    "editor.tokenColorCustomizations": {
+        // default dark + colors things that used to be python keywords, like "file", as light blue.
+        // I often use "file" in particular as a variable name and don't want it to have any special
+        // coloring.
+        "[Default Dark+]": {
+            "textMateRules": [
+                {
+                    "scope": "variable.legacy.builtin.python",
+                    "settings": {
+                        // default "nothing-special" white coloring
+                        "foreground": "#D4D4D4"
+                    }
+                }
+            ]
+        }
+    },
 }
