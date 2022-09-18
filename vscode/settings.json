@@ -188,10 +188,12 @@
         // (edit later that day: here's the PR that made this change
         // https://github.com/microsoft/vscode/pull/155344)
         // - liam 08/04/2022
-        "diffEditor.removedTextBackground": "#ff0d002f",
-        "diffEditor.insertedTextBackground": "#80a52833"
 
-
+        // update: I've changed the value here to the one kindly provided by eddyb on github
+        // https://github.com/microsoft/vscode/pull/155344#discussion_r950667450,
+        // which he claims (accurately, I think) matches previous brightness before the change.
+        // Disappointing this still hasn't been fixed and requires manual override.
+        "diffEditor.removedTextBackground": "#ff000033",
     },
     "editor.folding": false,
     "editor.bracketPairColorization.enabled": false,
