@@ -24,7 +24,7 @@
         "command": "-workbench.action.togglePanel"
     },
     {
-        "key": "shift+cmd+right",
+        "key": "cmd+j",
         "command": "extension.coq.interpretToPoint",
         "when": "editorTextFocus && editorLangId == 'coq'"
     },
@@ -254,5 +254,10 @@
     {
         "key": "cmd+0",
         "command": "-workbench.action.focusSideBar"
+    },
+    {
+        "key": "shift+cmd+right",
+        "command": "extension.coq.interpretToPoint",
+        "when": "editorTextFocus && editorLangId == 'coq'"
     }
 ]
