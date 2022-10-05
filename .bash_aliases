@@ -4,12 +4,13 @@
 
 alias t='python3 -m unittest'
 alias run='python3 manage.py runserver'
-alias d='open -a Finder /Users/tybug/Desktop/Liam/coding/tybug/data/ok'
 alias f='open -a Finder ./'
 alias bashrc='open -a Finder /Users/tybug/.bash_profile'
 alias aliases='open -a Finder /Users/tybug/.bash_aliases'
 alias aliases-private='open -a Finder /Users/tybug/.bash_aliases_private'
 alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
 # cd to the path of the currently open finder window
 alias cdc='cd "$(current_finder_path)"'
 alias c='cdc'
