@@ -1,0 +1,18 @@
+{
+    "global": {
+        "_HIHideMenuBar": false,
+        "com.apple.trackpad.forceClick": false,
+        "com.apple.swipescrolldirection": false,
+        "com.apple.trackpad.scaling": 3.0,
+        "InitialKeyRepeat": 15,
+        "NSAutomaticCapitalizationEnabled": true,
+        "NSAutomaticDashSubstitutionEnabled": false,
+        "NSAutomaticPeriodSubstitutionEnabled": false,
+        "NSAutomaticQuoteSubstitutionEnabled": false,
+        "NSAutomaticSpellingCorrectionEnabled": true,
+        "NSAutomaticTextCompletionEnabled": true,
+        "NSRequiresAquaSystemAppearance": true,
+        "CGDisableCursorLocationMagnification": true,
+        "AppleShowAllExtensions": true
+    }
+}
