@@ -151,7 +151,5 @@ export PATH
 # node 14 (remove this export to use node 18)
 export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 
-# opam configuration (maybe?)
-# TODO figure out what the hell is going on here for building quickchick
-# test -r /Users/tybug/.opam/opam-init/init.sh && . /Users/tybug/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
-# export PATH=/opt/homebrew/Cellar/coq/8.15.2/bin:$PATH
+# opam configuration
+test -r /Users/tybug/.opam/opam-init/init.sh && . /Users/tybug/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
