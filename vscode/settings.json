@@ -174,26 +174,38 @@
     // "editor.acceptSuggestionOnEnter": "off"
 
     "workbench.colorCustomizations": {
-        // TODO I'm 98% sure they made the red color for diff comparisons brighter
-        // in the most recent update (as of 08/04/2022). I'd really like to revert
-        // it to what it was, but there's annoying alpha channels I have to deal
-        // with here and it makes finding the correct color that was used previously
-        // very difficult...
-        // https://stackoverflow.com/a/71176424
+        "[Default Dark+]": {
+            // TODO I'm 98% sure they made the red color for diff comparisons brighter
+            // in the most recent update (as of 08/04/2022). I'd really like to revert
+            // it to what it was, but there's annoying alpha channels I have to deal
+            // with here and it makes finding the correct color that was used previously
+            // very difficult...
+            // https://stackoverflow.com/a/71176424
 
-        // not perfect, but at least it's not the blinding brightness it was before.
-        // TODO check in on this in the next release to see if this was a bug, perhaps
-        // with my theme.
-        // (edit later that day: here's the PR that made this change
-        // https://github.com/microsoft/vscode/pull/155344)
-        // - liam 08/04/2022
+            // not perfect, but at least it's not the blinding brightness it was before.
+            // TODO check in on this in the next release to see if this was a bug, perhaps
+            // with my theme.
+            // (edit later that day: here's the PR that made this change
+            // https://github.com/microsoft/vscode/pull/155344)
+            // - liam 08/04/2022
 
-        // update: I've changed the value here to the one kindly provided by eddyb on github
-        // https://github.com/microsoft/vscode/pull/155344#discussion_r950667450,
-        // which he claims (accurately, I think) matches previous brightness before the change.
-        // Disappointing this still hasn't been fixed
-        "diffEditor.removedTextBackground": "#ff000033",
-        "diffEditor.insertedTextBackground": "#80a52833"
+            // update: I've changed the value here to the one kindly provided by eddyb on github
+            // https://github.com/microsoft/vscode/pull/155344#discussion_r950667450,
+            // which he claims (accurately, I think) matches previous brightness before the change.
+            // Disappointing this still hasn't been fixed
+            "diffEditor.removedTextBackground": "#ff000033",
+            "diffEditor.insertedTextBackground": "#80a52833",
+            // after a computer restart vscode's background felt way darker than normal, but
+            // incognito tabs and slack also felt a little darker than normal. Not sure if I triggered some
+            // macos-level color adjustment by restarting or the restarting of vscode triggered a theme update,
+            // but for now I've manually selected a color that looks close to what I had before.
+            // I've done the same fot the sidebar, which wasn't as egregious but still felt darker than it used to.
+            // At some point I need to fix in stone all the colors default dark+ has so I'm not at the mercy of
+            // theme updates.
+            // - liam 10/27/2022
+            "editor.background": "#252525",
+            "sideBar.background": "#292929"
+        }
     },
     "editor.folding": false,
     "editor.bracketPairColorization.enabled": false,
@@ -201,7 +213,7 @@
     "workbench.settings.enableNaturalLanguageSearch": false,
     "extensions.ignoreRecommendations": true,
     "terminal.integrated.enableMultiLinePasteWarning": false,
-    "terminal.integrated.scrollback": 5000,
+    "terminal.integrated.scrollback": 7500,
 
     "editor.tokenColorCustomizations": {
         // default dark + colors things that used to be python keywords, like "file", as light blue.
@@ -215,7 +227,7 @@
                         // default "nothing-special" white coloring
                         "foreground": "#D4D4D4"
                     }
-                }
+                },
             ]
         }
     },
