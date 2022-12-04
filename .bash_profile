@@ -53,7 +53,8 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH=/opt/homebrew/Cellar/coq/8.15.2/bin:$PATH
 # personal scripts
 export PATH=$HOME/bin:$PATH
-
+# docker
+export PATH="/Users/tybug/.docker/bin:$PATH"
 
 ###########################
 ## Environment Variables ##
@@ -121,6 +122,8 @@ bind 'set completion-ignore-case on'
 # activate z (https://github.com/rupa/z)
 . /Users/tybug/bin/z.sh
 
+# opam configuration
+test -r /Users/tybug/.opam/opam-init/init.sh && . /Users/tybug/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
 #############
 ## Aliases ##
@@ -140,16 +143,4 @@ fi
 # use our current shell for this script so we can immediately add our new alias to our shell when we call this
 # https://stackoverflow.com/a/44122806
 # alias alias='. alias-permanent'
-
-# Setting PATH for Python 3.7
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
-export PATH
-
-
-
-# node 14 (remove this export to use node 18)
-export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
-
-# opam configuration
-test -r /Users/tybug/.opam/opam-init/init.sh && . /Users/tybug/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
