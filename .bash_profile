@@ -144,3 +144,5 @@ fi
 # https://stackoverflow.com/a/44122806
 # alias alias='. alias-permanent'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+source /Users/tybug/.docker/init-bash.sh || true # Added by Docker Desktop
