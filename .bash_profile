@@ -66,6 +66,8 @@ export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
 # remove annoying "please change to zsh" warning (I should probably switch to zsh at some point,
 # but a task for another day)
 export BASH_SILENCE_DEPRECATION_WARNING=1
+# remove github cli (gh) update notification https://github.com/cli/cli/issues/743#issuecomment-704948488 
+export GH_NO_UPDATE_NOTIFIER=1
 
 
 
