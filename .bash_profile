@@ -55,6 +55,8 @@ export PATH=/opt/homebrew/Cellar/coq/8.15.2/bin:$PATH
 export PATH=$HOME/bin:$PATH
 # docker
 export PATH="/Users/tybug/.docker/bin:$PATH"
+# vscode's `code` command
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 
 ###########################
 ## Environment Variables ##
