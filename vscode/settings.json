@@ -233,4 +233,9 @@
     },
     "coq.proofViewDiff.addedTextIsItalic": true,
     "coqtop.binPath": "/Users/tybug/.opam/default/bin",
+    // removes things like `and`, `yield`, `for` from control+space intellisense.
+    // I would like to also get rid of python builtins like `__file__` or `iter`,
+    // but vscode doesn't seem to expose an option for builtins, not a way to manually
+    // exclude certain suggestions.
+    "editor.suggest.showKeywords": false,
 }
