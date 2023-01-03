@@ -25,12 +25,12 @@ class Fix:
         song.rename(new_name)
 
 fixes = [
-    # missing dot after name, eg
-    # 03 S.C.K. -> 03. S.C.K.
+    # missing dot after name, eg    03 S.C.K. -> 03. S.C.K.
     Fix(r"^(\d+) (.*)", r"\1. \2"),
-    # missing leading 0, eg
-    # 3. S.C.K. -> 03. S.C.K.
-    Fix(r"^(\d)\. (.*)", r"0\1. \2"),
+    # missing space after dot, eg   03.S.C.K. -> 03. S.C.K.
+    Fix(r"^(\d+).(\w.*)", r"\1. \2"),
+    # missing leading 0, eg         3. S.C.K. -> 03. S.C.K.
+    Fix(r"^(\d)\. (.*)", r"0\1. \2")
 ]
 
 for fix in fixes:
