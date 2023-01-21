@@ -238,4 +238,5 @@
     // but vscode doesn't seem to expose an option for builtins, not a way to manually
     // exclude certain suggestions.
     "editor.suggest.showKeywords": false,
+    "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
 }
