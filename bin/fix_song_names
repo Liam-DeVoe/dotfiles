@@ -31,6 +31,9 @@ class FixRegex(Fix):
         new_name = re.sub(self.find_re, self.replace_re, file.name)
         file.rename(new_name)
 
+    def __str__(self):
+        return f"FixRegex(find_re={self.find_re},replace_re={self.replace_re})"
+
 class FixCommonPrefix(Fix):
     def __init__(self):
         self.prefix = None
@@ -151,6 +154,7 @@ class Fixer:
         self.path = path
 
     def refresh_files(self):
+        self.files = []
         for extension in self.SONG_EXTENSIONS:
             self.files += path.glob(f"*.{extension}")
 
