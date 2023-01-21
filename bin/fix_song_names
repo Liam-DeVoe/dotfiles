@@ -2,40 +2,175 @@
 
 from pathlib import Path
 import re
-
-SONG_EXTENSIONS = ["mp3", "flac", "wav", "ogg"]
-pwd = Path.cwd()
-
-songs = []
-for extension in SONG_EXTENSIONS:
-    songs += pwd.glob(f"*.{extension}")
+import sys
 
 class Fix:
+    # may be overriden by subclasses which have a more specific definition for
+    # a fix matching all files.
+    def matches_all(self, files):
+        return all(self.matches(file) for file in files)
+
+    # only called if matches_all is not overriden.
+    def matches(self, file):
+        raise NotImplementedError()
+
+    def apply(self, file):
+        raise NotImplementedError()
+
+class FixRegex(Fix):
     def __init__(self, find, replace):
         self.find_re = re.compile(find)
         # the "replace" argument to `re.sub` can't be a compiled regex
         # object apparently
         self.replace_re = replace
 
-    def matches(self, song):
-        return re.match(self.find_re, song.name)
+    def matches(self, file):
+        return re.match(self.find_re, file.name)
 
-    def apply(self, song):
-        new_name = re.sub(self.find_re, self.replace_re, song.name)
-        song.rename(new_name)
+    def apply(self, file):
+        new_name = re.sub(self.find_re, self.replace_re, file.name)
+        file.rename(new_name)
 
-fixes = [
-    # missing dot after name, eg    03 S.C.K. -> 03. S.C.K.
-    Fix(r"^(\d+) (.*)", r"\1. \2"),
-    # missing space after dot, eg   03.S.C.K. -> 03. S.C.K.
-    Fix(r"^(\d+).([^\. ].*)", r"\1. \2"),
-    # missing leading 0, eg         3. S.C.K. -> 03. S.C.K.
-    Fix(r"^(\d)\. (.*)", r"0\1. \2")
-]
+class FixCommonPrefix(Fix):
+    def __init__(self):
+        self.prefix = None
 
-for fix in fixes:
-    # only apply the fix (ie rename the songs) if every song matches the
-    # prerequisites of the fix
-    if all(fix.matches(song) for song in songs):
-        for song in songs:
-            fix.apply(song)
+    def matches_all(self, files):
+        # reset prefix from previous runs
+        self.prefix = None
+
+        # avoid false positives on a small number of songs.
+        # could probably be reduced to < 3.
+        if len(files) < 4:
+            return False
+
+        max_len = max(len(file.name) for file in files)
+        for i in range(1, max_len):
+            # extract our attempt at a common prefix from the first file.
+            regex_first = rf"\d+\. (.{{{i}}})"
+            m = re.match(regex_first, files[0].name)
+            prefix = m.group(1)
+
+            # see if that prefix really does match the rest.
+            regex_common = rf"\d+\. {prefix}"
+            if not all(re.match(regex_common, file.name) for file in files):
+                break
+
+            self.prefix = prefix
+            # continue to the next iteration to find a potentially longer
+            # prefix.
+
+        return self.prefix is not None
+
+    def apply(self, file):
+        # can only apply a fix which has already been matched against files
+        assert self.prefix is not None
+        # if we found any common prefix, remove the first occurrence of it from
+        # the file name
+        new_name = file.name.replace(self.prefix, "", 1)
+        file.rename(new_name)
+
+class FixDashes(Fix):
+    HYPHEN =  "-"
+    EM_DASH = "—"
+    EN_DASH = "–"
+
+    def __init__(self):
+        self.replace_char = None
+
+    def matches_all(self, files):
+        # reset from previous fixes
+        self.replace_char = None
+
+        # if every file has exactly one em or en dash, change it to a hyphen.
+        replace_char = None
+        for file in files:
+            matches_em = file.name.count(self.EM_DASH) == 1
+            matches_en = file.name.count(self.EN_DASH) == 1
+
+            # no char set yet, take whichever matches
+            if matches_em and replace_char is None:
+                replace_char = self.EM_DASH
+                continue
+
+            if matches_en and replace_char is None:
+                replace_char = self.EN_DASH
+                continue
+
+            # required char has been set by a previous file already, require
+            # matching that char
+            if matches_em and replace_char == self.EM_DASH:
+                continue
+
+            if matches_en and replace_char == self.EN_DASH:
+                continue
+
+            # anything else is a non-match
+            return False
+
+        self.replace_char = replace_char
+        return True
+
+    def apply(self, file):
+        # can only apply a fix which has already been matched against files
+        assert self.replace_char is not None
+        # the file is guaranteed to have exactly one occurrence of the replace
+        # char since all the files matched our fix.
+        assert file.name.count(self.replace_char) == 1
+
+        new_name = file.name.replace(self.replace_char, self.HYPHEN, 1)
+        file.rename(new_name)
+
+
+
+class Fixer:
+    SONG_EXTENSIONS = ["mp3", "flac", "wav", "ogg"]
+
+    # order here is important. Some fixes rely on the filename being
+    # sufficiently correct before operating further (ie, it relies on previous
+    # fixes having been run first).
+    fixes = [
+        # missing dot after name, eg    03 S.C.K. -> 03. S.C.K.
+        FixRegex(r"^(\d+) (.*)", r"\1. \2"),
+        # missing space after dot, eg   03.S.C.K. -> 03. S.C.K.
+        FixRegex(r"^(\d+).([^\. ].*)", r"\1. \2"),
+        # missing leading 0, eg         3. S.C.K. -> 03. S.C.K.
+        FixRegex(r"^(\d)\. (.*)", r"0\1. \2"),
+        # remove common prefixes, eg
+        # ```
+        # 01. [M31] title1.mp3  ->  01. title1.mp3
+        # 02. [M31] title2.mp3  ->  01. title1.mp3
+        # 03. [M31] title3.mp3  ->  01. title1.mp3
+        # ```
+        FixCommonPrefix(),
+        FixDashes()
+    ]
+
+    def __init__(self, path):
+        self.files = []
+        self.path = path
+
+    def refresh_files(self):
+        for extension in self.SONG_EXTENSIONS:
+            self.files += path.glob(f"*.{extension}")
+
+    def fix(self):
+        # load original file names.
+        self.refresh_files()
+
+        for fix in self.fixes:
+            # only apply the fix (ie rename the files) if every file matches the
+            # prerequisites of the fix
+            if fix.matches_all(self.files):
+                for file in self.files:
+                    fix.apply(file)
+
+                # each fix has the potential to change filenames and invalidate
+                # future fixes. If we applied a fix to any files, refresh our
+                # file names.
+                self.refresh_files()
+
+# default to cwd if no path is passed
+path = sys.argv[1] if len(sys.argv) > 1 else Path.cwd()
+fixer = Fixer(path)
+fixer.fix()
