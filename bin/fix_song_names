@@ -14,7 +14,8 @@ class Fix:
     def matches(self, file):
         raise NotImplementedError()
 
-    def apply(self, file):
+    # what the name of the passed file should be after applying this fix.
+    def new_name(self, file):
         raise NotImplementedError()
 
 class FixRegex(Fix):
@@ -27,9 +28,8 @@ class FixRegex(Fix):
     def matches(self, file):
         return re.match(self.find_re, file.name)
 
-    def apply(self, file):
-        new_name = re.sub(self.find_re, self.replace_re, file.name)
-        file.rename(new_name)
+    def new_name(self, file):
+        return re.sub(self.find_re, self.replace_re, file.name)
 
     def __str__(self):
         return f"FixRegex(find_re={self.find_re},replace_re={self.replace_re})"
@@ -65,13 +65,12 @@ class FixCommonPrefix(Fix):
 
         return self.prefix is not None
 
-    def apply(self, file):
+    def new_name(self, file):
         # can only apply a fix which has already been matched against files
         assert self.prefix is not None
         # if we found any common prefix, remove the first occurrence of it from
         # the file name
-        new_name = file.name.replace(self.prefix, "", 1)
-        file.rename(new_name)
+        return file.name.replace(self.prefix, "", 1)
 
 class FixDashes(Fix):
     HYPHEN =  "-"
@@ -114,15 +113,14 @@ class FixDashes(Fix):
         self.replace_char = replace_char
         return True
 
-    def apply(self, file):
+    def new_name(self, file):
         # can only apply a fix which has already been matched against files
         assert self.replace_char is not None
         # the file is guaranteed to have exactly one occurrence of the replace
         # char since all the files matched our fix.
         assert file.name.count(self.replace_char) == 1
 
-        new_name = file.name.replace(self.replace_char, self.HYPHEN, 1)
-        file.rename(new_name)
+        return file.name.replace(self.replace_char, self.HYPHEN, 1)
 
 
 
@@ -156,7 +154,7 @@ class Fixer:
     def refresh_files(self):
         self.files = []
         for extension in self.SONG_EXTENSIONS:
-            self.files += path.glob(f"*.{extension}")
+            self.files += self.path.glob(f"*.{extension}")
 
     def fix(self):
         # load original file names.
@@ -167,7 +165,8 @@ class Fixer:
             # prerequisites of the fix
             if fix.matches_all(self.files):
                 for file in self.files:
-                    fix.apply(file)
+                    new_name = fix.new_name(file)
+                    file.rename(file.parent / new_name)
 
                 # each fix has the potential to change filenames and invalidate
                 # future fixes. If we applied a fix to any files, refresh our
@@ -175,6 +174,6 @@ class Fixer:
                 self.refresh_files()
 
 # default to cwd if no path is passed
-path = sys.argv[1] if len(sys.argv) > 1 else Path.cwd()
+path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path.cwd()
 fixer = Fixer(path)
 fixer.fix()
