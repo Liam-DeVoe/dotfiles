@@ -61,7 +61,7 @@ alias ll='ls -FGlAhp'
 # yt-dlp (aka youtube-dl)
 alias yt-dla='yt-dlp --extract-audio --no-mtime --output %"(title)s.%(ext)s"'
 alias dla='yt-dla'
-alias dl='yt-dlp -f best'
+alias dl='yt-dlp'
 # my install doesn't have SSl certificates set up right or something, I should probably fix that but in the meantime just ignore it
 alias yt-dlp='yt-dlp --no-check-certificates'
 
