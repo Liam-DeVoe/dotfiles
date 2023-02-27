@@ -22,7 +22,7 @@
         "editor.rulers": [
             80,
         ],
-        "editor.formatOnType": true
+        "editor.formatOnType": false
     },
     "python.pythonPath": "/Library/Frameworks/Python.framework/Versions/3.9/bin/python3",
     "workbench.tree.renderIndentGuides": "none",
