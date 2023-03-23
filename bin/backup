@@ -40,7 +40,7 @@
 #   snapshot root. If you have a directory where you want to back up some parts
 #   of it, but not everything, you'll need to copy that to a new location -
 #   either somewhere on your working drive or somewhere on your backup drive,
-#   not including inside your backup root. Personally I like copying it my
+#   not including inside your backup root. Personally I like copying it to my
 #   backup drive and then deleting it entirely once I'm done.
 #   For instance, I want to back up some files in my ~/, but not all of them.
 #   So I copy ~/ to my backup drive and delete the files I don't want, and
