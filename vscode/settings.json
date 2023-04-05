@@ -214,7 +214,7 @@
     "workbench.settings.enableNaturalLanguageSearch": false,
     "extensions.ignoreRecommendations": true,
     "terminal.integrated.enableMultiLinePasteWarning": false,
-    "terminal.integrated.scrollback": 7500,
+    "terminal.integrated.scrollback": 20000,
 
     "editor.tokenColorCustomizations": {
         // default dark + colors things that used to be python keywords, like "file", as light blue.
