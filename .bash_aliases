@@ -18,6 +18,7 @@ alias c='cdc'
 alias dlac='dla $(current_chrome_url)'
 alias dlc='dl $(current_chrome_url)'
 alias lazer='python3 /Users/tybug/Desktop/Liam/coding/scrape_lazer_market_share/scrape_lazer_market_share.py'
+alias fix_strawberry='rm /Users/tybug/Library/Caches/Strawberry/Strawberry/listenbrainzscrobbler.cache'
 
 # cd shortcuts
 alias comfy='cd /Users/tybug/Desktop/Liam/Music/singles\ \(comfy\)'
