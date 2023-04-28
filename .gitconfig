@@ -14,6 +14,8 @@ lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(
 lg = !"git lg1"
 find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
 nuke = clean -xfd
+whatadded = log --diff-filter=A --pretty=format:"%H"
+whatchanged = log --follow
 [pull]
 	rebase = false
 [core]
