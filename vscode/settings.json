@@ -241,5 +241,6 @@
     "editor.suggest.showKeywords": false,
     "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
     "git.openRepositoryInParentFolders": "never",
-    "python.experiments.enabled": false
+    "python.experiments.enabled": false,
+    "workbench.colorTheme": "Default Dark+"
 }
