@@ -24,7 +24,6 @@
         ],
         "editor.formatOnType": false
     },
-    "python.pythonPath": "/Library/Frameworks/Python.framework/Versions/3.9/bin/python3",
     "workbench.tree.renderIndentGuides": "none",
     "workbench.tips.enabled": false,
     "files.exclude": {
@@ -126,7 +125,7 @@
     "git.confirmSync": false,
     "editor.find.seedSearchStringFromSelection": "never",
     "security.workspace.trust.enabled": false,
-    "python.defaultInterpreterPath": "/opt/homebrew/opt/python@3.10/bin/python3",
+    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.10",
     "files.associations": {
         "*.rst": "restructuredtext"
     },
@@ -233,7 +232,7 @@
         }
     },
     "coq.proofViewDiff.addedTextIsItalic": true,
-    "coqtop.binPath": "/Users/tybug/.opam/default/bin",
+    "coqtop.binPath": "/Users/tybug/.opam/default/bin/",
     // removes things like `and`, `yield`, `for` from control+space intellisense.
     // I would like to also get rid of python builtins like `__file__` or `iter`,
     // but vscode doesn't seem to expose an option for builtins, not a way to manually
