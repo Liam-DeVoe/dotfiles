@@ -42,6 +42,7 @@ _git_alias gt tag
 _git_alias gc checkout
 _git_alias gs switch
 _git_alias gd diff
+_git_alias gcp cherry-pick
 
 
 ##########################
