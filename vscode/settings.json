@@ -170,7 +170,6 @@
         "modified": false
     },
     "gitlens.currentLine.enabled": false,
-    "diffEditor.ignoreTrimWhitespace": false,
     // "editor.acceptSuggestionOnEnter": "off"
 
     "workbench.colorCustomizations": {
