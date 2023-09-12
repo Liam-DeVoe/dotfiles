@@ -241,4 +241,5 @@
     "git.openRepositoryInParentFolders": "never",
     "python.experiments.enabled": false,
     "workbench.colorTheme": "Default Dark+",
+    "window.commandCenter": false,
 }
