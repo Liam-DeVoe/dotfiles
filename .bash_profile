@@ -63,8 +63,10 @@ export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PA
 ###########################
 
 # see https://stackoverflow.com/a/17886334/12164878 and https://stackoverflow.com/a/1348940/12164878.
-# TODO is this the right path??
-export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
+# uncomment to switch to java 17 (real modern java)
+# export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+
 # remove annoying "please change to zsh" warning (I should probably switch to zsh at some point,
 # but a task for another day)
 export BASH_SILENCE_DEPRECATION_WARNING=1
