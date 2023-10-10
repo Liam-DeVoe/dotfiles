@@ -242,4 +242,5 @@
     "python.experiments.enabled": false,
     "workbench.colorTheme": "Default Dark+",
     "window.commandCenter": false,
+    "workbench.editor.empty.hint": "hidden",
 }
