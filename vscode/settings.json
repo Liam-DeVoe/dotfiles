@@ -243,4 +243,5 @@
     "workbench.colorTheme": "Default Dark+",
     "window.commandCenter": false,
     "workbench.editor.empty.hint": "hidden",
+    "python.terminal.focusAfterLaunch": true,
 }
