@@ -45,8 +45,6 @@
     // "python.linting.pylintArgs": [
     //     "--disable=protected-access,invalid-name,logging-not-lazy,broad-except,missing-function-docstring,import-outside-toplevel,missing-module-docstring,missing-class-docstring,fixme,relative-beyond-top-level,wildcard-import,line-too-long,anomalous-backslash-in-string,too-many-arguments,too-few-public-methods,useless-super-delegation,too-many-lines,unnecessary-pass,wrong-import-order,redefined-outer-name,expression-not-assigned,dangerous-default-value,arguments-differ,abstract-method,too-many-locals,too-many-statements,wrong-import-position,too-many-instance-attributes,too-many-public-methods,too-many-nested-blocks,logging-fstring-interpolation,too-many-return-statements,too-many-ancestors,too-many-branches,inconsistent-return-statements,subprocess-run-check,eval-used,global-statement,exec-used,unused-wildcard-import,disallowed-name,bare-except,using-constant-test,raise-missing-from,redefined-builtin,unspecified-encoding,undefined-loop-variable,use-implicit-booleaness-not-comparison,signature-differs,arguments-renamed,deprecated-method,consider-using-get,missing-timeout,broad-exception-raised,multiple-statements,unidiomatic-typecheck,unnecessary-lambda-assignment,redefined-argument-from-local,consider-using-enumerate,unnecessary-dunder-call",
     // ],
-    // "python.linting.pylintEnabled": true,
-
     // Here is my understanding. The python extension, developed by microsoft, provides a "language server".
     // This is pylance by default. This provides nice things like autocomplete, click-to-go-to-definition, etc.
     // They also decided to include *linting* in the "features" provided by the language server. This is
@@ -59,7 +57,61 @@
     //
     // see https://stackoverflow.com/a/73986643.
     "python.analysis.ignore": ["*"],
-    "ruff.lint.args": ["--ignore", "E741"],
+    "ruff.lint.args": [
+        // we'll start by enabling practically all of ruff's rules (except the categories which I
+        // decided were absolutely worthless). Then we'll filter them further down by blacklisting specific ones.
+        // This lets me opt-in to new implemented rules by default, which I want.
+        // In other words, this is a blacklist, not a whitelist, of rules.
+        "--select", "F",
+        "--select", "E",
+        "--select", "W",
+        "--select", "UP",
+        "--select", "PL",
+        "--select", "ASYNC",
+        "--select", "B",
+        "--select", "COM",
+        "--select", "C4",
+        "--select", "ISC",
+        "--select", "PIE",
+        "--select", "RET",
+        "--select", "SIM",
+        "--select", "TCH",
+        "--select", "ARG",
+        "--select", "NPY",
+        "--select", "PERF",
+        "--select", "FURB",
+        "--select", "RUF",
+
+        // now the blacklist.
+        "--ignore", "E741",
+        "--ignore", "E501",
+        "--ignore", "W605",
+        "--ignore", "UP032",
+        "--ignore", "B006",
+        "--ignore", "B018",
+        "--ignore", "B020",
+        "--ignore", "B023",
+        "--ignore", "B904",
+        "--ignore", "COM812",
+        "--ignore", "PIE790",
+        "--ignore", "RET503",
+        "--ignore", "RET504",
+        "--ignore", "SIM114",
+        "--ignore", "SIM102",
+        "--ignore", "RUF012",
+        "--ignore", "RUF009",
+        // pylint blacklist. still need to transfer a bunch of my old pylint ignores to ruff, but I cba
+        // to manually lookup the conversion from names (pylint format) to codes (ruff format) for
+        // the ones ruff doesn't have implemented yet. I'll blacklist these as they get implemented and as
+        // I notice them.
+        "--ignore", "PLR0913",
+        "--ignore", "PLR2004",
+        "--ignore", "PLR5501",
+        "--ignore", "PLR0915",
+        "--ignore", "PLR0912",
+        "--ignore", "PLW2901",
+        "--ignore", "PLR0911",
+    ],
 
 
     "explorer.confirmDelete": false,
