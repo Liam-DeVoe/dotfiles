@@ -42,10 +42,26 @@
         "**/.hg/store/**": true,
         "**/node_modules/**": true
     },
-    "python.linting.pylintArgs": [
-        "--disable=protected-access,invalid-name,logging-not-lazy,broad-except,missing-function-docstring,import-outside-toplevel,missing-module-docstring,missing-class-docstring,fixme,relative-beyond-top-level,wildcard-import,line-too-long,anomalous-backslash-in-string,too-many-arguments,too-few-public-methods,useless-super-delegation,too-many-lines,unnecessary-pass,wrong-import-order,redefined-outer-name,expression-not-assigned,dangerous-default-value,arguments-differ,abstract-method,too-many-locals,too-many-statements,wrong-import-position,too-many-instance-attributes,too-many-public-methods,too-many-nested-blocks,logging-fstring-interpolation,too-many-return-statements,too-many-ancestors,too-many-branches,inconsistent-return-statements,subprocess-run-check,eval-used,global-statement,exec-used,unused-wildcard-import,disallowed-name,bare-except,using-constant-test,raise-missing-from,redefined-builtin,unspecified-encoding,undefined-loop-variable,use-implicit-booleaness-not-comparison,signature-differs,arguments-renamed,deprecated-method,consider-using-get,missing-timeout,broad-exception-raised,multiple-statements,unidiomatic-typecheck,unnecessary-lambda-assignment,redefined-argument-from-local,consider-using-enumerate,unnecessary-dunder-call",
-    ],
-    "python.linting.pylintEnabled": true,
+    // "python.linting.pylintArgs": [
+    //     "--disable=protected-access,invalid-name,logging-not-lazy,broad-except,missing-function-docstring,import-outside-toplevel,missing-module-docstring,missing-class-docstring,fixme,relative-beyond-top-level,wildcard-import,line-too-long,anomalous-backslash-in-string,too-many-arguments,too-few-public-methods,useless-super-delegation,too-many-lines,unnecessary-pass,wrong-import-order,redefined-outer-name,expression-not-assigned,dangerous-default-value,arguments-differ,abstract-method,too-many-locals,too-many-statements,wrong-import-position,too-many-instance-attributes,too-many-public-methods,too-many-nested-blocks,logging-fstring-interpolation,too-many-return-statements,too-many-ancestors,too-many-branches,inconsistent-return-statements,subprocess-run-check,eval-used,global-statement,exec-used,unused-wildcard-import,disallowed-name,bare-except,using-constant-test,raise-missing-from,redefined-builtin,unspecified-encoding,undefined-loop-variable,use-implicit-booleaness-not-comparison,signature-differs,arguments-renamed,deprecated-method,consider-using-get,missing-timeout,broad-exception-raised,multiple-statements,unidiomatic-typecheck,unnecessary-lambda-assignment,redefined-argument-from-local,consider-using-enumerate,unnecessary-dunder-call",
+    // ],
+    // "python.linting.pylintEnabled": true,
+
+    // Here is my understanding. The python extension, developed by microsoft, provides a "language server".
+    // This is pylance by default. This provides nice things like autocomplete, click-to-go-to-definition, etc.
+    // They also decided to include *linting* in the "features" provided by the language server. This is
+    // not a good thing, as I already use ruff (or maybe something else by the time you read this) as my linter
+    // and now I recieved duplicate error messages!
+    //
+    // This setting seems to disable pylance's linting while keeping all the other features I want. Bless the souls
+    // at stackoverflow, because I never would have found this on my own. This is not documented anywhere I could
+    // find, or exposed in the settings ui.
+    //
+    // see https://stackoverflow.com/a/73986643.
+    "python.analysis.ignore": ["*"],
+    "ruff.lint.args": ["--ignore", "E741"],
+
+
     "explorer.confirmDelete": false,
     "git.enableSmartCommit": true,
     "diffEditor.wordWrap": "off",
@@ -57,9 +73,6 @@
     "workbench.startupEditor": "newUntitledFile",
     "editor.find.autoFindInSelection": "multiline",
     "python.showStartPage": false,
-    "python.linting.flake8Args": [
-        "--ignore W191, E117, E402"
-    ],
     "latex-workshop.view.pdf.viewer": "tab",
     "githubPullRequests.queries": [
 
@@ -243,5 +256,6 @@
     "workbench.colorTheme": "Default Dark+",
     "window.commandCenter": false,
     "workbench.editor.empty.hint": "hidden",
+    // 10/16/2023: trying this out. may revert later.
     "python.terminal.focusAfterLaunch": true,
 }
