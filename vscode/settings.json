@@ -85,21 +85,33 @@
         // now the blacklist.
         "--ignore", "E741",
         "--ignore", "E501",
+        "--ignore", "E402",
         "--ignore", "W605",
         "--ignore", "UP032",
+        "--ignore", "UP007",
+        "--ignore", "UP006",
         "--ignore", "B006",
+        "--ignore", "B008",
         "--ignore", "B018",
         "--ignore", "B020",
         "--ignore", "B023",
         "--ignore", "B904",
+        "--ignore", "B011",
+        "--ignore", "F403",
+        "--ignore", "F405",
+        "--ignore", "W291",
+        "--ignore", "W293",
         "--ignore", "COM812",
         "--ignore", "PIE790",
         "--ignore", "RET503",
         "--ignore", "RET504",
         "--ignore", "SIM114",
         "--ignore", "SIM102",
+        "--ignore", "SIM105",
+        "--ignore", "SIM108",
         "--ignore", "RUF012",
         "--ignore", "RUF009",
+        "--ignore", "PERF203",
         // pylint blacklist. still need to transfer a bunch of my old pylint ignores to ruff, but I cba
         // to manually lookup the conversion from names (pylint format) to codes (ruff format) for
         // the ones ruff doesn't have implemented yet. I'll blacklist these as they get implemented and as
@@ -111,6 +123,7 @@
         "--ignore", "PLR0912",
         "--ignore", "PLW2901",
         "--ignore", "PLR0911",
+        "--ignore", "PLC0105",
     ],
 
 
