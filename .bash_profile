@@ -33,12 +33,6 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 ## Path Modifications ##
 ########################
 
-# python 3.7
-export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
-# python 3.9
-export PATH=/Library/Frameworks/Python.framework/Versions/3.9/bin:$PATH
-# python 3.10
-export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
 # java (currently java 18)
 # export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # java 17
