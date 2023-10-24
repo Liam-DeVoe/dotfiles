@@ -325,4 +325,5 @@
     "workbench.editor.empty.hint": "hidden",
     // 10/16/2023: trying this out. may revert later.
     "python.terminal.focusAfterLaunch": true,
+    "diffEditor.ignoreTrimWhitespace": false,
 }
