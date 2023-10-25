@@ -36,7 +36,9 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # java (currently java 18)
 # export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # java 17
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+# export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+# java 21
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 # racket + racket tools
 export PATH=/Applications/Racket\ v7.8/bin:$PATH
 # prolog + prolog tools
@@ -57,9 +59,11 @@ export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PA
 ###########################
 
 # see https://stackoverflow.com/a/17886334/12164878 and https://stackoverflow.com/a/1348940/12164878.
-export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home" # java 17
-
 # export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home" # java 8
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home" # java 17
+export JAVA_HOME="/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home" # java 17
+
+
 
 
 # remove annoying "please change to zsh" warning (I should probably switch to zsh at some point,
