@@ -205,7 +205,7 @@
     "git.confirmSync": false,
     "editor.find.seedSearchStringFromSelection": "never",
     "security.workspace.trust.enabled": false,
-    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.10",
+    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.12",
     "files.associations": {
         "*.rst": "restructuredtext"
     },
