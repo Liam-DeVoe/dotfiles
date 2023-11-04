@@ -192,7 +192,6 @@
         // disable MD001/heading-increment/header-increment: Heading levels should only increment by one level at a time (MD001)
         "header-increment": false
     },
-    "workbench.editor.untitled.hint": "hidden",
     // the python extension changed their default language server to pylance recently (05/10/2021), which applies
     // semantic highlighting *on top of* my normal theme. I don't like this so I've disabled it globally here, since
     // I frustratingly can't find any way to disable it for only pylance or for only my particular theme (which is
@@ -326,4 +325,5 @@
     // 10/16/2023: trying this out. may revert later.
     "python.terminal.focusAfterLaunch": true,
     "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.activityBar.location": "top",
 }
