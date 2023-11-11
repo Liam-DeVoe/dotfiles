@@ -211,7 +211,6 @@
     "[restructuredtext]": {
         "editor.suggestOnTriggerCharacters": false,
     },
-    "workbench.statusBar.visible": false,
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
@@ -326,4 +325,5 @@
     "python.terminal.focusAfterLaunch": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "workbench.activityBar.location": "top",
+    "workbench.statusBar.visible": false,
 }
