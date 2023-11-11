@@ -68,6 +68,9 @@ alias dl='yt-dlp'
 # alias yt-dlp='yt-dlp --no-check-certificates'
 
 alias pip='python3 -m pip'
+# older python versions, while things move to supporting 3.12
+alias python3.11='/opt/homebrew/Cellar/python@3.11/3.11.5/bin/python3.11'
+alias pip3.11='/opt/homebrew/Cellar/python@3.11/3.11.5/bin/pip3.11'
 
 # others
 alias dott='dot -o output.png -T png'
@@ -75,5 +78,5 @@ alias dott='dot -o output.png -T png'
 alias findpi='arp -na | grep -i b8:27:eb'
 alias fuck='fuck --yeah'
 # always print output when running pytest https://stackoverflow.com/a/14414325/12164878
-alias pytest='pytest -s'
+# alias pytest='pytest -s'
 alias j='jconsole'
