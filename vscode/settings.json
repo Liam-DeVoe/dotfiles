@@ -91,6 +91,7 @@
         "--ignore", "UP032",
         "--ignore", "UP007",
         "--ignore", "UP006",
+        "--ignore", "UP031",
         "--ignore", "B006",
         "--ignore", "B008",
         "--ignore", "B018",
