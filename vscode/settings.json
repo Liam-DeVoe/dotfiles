@@ -114,6 +114,7 @@
         "--ignore", "SIM108",
         "--ignore", "RUF012",
         "--ignore", "RUF009",
+        "--ignore", "RUF005",
         "--ignore", "PERF203",
         // pylint blacklist. still need to transfer a bunch of my old pylint ignores to ruff, but I cba
         // to manually lookup the conversion from names (pylint format) to codes (ruff format) for
