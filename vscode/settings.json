@@ -56,7 +56,7 @@
     // find, or exposed in the settings ui.
     //
     // see https://stackoverflow.com/a/73986643.
-    "python.analysis.ignore": ["*"],
+    // "python.analysis.ignore": ["*"],
     "ruff.lint.args": [
         // we'll start by enabling practically all of ruff's rules (except the categories which I
         // decided were absolutely worthless). Then we'll filter them further down by blacklisting specific ones.
@@ -104,6 +104,7 @@
         "--ignore", "F402",
         "--ignore", "W291",
         "--ignore", "W293",
+        "--ignore", "RET502",
         "--ignore", "COM812",
         "--ignore", "PIE790",
         "--ignore", "RET503",
@@ -128,6 +129,7 @@
         "--ignore", "PLR0912",
         "--ignore", "PLW2901",
         "--ignore", "PLW0603",
+        "--ignore", "PLW1510",
         "--ignore", "PLR0911",
         "--ignore", "PLC0105",
     ],
