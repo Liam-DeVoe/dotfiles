@@ -1,3 +1,4 @@
+// good reference: https://code.visualstudio.com/docs/getstarted/keybindings
 [
     {
         "key": "cmd+d",
@@ -259,5 +260,17 @@
         "key": "shift+cmd+right",
         "command": "extension.coq.interpretToPoint",
         "when": "editorTextFocus && editorLangId == 'coq'"
-    }
+    },
+    {
+        "key": "cmd+k",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "search.action.clearSearchResults",
+            // Override search.action.clearSearchResults focusing the search bar.
+            "workbench.action.focusActiveEditorGroup"
+          ]
+        },
+        "when": "editorTextFocus && !isInDiffEditor"
+    },
 ]
