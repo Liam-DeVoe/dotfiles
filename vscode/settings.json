@@ -102,6 +102,7 @@
         "--ignore", "F403",
         "--ignore", "F405",
         "--ignore", "F402",
+        "--ignore", "F841",
         "--ignore", "W291",
         "--ignore", "W293",
         "--ignore", "RET502",
@@ -117,6 +118,9 @@
         "--ignore", "RUF012",
         "--ignore", "RUF009",
         "--ignore", "RUF005",
+        "--ignore", "ARG002",
+        "--ignore", "ARG004",
+        "--ignore", "ARG005",
         "--ignore", "PERF203",
         // pylint blacklist. still need to transfer a bunch of my old pylint ignores to ruff, but I cba
         // to manually lookup the conversion from names (pylint format) to codes (ruff format) for
@@ -335,4 +339,26 @@
     "gitlens.plusFeatures.enabled": false,
     "gitlens.virtualRepositories.enabled": false,
     "gitlens.ai.experimental.generateCommitMessage.enabled": false,
+    // set to "basic" to enable type checking
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportUnboundVariable": "none",
+        // this category includes a frustrating amount of unrelated things. It includes:
+        //
+        // ```
+        // def f(x: int):
+        //     x = "a"
+        // ```
+        //
+        // which is rarely an error for me. However, this category also includes:
+        //
+        // ```
+        // instance.nonexistent_method()
+        // ```
+        //
+        // which is a mistake I make all the time. I would love to have the latter enabled, but not the former.
+        // I don't know of any way to achieve that currently, though.
+        //
+        // "reportGeneralTypeIssues": "none"
+    },
 }
