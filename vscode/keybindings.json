@@ -273,4 +273,9 @@
         },
         "when": "editorTextFocus && !isInDiffEditor"
     },
+    {
+        "key": "shift+enter",
+        "command": "-python.execSelectionInTerminal",
+        "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+    },
 ]
