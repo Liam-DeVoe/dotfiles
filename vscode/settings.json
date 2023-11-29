@@ -363,4 +363,5 @@
         //
         // "reportGeneralTypeIssues": "none"
     },
+    "diffEditor.ignoreTrimWhitespace": false,
 }
