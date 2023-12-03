@@ -38,8 +38,10 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # see also https://mhoffman.github.io/2015/05/21/how-to-navigate-directories-with-the-shell.html
 # or https://stackoverflow.com/a/1030206
 
-bind '"\e[A":history-search-backward'
-bind '"\e[B":history-search-forward'
+# edit: I've decided I dislike this.
+
+# bind '"\e[A":history-search-backward'
+# bind '"\e[B":history-search-forward'
 
 
 ########################
