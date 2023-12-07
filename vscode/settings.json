@@ -110,6 +110,11 @@
         "--ignore", "PIE790",
         "--ignore", "RET503",
         "--ignore", "RET504",
+
+        // TODO revisit these. they're only really a problem in hypothesis code.
+        "--ignore", "RET505",
+        "--ignore", "RET506",
+
         "--ignore", "RET501",
         "--ignore", "SIM114",
         "--ignore", "SIM102",
@@ -125,6 +130,7 @@
         "--ignore", "ARG004",
         "--ignore", "ARG005",
         "--ignore", "PERF203",
+        "--ignore", "PERF401",
         // pylint blacklist. still need to transfer a bunch of my old pylint ignores to ruff, but I cba
         // to manually lookup the conversion from names (pylint format) to codes (ruff format) for
         // the ones ruff doesn't have implemented yet. I'll blacklist these as they get implemented and as
