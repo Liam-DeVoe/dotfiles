@@ -124,6 +124,7 @@
         "--ignore", "RUF009",
         "--ignore", "RUF005",
         "--ignore", "RUF015",
+        "--ignore", "RUF010",
         "--ignore", "ARG001",
         "--ignore", "ARG002",
         "--ignore", "ARG003",
