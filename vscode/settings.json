@@ -120,6 +120,7 @@
         "--ignore", "SIM102",
         "--ignore", "SIM105",
         "--ignore", "SIM108",
+        "--ignore", "SIM300",
         "--ignore", "RUF012",
         "--ignore", "RUF009",
         "--ignore", "RUF005",
