@@ -2,7 +2,7 @@
 ## Custom Commands ##
 #####################
 
-alias t='python3 -m unittest'
+alias t='python3 -m pytest'
 alias run='python3 manage.py runserver'
 alias f='open -a Finder ./'
 alias bashrc='open -e /Users/tybug/.bash_profile'
