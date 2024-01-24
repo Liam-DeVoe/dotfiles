@@ -55,7 +55,7 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # java 21
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 # racket + racket tools
-export PATH=/Applications/Racket\ v7.8/bin:$PATH
+export PATH=/Applications/Racket\ v8.11.1/bin:$PATH
 # prolog + prolog tools
 export PATH=/Applications/SWI-Prolog.app/Contents/MacOS:$PATH
 # use brew ruby
