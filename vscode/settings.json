@@ -340,7 +340,6 @@
     "git.openRepositoryInParentFolders": "never",
     "python.experiments.enabled": false,
     "workbench.colorTheme": "Default Dark+",
-    "window.commandCenter": false,
     "workbench.editor.empty.hint": "hidden",
     // 10/16/2023: trying this out. may revert later.
     "python.terminal.focusAfterLaunch": true,
@@ -374,4 +373,5 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.experimental.showMoves": true,
     "diffEditor.hideUnchangedRegions.enabled": true,
+    "window.commandCenter": false,
 }
