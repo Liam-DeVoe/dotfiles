@@ -3,6 +3,9 @@
 #####################
 
 alias t='python3 -m pytest'
+alias p8='python3 -m pytest -n 8 hypothesis-python/tests/'
+alias p1='python3 -m pytest hypothesis-python/tests/'
+alias format='./build.sh format'
 alias run='python3 manage.py runserver'
 alias f='open -a Finder ./'
 alias bashrc='open -e /Users/tybug/.bash_profile'

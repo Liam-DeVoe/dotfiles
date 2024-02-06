@@ -376,4 +376,5 @@
     "window.commandCenter": false,
     // https://stackoverflow.com/a/68037114
     "editor.lightbulb.enabled": "off",
+    "editor.dragAndDrop": false,
 }
