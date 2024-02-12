@@ -377,4 +377,6 @@
     // https://stackoverflow.com/a/68037114
     "editor.lightbulb.enabled": "off",
     "editor.dragAndDrop": false,
+    "workbench.tree.enableStickyScroll": false,
+    "editor.stickyScroll.enabled": false,
 }
