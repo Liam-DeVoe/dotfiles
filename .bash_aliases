@@ -60,6 +60,8 @@ alias grep='grep -i'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias ll='ls -FGlAhp'
+alias du='du -hs'
+alias df='df -h'
 
 
 
