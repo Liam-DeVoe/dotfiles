@@ -380,4 +380,5 @@
     "workbench.tree.enableStickyScroll": false,
     "editor.stickyScroll.enabled": false,
     "debugpy.debugJustMyCode": false,
+    "window.confirmSaveUntitledWorkspace": false,
 }
