@@ -1,6 +1,7 @@
 {
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
+        "*.ipynb": "jupyter-notebook",
+        "git-rebase-todo": "default"
     },
     "editor.minimap.enabled": false,
     "gitlens.blame.heatmap.enabled": false,
