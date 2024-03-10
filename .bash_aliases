@@ -72,8 +72,7 @@ alias df='df -h'
 alias yt-dla='yt-dlp --extract-audio --no-mtime --output %"(title)s.%(ext)s"'
 alias dla='yt-dla'
 alias dl='yt-dlp'
-# my install doesn't have SSl certificates set up right or something, I should probably fix that but in the meantime just ignore it
-# alias yt-dlp='yt-dlp --no-check-certificates'
+alias yt-dlp='yt-dlp --recode-video "mkv>mp4/webm>mp4"'
 
 alias python3='python3.12'
 alias pip='python3 -m pip'
