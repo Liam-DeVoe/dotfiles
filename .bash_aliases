@@ -75,6 +75,7 @@ alias dl='yt-dlp'
 alias yt-dlp='yt-dlp --recode-video "mkv>mp4/webm>mp4"'
 
 alias python3='python3.12'
+alias python='python3'
 alias pip='python3 -m pip'
 # older python versions, while things move to supporting 3.12
 # alias python3.11='/opt/homebrew/Cellar/python@3.11/3.11.5/bin/python3.11'
