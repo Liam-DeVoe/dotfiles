@@ -100,6 +100,7 @@
         "--ignore", "B023",
         "--ignore", "B904",
         "--ignore", "B011",
+        "--ignore", "B027",
         "--ignore", "F403",
         "--ignore", "F405",
         "--ignore", "F402",
