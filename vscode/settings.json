@@ -385,4 +385,6 @@
     "debugpy.debugJustMyCode": false,
     "window.confirmSaveUntitledWorkspace": false,
     "workbench.editor.untitled.labelFormat": "name",
+    "editor.cursorBlinking": "solid",
+    "editor.find.cursorMoveOnType": false,
 }
