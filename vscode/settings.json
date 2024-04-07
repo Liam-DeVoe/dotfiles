@@ -375,7 +375,6 @@
     },
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.experimental.showMoves": true,
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "window.commandCenter": false,
     // https://stackoverflow.com/a/68037114
     "editor.lightbulb.enabled": "off",
