@@ -385,4 +385,5 @@
     "window.confirmSaveUntitledWorkspace": false,
     "workbench.editor.untitled.labelFormat": "name",
     "editor.cursorBlinking": "solid",
+    "diffEditor.hideUnchangedRegions.enabled": true,
 }
