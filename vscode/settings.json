@@ -386,4 +386,5 @@
     "workbench.editor.untitled.labelFormat": "name",
     "editor.cursorBlinking": "solid",
     "diffEditor.hideUnchangedRegions.enabled": true,
+    "explorer.confirmPasteNative": false,
 }
