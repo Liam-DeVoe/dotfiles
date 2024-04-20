@@ -346,7 +346,6 @@
     "workbench.editor.empty.hint": "hidden",
     // 10/16/2023: trying this out. may revert later.
     "python.terminal.focusAfterLaunch": true,
-    "workbench.activityBar.location": "top",
     "workbench.statusBar.visible": false,
     "gitlens.plusFeatures.enabled": false,
     "gitlens.virtualRepositories.enabled": false,
@@ -387,4 +386,5 @@
     "editor.cursorBlinking": "solid",
     "diffEditor.hideUnchangedRegions.enabled": true,
     "explorer.confirmPasteNative": false,
+    "workbench.activityBar.location": "top",
 }
