@@ -387,4 +387,5 @@
     "diffEditor.hideUnchangedRegions.enabled": true,
     "explorer.confirmPasteNative": false,
     "workbench.activityBar.location": "top",
+    "zenMode.showTabs": "none",
 }
