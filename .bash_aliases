@@ -82,6 +82,7 @@ alias pip='python3 -m pip'
 # older python versions, while things move to supporting 3.12
 # alias python3.11='/opt/homebrew/Cellar/python@3.11/3.11.5/bin/python3.11'
 # alias pip3.11='/opt/homebrew/Cellar/python@3.11/3.11.5/bin/pip3.11'
+alias pyinstrument='pyinstrument -r html'
 
 # others
 alias dott='dot -o output.png -T png'

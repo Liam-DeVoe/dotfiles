@@ -373,7 +373,6 @@
         // "reportGeneralTypeIssues": "none"
     },
     "diffEditor.ignoreTrimWhitespace": false,
-    "diffEditor.experimental.showMoves": true,
     "window.commandCenter": false,
     // https://stackoverflow.com/a/68037114
     "editor.lightbulb.enabled": "off",
@@ -384,8 +383,10 @@
     "window.confirmSaveUntitledWorkspace": false,
     "workbench.editor.untitled.labelFormat": "name",
     "editor.cursorBlinking": "solid",
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "explorer.confirmPasteNative": false,
     "workbench.activityBar.location": "top",
     "zenMode.showTabs": "none",
+    "diffEditor.renderGutterMenu": false,
+    "diffEditor.renderIndicators": false,
+    "diffEditor.renderMarginRevertIcon": false,
 }
