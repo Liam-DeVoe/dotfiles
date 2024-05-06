@@ -389,4 +389,5 @@
     "diffEditor.renderGutterMenu": false,
     "diffEditor.renderIndicators": false,
     "diffEditor.renderMarginRevertIcon": false,
+    "diffEditor.hideUnchangedRegions.enabled": true,
 }
