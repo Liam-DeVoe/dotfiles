@@ -89,6 +89,7 @@
         "--ignore", "E402",
         "--ignore", "E731",
         "--ignore", "E721",
+        "--ignore", "E702",
         "--ignore", "W605",
         "--ignore", "UP032",
         "--ignore", "UP007",
