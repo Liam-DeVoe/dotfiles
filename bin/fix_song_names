@@ -125,7 +125,7 @@ class FixDashes(Fix):
 
 
 class Fixer:
-    SONG_EXTENSIONS = ["mp3", "flac", "wav", "ogg", "opus"]
+    SONG_EXTENSIONS = ["mp3", "flac", "wav", "ogg", "opus", "m4a"]
 
     # order here is important. Some fixes rely on the filename being
     # sufficiently correct before operating further (ie, it relies on previous
