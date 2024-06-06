@@ -23,6 +23,7 @@ alias dlac='dla $(current_chrome_url)'
 alias dlc='dl $(current_chrome_url)'
 alias lazer='python3 /Users/tybug/Desktop/Liam/coding/scrape_lazer_market_share/scrape_lazer_market_share.py'
 alias sha256='shasum -a 256'
+alias library='cd $HOME/Library'
 
 function until_failure {
 	while $1; do :; done
