@@ -399,4 +399,9 @@
         "–": true,
         "𝒪": true
     },
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.inlineSuggest.enabled": false,
+    "editor.inlineSuggest.showToolbar": "never",
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "editor.snippetSuggestions": "none",
 }
