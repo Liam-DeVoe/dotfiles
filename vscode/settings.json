@@ -404,4 +404,5 @@
     "editor.inlineSuggest.showToolbar": "never",
     "editor.inlineSuggest.suppressSuggestions": true,
     "editor.snippetSuggestions": "none",
+    "gitlens.views.searchAndCompare.avatars": false,
 }
