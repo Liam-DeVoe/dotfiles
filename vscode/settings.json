@@ -393,7 +393,6 @@
     "diffEditor.renderGutterMenu": false,
     "diffEditor.renderIndicators": false,
     "diffEditor.renderMarginRevertIcon": false,
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "editor.unicodeHighlight.allowedCharacters": {
         "σ": true,
         "–": true,
@@ -405,4 +404,5 @@
     "editor.inlineSuggest.suppressSuggestions": true,
     "editor.snippetSuggestions": "none",
     "gitlens.views.searchAndCompare.avatars": false,
+    "diffEditor.hideUnchangedRegions.enabled": true,
 }
