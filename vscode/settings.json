@@ -261,7 +261,6 @@
     // something about the language server not supporting multi-root workspaces. I don't
     // really care about rst intellisense so I've just disabled it to silence the error.
     "restructuredtext.languageServer.disabled": true,
-    "files.trimTrailingWhitespace": true,
     "html.completion.attributeDefaultValue": "empty",
     "java.import.gradle.java.home": "/opt/homebrew/Cellar/openjdk@17/17.0.3/libexec/openjdk.jdk/Contents/Home",
     "files.insertFinalNewline": true,
@@ -405,4 +404,5 @@
     "editor.snippetSuggestions": "none",
     "gitlens.views.searchAndCompare.avatars": false,
     "diffEditor.hideUnchangedRegions.enabled": true,
+    "files.trimTrailingWhitespace": true,
 }
