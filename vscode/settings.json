@@ -387,7 +387,6 @@
     "workbench.editor.untitled.labelFormat": "name",
     "editor.cursorBlinking": "solid",
     "explorer.confirmPasteNative": false,
-    "workbench.activityBar.location": "top",
     "zenMode.showTabs": "none",
     "diffEditor.renderGutterMenu": false,
     "diffEditor.renderIndicators": false,
@@ -405,4 +404,7 @@
     "gitlens.views.searchAndCompare.avatars": false,
     "diffEditor.hideUnchangedRegions.enabled": true,
     "files.trimTrailingWhitespace": true,
+    "scm.showIncomingChanges": "never",
+    "scm.showOutgoingChanges": "never",
+    "workbench.activityBar.location": "top",
 }
