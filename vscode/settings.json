@@ -402,9 +402,9 @@
     "editor.inlineSuggest.suppressSuggestions": true,
     "editor.snippetSuggestions": "none",
     "gitlens.views.searchAndCompare.avatars": false,
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "files.trimTrailingWhitespace": true,
     "scm.showIncomingChanges": "never",
     "scm.showOutgoingChanges": "never",
     "workbench.activityBar.location": "top",
+    "diffEditor.hideUnchangedRegions.enabled": true,
 }
