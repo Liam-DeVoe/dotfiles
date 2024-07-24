@@ -405,6 +405,6 @@
     "files.trimTrailingWhitespace": true,
     "scm.showIncomingChanges": "never",
     "scm.showOutgoingChanges": "never",
-    "workbench.activityBar.location": "top",
     "diffEditor.hideUnchangedRegions.enabled": true,
+    "workbench.activityBar.location": "top",
 }
