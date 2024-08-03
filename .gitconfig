@@ -16,6 +16,8 @@ find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
 nuke = !"git reset --hard && git clean -xfd"
 whatadded = log --diff-filter=A --pretty=format:"%H"
 whatchanged = log --follow
+children = "!bash -c 'c=${1:-HEAD}; set -- $(git rev-list --all --not \"$c\"^@ --children | grep $(git rev-parse \"$c\") ); shift; echo $1' -"
+
 [pull]
 	rebase = false
 [core]
