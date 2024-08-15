@@ -113,6 +113,7 @@
         "--ignore", "RET502",
         "--ignore", "COM812",
         "--ignore", "PIE790",
+        "--ignore", "PIE808",
         "--ignore", "RET503",
         "--ignore", "RET504",
 
@@ -405,7 +406,6 @@
     "files.trimTrailingWhitespace": true,
     "scm.showIncomingChanges": "never",
     "scm.showOutgoingChanges": "never",
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "workbench.activityBar.location": "top",
     "gitlens.ai.experimental.model": "anthropic:claude-3-opus-20240229",
     "scm.showHistoryGraph": false,
