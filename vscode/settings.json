@@ -409,4 +409,5 @@
     "workbench.activityBar.location": "top",
     "gitlens.ai.experimental.model": "anthropic:claude-3-opus-20240229",
     "scm.showHistoryGraph": false,
+    "diffEditor.hideUnchangedRegions.enabled": true,
 }
