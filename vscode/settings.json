@@ -346,7 +346,6 @@
     "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
     "git.openRepositoryInParentFolders": "never",
     "python.experiments.enabled": false,
-    "workbench.colorTheme": "Default Dark+",
     "workbench.editor.empty.hint": "hidden",
     // 10/16/2023: trying this out. may revert later.
     "python.terminal.focusAfterLaunch": true,
@@ -410,4 +409,5 @@
     "gitlens.ai.experimental.model": "anthropic:claude-3-opus-20240229",
     "scm.showHistoryGraph": false,
     "diffEditor.hideUnchangedRegions.enabled": true,
+    "workbench.colorTheme": "Default Dark+",
 }
