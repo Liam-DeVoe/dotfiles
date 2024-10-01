@@ -141,6 +141,7 @@
         "--ignore", "ARG005",
         "--ignore", "PERF203",
         "--ignore", "PERF401",
+        "--ignore", "PERF102",
         "--ignore", "NPY002",
         // pylint blacklist. still need to transfer a bunch of my old pylint ignores to ruff, but I cba
         // to manually lookup the conversion from names (pylint format) to codes (ruff format) for
