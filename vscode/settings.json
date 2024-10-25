@@ -359,6 +359,7 @@
     "python.analysis.typeCheckingMode": "off",
     "python.analysis.diagnosticSeverityOverrides": {
         "reportUnboundVariable": "none",
+        "reportInvalidTypeForm": "none",
         // this category includes a frustrating amount of unrelated things. It includes:
         //
         // ```
@@ -410,6 +411,6 @@
     "workbench.activityBar.location": "top",
     "gitlens.ai.experimental.model": "anthropic:claude-3-opus-20240229",
     "scm.showHistoryGraph": false,
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "workbench.colorTheme": "Default Dark+",
+    "diffEditor.hideUnchangedRegions.enabled": true,
 }
