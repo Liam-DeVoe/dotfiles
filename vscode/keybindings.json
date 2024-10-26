@@ -288,11 +288,12 @@
         "command": "-workbench.action.navigateBack",
         "when": "canNavigateBack"
     },
-    {
-        "key": "shift+cmd+j",
-        "command": "workbench.action.navigateForward",
-        "when": "canNavigateForward"
-    },
+    // {
+    //     "key": "cmd+k",
+    //     "command": "workbench.action.navigateForward",
+    //     // don't block out cmd+k for clearing the search bar
+    //     "when": "canNavigateForward && !findWidgetVisible"
+    // },
     {
         "key": "ctrl+shift+-",
         "command": "-workbench.action.navigateForward",
@@ -333,4 +334,50 @@
         "command": "-workbench.action.files.openFileFolder",
         "when": "isMacNative && openFolderWorkspaceSupport"
     },
+    {
+        "key": "cmd+e",
+        "command": "-actions.findWithSelection"
+    },
+    {
+        "key": "cmd+e",
+        "command": "-editor.action.toggleScreenReaderAccessibilityMode",
+        "when": "accessibilityHelpIsShown"
+    },
+    {
+        "key": "cmd+e",
+        "command": "workbench.action.splitEditorRight"
+    },
+    {
+        "key": "cmd+k cmd+\\",
+        "command": "-workbench.action.splitEditorRight"
+    },
+    {
+        "key": "cmd+k shift+cmd+right",
+        "command": "-workbench.action.moveEditorRightInGroup"
+    },
+    {
+        "key": "cmd+k right",
+        "command": "-views.moveViewRight",
+        "when": "focusedView != ''"
+    },
+    {
+        "key": "cmd+k right",
+        "command": "-workbench.action.moveActiveEditorGroupRight"
+    },
+    {
+        "key": "cmd+e",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.moveEditorToNextGroup",
+                // TODO this focus doesn't work, possibly because it needs a delay. but there's no
+                // way to add a delay with runCommands.
+                "workbench.action.focusPreviousGroup"
+            ]
+        },
+    },
+    {
+        "key": "ctrl+cmd+right",
+        "command": "-workbench.action.moveEditorToNextGroup"
+    }
 ]
