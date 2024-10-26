@@ -263,15 +263,8 @@
     },
     {
         "key": "cmd+k",
-        "command": "runCommands",
-        "args": {
-          "commands": [
-            "search.action.clearSearchResults",
-            // Override search.action.clearSearchResults focusing the search bar.
-            "workbench.action.focusActiveEditorGroup"
-          ]
-        },
-        "when": "editorTextFocus && !isInDiffEditor"
+        "command": "closeFindWidget",
+        "when": "(editorTextFocus && !isInDiffEditor) || findInputFocussed"
     },
     {
         "key": "shift+enter",
@@ -288,12 +281,12 @@
         "command": "-workbench.action.navigateBack",
         "when": "canNavigateBack"
     },
-    // {
-    //     "key": "cmd+k",
-    //     "command": "workbench.action.navigateForward",
-    //     // don't block out cmd+k for clearing the search bar
-    //     "when": "canNavigateForward && !findWidgetVisible"
-    // },
+    {
+        "key": "cmd+k",
+        "command": "workbench.action.navigateForward",
+        // don't block out cmd+k for clearing the search bar
+        "when": "canNavigateForward && !findWidgetVisible"
+    },
     {
         "key": "ctrl+shift+-",
         "command": "-workbench.action.navigateForward",
