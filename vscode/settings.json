@@ -153,6 +153,7 @@
         "--ignore", "PLR5501",
         "--ignore", "PLR0915",
         "--ignore", "PLR0912",
+        "--ignore", "PLR0124",
         "--ignore", "PLW2901",
         "--ignore", "PLW0603",
         "--ignore", "PLW1510",

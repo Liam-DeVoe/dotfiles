@@ -263,7 +263,15 @@
     },
     {
         "key": "cmd+k",
-        "command": "closeFindWidget",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "closeFindWidget",
+            "search.action.clearSearchResults",
+            // Override search.action.clearSearchResults focusing the search bar.
+            "workbench.action.focusActiveEditorGroup"
+          ]
+        },
         "when": "(editorTextFocus && !isInDiffEditor) || findInputFocussed"
     },
     {
