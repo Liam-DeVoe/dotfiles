@@ -415,4 +415,5 @@
     "scm.showHistoryGraph": false,
     "workbench.colorTheme": "Default Dark+",
     "diffEditor.hideUnchangedRegions.enabled": true,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
 }
