@@ -414,6 +414,6 @@
     "gitlens.ai.experimental.model": "anthropic:claude-3-opus-20240229",
     "scm.showHistoryGraph": false,
     "workbench.colorTheme": "Default Dark+",
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "editor.unicodeHighlight.ambiguousCharacters": false,
+    "diffEditor.hideUnchangedRegions.enabled": true,
 }
