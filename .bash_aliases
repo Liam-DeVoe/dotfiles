@@ -43,6 +43,7 @@ function _git_alias {
 } 
 
 _git_alias p push
+_git_alias pp "push --no-verify"
 _git_alias pu pull
 _git_alias gst status
 _git_alias gb branch
