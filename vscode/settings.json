@@ -415,6 +415,6 @@
     "scm.showHistoryGraph": false,
     "workbench.colorTheme": "Default Dark+",
     "editor.unicodeHighlight.ambiguousCharacters": false,
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "diffEditor.renderSideBySide": true,
+    "diffEditor.hideUnchangedRegions.enabled": true,
 }
