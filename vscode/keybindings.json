@@ -380,5 +380,112 @@
     {
         "key": "ctrl+cmd+right",
         "command": "-workbench.action.moveEditorToNextGroup"
+    },
+    {
+        "key": "cmd+;",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "ctrl+shift+`",
+        "command": "-workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "cmd+l",
+        "command": "python.execInTerminal-icon"
+    },
+    {
+        "key": "cmd+; cmd+a",
+        "command": "-testing.debugAll"
+    },
+    {
+        "key": "cmd+; cmd+l",
+        "command": "-testing.debugLastRun"
+    },
+    {
+        "key": "cmd+; cmd+c",
+        "command": "-testing.debugAtCursor",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+; cmd+e",
+        "command": "-testing.debugFailTests"
+    },
+    {
+        "key": "cmd+; cmd+f",
+        "command": "-testing.debugCurrentFile",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+; cmd+r",
+        "command": "-testing.refreshTests",
+        "when": "testing.canRefresh"
+    },
+    {
+        "key": "cmd+; l",
+        "command": "-testing.reRunLastRun"
+    },
+    {
+        "key": "cmd+; e",
+        "command": "-testing.reRunFailTests"
+    },
+    {
+        "key": "cmd+; cmd+m",
+        "command": "-testing.openOutputPeek"
+    },
+    {
+        "key": "cmd+; shift+cmd+a",
+        "command": "-testing.coverageAll"
+    },
+    {
+        "key": "cmd+; a",
+        "command": "-testing.runAll"
+    },
+    {
+        "key": "cmd+; c",
+        "command": "-testing.runAtCursor",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+; f",
+        "command": "-testing.runCurrentFile",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+; cmd+o",
+        "command": "-testing.showMostRecentOutput",
+        "when": "testing.hasAnyResults"
+    },
+    {
+        "key": "cmd+; shift+cmd+f",
+        "command": "-testing.coverageCurrentFile",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+; shift+cmd+c",
+        "command": "-testing.coverageAtCursor",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+; shift+cmd+i",
+        "command": "-testing.toggleInlineCoverage"
+    },
+    {
+        "key": "cmd+; cmd+x",
+        "command": "-testing.cancelRun"
+    },
+    {
+        "key": "cmd+; cmd+i",
+        "command": "-testing.toggleInlineTestOutput"
+    },
+    {
+        "key": "cmd+; shift+cmd+l",
+        "command": "-testing.coverageLastRun"
+    },
+    {
+        "key": "cmd+l",
+        "command": "-expandLineSelection",
+        "when": "textInputFocus"
     }
 ]
