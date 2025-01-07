@@ -416,5 +416,17 @@
     "workbench.colorTheme": "Default Dark+",
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "diffEditor.renderSideBySide": true,
+    "gitlens.views.scm.grouped.views": {
+        "commits": true,
+        "branches": true,
+        "remotes": true,
+        "stashes": true,
+        "tags": true,
+        "worktrees": true,
+        "contributors": true,
+        "repositories": false,
+        "searchAndCompare": true,
+        "launchpad": false
+    },
     "diffEditor.hideUnchangedRegions.enabled": true,
 }
