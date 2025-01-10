@@ -425,7 +425,6 @@
         "searchAndCompare": true,
         "launchpad": false
     },
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "python.testing.pytestEnabled": true,
     "python.testing.promptToConfigure": false,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
@@ -433,4 +432,5 @@
     "diffEditor.renderGutterMenu": false,
     "gitlens.codeLens.enabled": false,
     "testing.gutterEnabled": false,
+    "diffEditor.hideUnchangedRegions.enabled": true,
 }
