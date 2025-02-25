@@ -23,6 +23,17 @@ children = "!bash -c 'c=${1:-HEAD}; set -- $(git rev-list --all --not \"$c\"^@ -
 [core]
 	excludesfile = /Users/tybug/.gitignore
 	autocrlf = input
+[diff]
+    algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
 [init]
 	defaultBranch = master
 [merge]
