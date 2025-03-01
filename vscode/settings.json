@@ -24,6 +24,13 @@
         ],
         "editor.formatOnType": false
     },
+    "[markdown]": {
+        "editor.wordWrap": "on"
+    },
+    "[restructuredtext]": {
+        "editor.wordWrap": "on",
+        "editor.suggestOnTriggerCharacters": false,
+    },
     "workbench.tree.renderIndentGuides": "none",
     "workbench.tips.enabled": false,
     "files.exclude": {
@@ -239,9 +246,6 @@
     "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.12",
     "files.associations": {
         "*.rst": "restructuredtext"
-    },
-    "[restructuredtext]": {
-        "editor.suggestOnTriggerCharacters": false,
     },
     "notebook.cellToolbarLocation": {
         "default": "right",
