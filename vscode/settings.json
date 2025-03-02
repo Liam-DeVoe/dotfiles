@@ -437,4 +437,11 @@
     "gitlens.codeLens.enabled": false,
     "testing.gutterEnabled": false,
     "diffEditor.hideUnchangedRegions.enabled": true,
+    "telemetry.telemetryLevel": "off",
+    "gitlens.telemetry.enabled": false,
+    "workbench.enableExperiments": false,
+    "workbench.cloudChanges.autoResume": "off",
+    "workbench.cloudChanges.continueOn": "off",
+    "settingsSync.keybindingsPerPlatform": false,
+    "npm.fetchOnlinePackageInfo": false,
 }
