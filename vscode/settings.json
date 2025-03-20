@@ -443,4 +443,5 @@
     "workbench.cloudChanges.continueOn": "off",
     "settingsSync.keybindingsPerPlatform": false,
     "npm.fetchOnlinePackageInfo": false,
+    "diffEditor.hideUnchangedRegions.enabled": true,
 }
