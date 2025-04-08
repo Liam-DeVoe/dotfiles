@@ -444,4 +444,6 @@
     "settingsSync.keybindingsPerPlatform": false,
     "npm.fetchOnlinePackageInfo": false,
     "diffEditor.hideUnchangedRegions.enabled": true,
+    "chat.commandCenter.enabled": false,
+    "workbench.layoutControl.enabled": false,
 }
