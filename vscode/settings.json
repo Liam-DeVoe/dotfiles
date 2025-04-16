@@ -151,6 +151,8 @@
         "--ignore", "PERF102",
         "--ignore", "NPY002",
         "--ignore", "TC006",
+        "--ignore", "TC001",
+        "--ignore", "TC002",
         // pylint blacklist. still need to transfer a bunch of my old pylint ignores to ruff, but I cba
         // to manually lookup the conversion from names (pylint format) to codes (ruff format) for
         // the ones ruff doesn't have implemented yet. I'll blacklist these as they get implemented and as
@@ -446,5 +448,4 @@
     "npm.fetchOnlinePackageInfo": false,
     "chat.commandCenter.enabled": false,
     "workbench.layoutControl.enabled": false,
-    "diffEditor.hideUnchangedRegions.enabled": true,
 }
