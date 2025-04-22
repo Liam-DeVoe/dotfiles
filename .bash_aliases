@@ -16,6 +16,13 @@ alias l='ls'
 alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../../'
+alias .......='cd ../../../../../../'
+alias ........='cd ../../../../../../../'
+alias .........='cd ../../../../../../../../'
+alias ..........='cd ../../../../../../../../../'
+alias ...........='cd ../../../../../../../../../../'
 # cd to the path of the currently open finder window
 alias cdc='cd "$(current_finder_path)"'
 alias c='cdc'
@@ -25,6 +32,8 @@ alias dlc='dl $(current_chrome_url)'
 alias lazer='python3 /Users/tybug/Desktop/Liam/coding/scrape_lazer_market_share/scrape_lazer_market_share.py'
 alias sha256='shasum -a 256'
 alias library='cd $HOME/Library'
+alias site-packages='open /opt/homebrew/lib/python3.12/site-packages'
+alias sitepackages=site-packages
 
 function until_failure {
 	while $1; do :; done
