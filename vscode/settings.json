@@ -448,5 +448,4 @@
     "npm.fetchOnlinePackageInfo": false,
     "chat.commandCenter.enabled": false,
     "workbench.layoutControl.enabled": false,
-    "diffEditor.hideUnchangedRegions.enabled": true,
 }
