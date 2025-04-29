@@ -262,19 +262,6 @@
         "when": "editorTextFocus && editorLangId == 'coq'"
     },
     {
-        "key": "cmd+k",
-        "command": "runCommands",
-        "args": {
-          "commands": [
-            "closeFindWidget",
-            "search.action.clearSearchResults",
-            // Override search.action.clearSearchResults focusing the search bar.
-            "workbench.action.focusActiveEditorGroup"
-          ]
-        },
-        "when": "(editorTextFocus && !isInDiffEditor) || findInputFocussed"
-    },
-    {
         "key": "shift+enter",
         "command": "-python.execSelectionInTerminal",
         "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
@@ -392,6 +379,10 @@
         "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
     },
     {
+        "key": "cmd+l",
+        "command": "python.execInTerminal-icon"
+    },
+    {
         "key": "cmd+; cmd+a",
         "command": "-testing.debugAll"
     },
@@ -483,5 +474,29 @@
         "key": "cmd+l",
         "command": "-expandLineSelection",
         "when": "textInputFocus"
+    },
+    {
+        "key": "cmd+l",
+        "command": "aipopup.action.modal.generate",
+        "when": "editorFocus && !composerBarIsVisible"
+    },
+    {
+        "key": "cmd+k",
+        "command": "-aipopup.action.modal.generate",
+        "when": "editorFocus && !composerBarIsVisible"
+    },
+    {
+        "key": "cmd+k",
+        "command": "-cursorai.action.generateInTerminal",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "cmd+i",
+        "command": "composerMode.agent"
+    },
+    {
+        "key": "cmd+k",
+        "command": "-cursorai.action.generateInTerminal",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalPromptBarVisible || terminalProcessSupported && terminalPromptBarVisible"
     }
 ]
