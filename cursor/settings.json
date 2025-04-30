@@ -384,5 +384,6 @@
     "workbench.colorTheme": "Default Dark+",
     "python.createEnvironment.trigger": "off",
     "cursor.composer.collapsePaneInputBoxPills": true,
-    "diffEditor.hideUnchangedRegions.enabled": true
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "cursor.chat.terminalShowHoverHint": false
 }
