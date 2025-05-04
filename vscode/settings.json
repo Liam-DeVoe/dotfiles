@@ -25,10 +25,12 @@
         "editor.formatOnType": false
     },
     "[markdown]": {
-        "editor.wordWrap": "on"
+        "editor.wordWrap": "on",
+        "diffEditor.wordWrap": "on"
     },
     "[restructuredtext]": {
         "editor.wordWrap": "on",
+        "diffEditor.wordWrap": "on",
         "editor.suggestOnTriggerCharacters": false,
     },
     "workbench.tree.renderIndentGuides": "none",
