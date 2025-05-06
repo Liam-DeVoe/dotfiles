@@ -21,7 +21,7 @@
             80
         ],
         "editor.formatOnType": false,
-        "diffEditor.ignoreTrimWhitespace": true
+        "diffEditor.ignoreTrimWhitespace": false
     },
     "workbench.tree.renderIndentGuides": "none",
     "workbench.tips.enabled": false,
@@ -384,6 +384,6 @@
     "workbench.colorTheme": "Default Dark+",
     "python.createEnvironment.trigger": "off",
     "cursor.composer.collapsePaneInputBoxPills": true,
-    "diffEditor.hideUnchangedRegions.enabled": true,
-    "cursor.chat.terminalShowHoverHint": false
+    "cursor.chat.terminalShowHoverHint": false,
+    "diffEditor.hideUnchangedRegions.enabled": true
 }
