@@ -60,10 +60,12 @@ _git_alias lg lg
 _git_alias gl lg
 _git_alias gt tag
 _git_alias gc checkout
-_git_alias gs switch
 _git_alias gd diff
 _git_alias gcp cherry-pick
 _git_alias gfa "fetch --all"
+
+alias gs=~/bin/git_switch_warn_on_todo
+__git_complete gs _git_switch
 
 
 ##########################
