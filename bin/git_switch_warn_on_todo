@@ -1,0 +1,14 @@
+#!/bin/bash
+
+git switch "$@"
+switch_status=$?
+
+# Only check the commit message if the switch was successful
+if [ $switch_status -eq 0 ]; then
+    commit_message=$(git log -1 --pretty=%B)
+    if [ "$commit_message" = "TODO RESET" ]; then
+        echo "⚠️  WARNING: The latest commit message is 'TODO RESET' ⚠️"
+    fi
+fi
+
+exit $switch_status

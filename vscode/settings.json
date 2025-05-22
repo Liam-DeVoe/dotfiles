@@ -28,6 +28,10 @@
         "editor.wordWrap": "on",
         "diffEditor.wordWrap": "on"
     },
+    "[toml]": {
+        "editor.wordWrap": "on",
+        "diffEditor.wordWrap": "on"
+    },
     "[restructuredtext]": {
         "editor.wordWrap": "on",
         "diffEditor.wordWrap": "on",
