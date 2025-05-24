@@ -12,6 +12,10 @@ alias f='open -a Finder ./'
 alias bashrc='open -e /Users/tybug/.bash_profile'
 alias aliases='open -e /Users/tybug/.bash_aliases'
 alias aliases-private='open -e /Users/tybug/.bash_aliases_private'
+alias git-aliases='open -e /Users/tybug/.gitconfig'
+alias gitaliases='open -e /Users/tybug/.gitconfig'
+alias git-config='open -e /Users/tybug/.gitconfig'
+alias gitconfig='open -e /Users/tybug/.gitconfig'
 alias l='ls'
 alias ..='cd ../'
 alias ...='cd ../../'
@@ -51,6 +55,14 @@ function _git_alias {
 	__git_complete $1 _git_$2
 } 
 
+function gstash {
+    if [[ $1 == "pop" ]]; then
+        git stash pop "${@:2}"
+    else
+        git stash --include-untracked "$@"
+    fi
+}
+
 _git_alias p push
 _git_alias pp "push --no-verify"
 _git_alias pu pull
@@ -66,7 +78,7 @@ _git_alias gfa "fetch --all"
 
 alias gs=~/bin/git_switch_warn_on_todo
 __git_complete gs _git_switch
-
+__git_complete gstash _git_stash
 
 ##########################
 ## Customizing Builtins ##
