@@ -38,6 +38,7 @@ alias sha256='shasum -a 256'
 alias library='cd $HOME/Library'
 alias site-packages='open /opt/homebrew/lib/python3.12/site-packages'
 alias sitepackages=site-packages
+alias hypothesisdocs='open /Users/tybug/Desktop/Liam/coding/hypothesis/hypothesis-python/docs/_build/html/index.html'
 
 function until_failure {
 	while $1; do :; done
@@ -120,3 +121,10 @@ alias dott='dot -o output.png -T png'
 alias findpi='arp -na | grep -i b8:27:eb'
 alias fuck='fuck --yeah'
 alias j='jconsole'
+
+
+###########
+## Typos ##
+###########
+
+alias pyest=pytest
