@@ -332,10 +332,6 @@
         "when": "accessibilityHelpIsShown"
     },
     {
-        "key": "cmd+e",
-        "command": "workbench.action.splitEditorRight"
-    },
-    {
         "key": "cmd+k cmd+\\",
         "command": "-workbench.action.splitEditorRight"
     },
