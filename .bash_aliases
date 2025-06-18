@@ -57,13 +57,14 @@ function _git_alias {
 } 
 
 function gstash {
-    if [[ $1 == "pop" ]]; then
-        git stash pop "${@:2}"
-    elif [[ $1 == "show" ]]; then
-        git stash show "${@:2}"
-    else
-        git stash --include-untracked "$@"
-    fi
+    case "$1" in
+        pop|show|drop|list)  
+            git stash "$@"
+            ;;
+        *)  
+            git stash --include-untracked "$@"
+            ;;
+    esac
 }
 
 _git_alias p push
