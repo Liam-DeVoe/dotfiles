@@ -5,7 +5,9 @@
 alias t='python3 -m pytest'
 alias p8='python3 -m pytest -n 8 hypothesis-python/tests/'
 alias coverage='./build.sh check-coverage'
-alias p1='python3 -m pytest hypothesis-python/tests/'
+# libcst and pandas take 370ms and 280ms respectively to load (under pyinstrument, at least). Ignore these on p1, where we want fast collection times.
+alias p1='python3 -m pytest hypothesis-python/tests/ --ignore=hypothesis-python/tests/codemods --ignore=hypothesis-python/tests/patching --ignore=hypothesis-python/tests/pandas'
+alias pp1='python3 -m pytest hypothesis-python/tests/'
 alias format='./build.sh format'
 alias run='python3 manage.py runserver'
 alias f='open -a Finder ./'
