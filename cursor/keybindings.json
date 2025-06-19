@@ -489,5 +489,9 @@
     {
         "key": "cmd+l",
         "command": "editor.cpp.toggle"
+    },
+    {
+        "key": "cmd+o",
+        "command": "aipopup.action.focusEdit"
     }
 ]
