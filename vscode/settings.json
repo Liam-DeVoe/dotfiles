@@ -326,13 +326,18 @@
             // - liam 10/27/2022
             "editor.background": "#252525",
             "sideBar.background": "#292929"
-        }
+        },
+        // "[Default Light Modern]": {
+        //     // I'm currently writing my DC systems 008 "Revisiting Property-Based Testing with Typed Choices"
+        //     // talk, and am playing around with overriding this so it matches the background color of my
+        //     // slides, so I can copy code with nice syntax highlighting from vscode.
+        //     "editor.background": "#FBFBFB",
+        // }
     },
     "editor.folding": false,
     "editor.bracketPairColorization.enabled": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
     "extensions.ignoreRecommendations": true,
-    "terminal.integrated.enableMultiLinePasteWarning": false,
     "terminal.integrated.scrollback": 20000,
 
     "editor.tokenColorCustomizations": {
