@@ -137,6 +137,7 @@
         "--ignore", "RET501",
         "--ignore", "SIM114",
         "--ignore", "SIM102",
+        "--ignore", "SIM103",
         "--ignore", "SIM105",
         "--ignore", "SIM108",
         "--ignore", "SIM300",
@@ -174,6 +175,7 @@
         "--ignore", "PLW1510",
         "--ignore", "PLR0911",
         "--ignore", "PLC0105",
+        "--ignore", "PLC0415"
     ],
 
 
