@@ -41,6 +41,7 @@ alias library='cd $HOME/Library'
 alias site-packages='open /opt/homebrew/lib/python3.12/site-packages'
 alias sitepackages=site-packages
 alias hypothesisdocs='open /Users/tybug/Desktop/Liam/coding/hypothesis/hypothesis-python/docs/_build/html/index.html'
+alias hypofuzzdocs='open /Users/tybug/Desktop/Liam/coding/hypofuzz/src/hypofuzz/frontend/public/docs/index.html'
 
 function until_failure {
 	while $1; do :; done
