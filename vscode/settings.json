@@ -148,6 +148,7 @@
         "--ignore", "RUF015",
         "--ignore", "RUF010",
         "--ignore", "RUF017",
+        "--ignore", "RUF028",
         "--ignore", "ARG001",
         "--ignore", "ARG002",
         "--ignore", "ARG003",
@@ -173,6 +174,7 @@
         "--ignore", "PLW2901",
         "--ignore", "PLW0603",
         "--ignore", "PLW1510",
+        "--ignore", "PLW1641",
         "--ignore", "PLR0911",
         "--ignore", "PLC0105",
         "--ignore", "PLC0415"
@@ -460,9 +462,9 @@
     "settingsSync.keybindingsPerPlatform": false,
     "npm.fetchOnlinePackageInfo": false,
     "chat.commandCenter.enabled": false,
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "chat.agent.enabled": false,
     "remote.SSH.experimental.chat": false,
     "telemetry.feedback.enabled": false,
     "workbench.layoutControl.enabled": false,
+    "diffEditor.hideUnchangedRegions.enabled": true,
 }
