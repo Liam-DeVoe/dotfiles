@@ -69,6 +69,8 @@ export PATH="/Users/tybug/.docker/bin:$PATH"
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 # codeql
 export PATH=$HOME/codeql:$PATH
+export PATH="/Users/tybug/.local/bin:$PATH"
+
 
 ###########################
 ## Environment Variables ##
