@@ -466,5 +466,4 @@
     "remote.SSH.experimental.chat": false,
     "telemetry.feedback.enabled": false,
     "workbench.layoutControl.enabled": false,
-    "diffEditor.hideUnchangedRegions.enabled": true,
 }
