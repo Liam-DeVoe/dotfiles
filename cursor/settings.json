@@ -21,7 +21,7 @@
             80
         ],
         "editor.formatOnType": false,
-        "diffEditor.ignoreTrimWhitespace": true
+        "diffEditor.ignoreTrimWhitespace": false
     },
     "[markdown]": {
         "editor.wordWrap": "on",
