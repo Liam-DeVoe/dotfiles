@@ -82,10 +82,23 @@ _git_alias gc checkout
 _git_alias gd diff
 _git_alias gcp cherry-pick
 _git_alias gfa "fetch --all"
+# short for "git undo", as my shorthand for vscode's "undo last commit" command.
+_git_alias gu "reset --soft HEAD~1"
 
 alias gs=~/bin/git_switch_warn_on_todo
 __git_complete gs _git_switch
 __git_complete gstash _git_stash
+
+# `squash` undoes the most commit, adds the working tree to the now-undone commit's changes, and re-commits with the same commit message.
+_squash() {
+    local commit_message=$(git log -1 --pretty=%B 2>/dev/null)
+    git reset --soft HEAD~1
+    git add .
+    git commit -m "$commit_message"
+}
+
+alias squash='_squash'
+
 
 ##########################
 ## Customizing Builtins ##
