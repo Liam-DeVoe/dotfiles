@@ -394,5 +394,7 @@
     "diffEditor.hideUnchangedRegions.enabled": true,
     "[yaml]": {
         "diffEditor.ignoreTrimWhitespace": false
-    }
+    },
+    "cursor.composer.shouldAutoScrollToBottom": false,
+    "cursor.terminal.enableAiChecks": false
 }
