@@ -391,10 +391,10 @@
     "python.createEnvironment.trigger": "off",
     "cursor.composer.collapsePaneInputBoxPills": true,
     "cursor.chat.terminalShowHoverHint": false,
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "[yaml]": {
         "diffEditor.ignoreTrimWhitespace": false
     },
     "cursor.composer.shouldAutoScrollToBottom": false,
-    "cursor.terminal.enableAiChecks": false
+    "cursor.terminal.enableAiChecks": false,
+    "diffEditor.hideUnchangedRegions.enabled": true
 }

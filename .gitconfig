@@ -23,6 +23,7 @@ children = "!bash -c 'c=${1:-HEAD}; set -- $(git rev-list --all --not \"$c\"^@ -
 [core]
 	excludesfile = /Users/tybug/.gitignore
 	autocrlf = input
+	mergeoptions = --no-edit
 [diff]
     algorithm = histogram
 	colorMoved = plain
