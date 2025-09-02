@@ -310,12 +310,235 @@
     "editor.tokenColorCustomizations": {
         "[Default Dark+]": {
             "textMateRules": [
+                { "name": "JS/TS comments", "scope": ["source.js comment", "source.ts comment", "source.tsx comment", "source.jsx comment"], "settings": { "foreground": "#6A9955" } },
+
+                { "name": "JS/TS numbers", "scope": ["source.js constant.numeric", "source.ts constant.numeric", "source.tsx constant.numeric", "source.jsx constant.numeric"], "settings": { "foreground": "#B5CEA8" } },
+                { "name": "JS/TS language constants", "scope": ["source.js constant.language", "source.ts constant.language", "source.tsx constant.language", "source.jsx constant.language"], "settings": { "foreground": "#569CD6" } },
+
+                { "name": "JS/TS strings", "scope": ["source.js string", "source.ts string", "source.tsx string", "source.jsx string"], "settings": { "foreground": "#CE9178" } },
+                { "name": "JS/TS regex body", "scope": ["source.js string.regexp", "source.ts string.regexp", "source.tsx string.regexp", "source.jsx string.regexp"], "settings": { "foreground": "#D16969" } },
+                { "name": "JS/TS regex groups/punctuation", "scope": [
+                    "source.js punctuation.definition.group.regexp",
+                    "source.js punctuation.definition.character-class.regexp",
+                    "source.js punctuation.character.set.begin.regexp",
+                    "source.js punctuation.character.set.end.regexp",
+                    "source.ts punctuation.definition.group.regexp",
+                    "source.ts punctuation.definition.character-class.regexp",
+                    "source.ts punctuation.character.set.begin.regexp",
+                    "source.ts punctuation.character.set.end.regexp",
+                    "source.tsx punctuation.definition.group.regexp",
+                    "source.tsx punctuation.definition.character-class.regexp",
+                    "source.tsx punctuation.character.set.begin.regexp",
+                    "source.tsx punctuation.character.set.end.regexp",
+                    "source.jsx punctuation.definition.group.regexp",
+                    "source.jsx punctuation.definition.character-class.regexp",
+                    "source.jsx punctuation.character.set.begin.regexp",
+                    "source.jsx punctuation.character.set.end.regexp"
+                ], "settings": { "foreground": "#CE9178" } },
+
+                { "name": "JS/TS keywords (general)", "scope": ["source.js keyword", "source.ts keyword", "source.tsx keyword", "source.jsx keyword"], "settings": { "foreground": "#569CD6" } },
+                { "name": "JS/TS control keywords", "scope": ["source.js keyword.control", "source.ts keyword.control", "source.tsx keyword.control", "source.jsx keyword.control"], "settings": { "foreground": "#C586C0" } },
+                { "name": "Storage (let/const/var, type modifiers)", "scope": ["source.js storage", "source.ts storage", "source.tsx storage"], "settings": { "foreground": "#569CD6" } },
+
+                { "name": "Operators (symbolic)", "scope": ["source.js keyword.operator", "source.ts keyword.operator", "source.tsx keyword.operator", "source.jsx keyword.operator"], "settings": { "foreground": "#D4D4D4" } },
+                { "name": "Operators (wordlike: new/typeof/instanceof/delete/in)", "scope": [
+                    "source.js keyword.operator.new", "source.js keyword.operator.typeof", "source.js keyword.operator.instanceof", "source.js keyword.operator.delete", "source.js keyword.operator.in",
+                    "source.ts keyword.operator.new", "source.ts keyword.operator.typeof", "source.ts keyword.operator.instanceof", "source.ts keyword.operator.delete", "source.ts keyword.operator.in",
+                    "source.tsx keyword.operator.new", "source.tsx keyword.operator.typeof", "source.tsx keyword.operator.instanceof", "source.tsx keyword.operator.delete", "source.tsx keyword.operator.in",
+                    "source.jsx keyword.operator.new", "source.jsx keyword.operator.typeof", "source.jsx keyword.operator.instanceof", "source.jsx keyword.operator.delete", "source.jsx keyword.operator.in"
+                ], "settings": { "foreground": "#569CD6" } },
+
+                { "name": "Language vars (this, super, arguments)", "scope": ["source.js variable.language", "source.ts variable.language", "source.tsx variable.language", "source.jsx variable.language"], "settings": { "foreground": "#569CD6" } },
+
+                { "name": "Variables", "scope": [
+                    "source.js variable", "source.ts variable", "source.tsx variable", "source.jsx variable",
+                    "source.js meta.definition.variable.name", "source.ts meta.definition.variable.name", "source.tsx meta.definition.variable.name"
+                ], "settings": { "foreground": "#9CDCFE" } },
+                { "name": "Constants and enum members", "scope": [
+                    "source.js variable.other.constant", "source.js variable.other.enummember",
+                    "source.ts variable.other.constant", "source.ts variable.other.enummember",
+                    "source.tsx variable.other.constant", "source.tsx variable.other.enummember"
+                ], "settings": { "foreground": "#4FC1FF" } },
+                { "name": "Parameters", "scope": ["source.js variable.parameter", "source.ts variable.parameter", "source.tsx variable.parameter"], "settings": { "foreground": "#9CDCFE" } },
+
+                { "name": "Function names (decls & calls)", "scope": [
+                    "source.js entity.name.function", "source.js support.function",
+                    "source.ts entity.name.function", "source.ts support.function",
+                    "source.tsx entity.name.function", "source.tsx support.function",
+                    "source.jsx entity.name.function", "source.jsx support.function"
+                ], "settings": { "foreground": "#DCDCAA" } },
+
+                { "name": "Object literal keys", "scope": ["source.js meta.object-literal.key", "source.ts meta.object-literal.key", "source.tsx meta.object-literal.key", "source.jsx meta.object-literal.key"], "settings": { "foreground": "#9CDCFE" } },
+
+                { "name": "TS types/classes/interfaces/namespaces", "scope": [
+                    "source.ts entity.name.type", "source.ts entity.name.class", "source.ts entity.name.namespace", "source.ts support.type", "source.ts support.class",
+                    "source.tsx entity.name.type", "source.tsx entity.name.class", "source.tsx entity.name.namespace", "source.tsx support.type", "source.tsx support.class"
+                ], "settings": { "foreground": "#4EC9B0" } },
+                { "name": "TS primitive types", "scope": ["source.ts support.type.primitive", "source.tsx support.type.primitive"], "settings": { "foreground": "#4EC9B0" } },
+
+                { "name": "JSX/TSX tag names", "scope": ["source.jsx entity.name.tag", "source.tsx entity.name.tag"], "settings": { "foreground": "#569CD6" } },
+                { "name": "JSX/TSX attributes", "scope": ["source.jsx entity.other.attribute-name", "source.tsx entity.other.attribute-name"], "settings": { "foreground": "#9CDCFE" } },
+                { "name": "JSX/TSX tag punctuation", "scope": ["source.jsx punctuation.definition.tag", "source.tsx punctuation.definition.tag"], "settings": { "foreground": "#808080" } },
+
+                { "name": "Template expr punctuation", "scope": [
+                    "source.js punctuation.definition.template-expression.begin", "source.js punctuation.definition.template-expression.end", "source.js punctuation.section.embedded",
+                    "source.ts punctuation.definition.template-expression.begin", "source.ts punctuation.definition.template-expression.end", "source.ts punctuation.section.embedded",
+                    "source.tsx punctuation.definition.template-expression.begin", "source.tsx punctuation.definition.template-expression.end", "source.tsx punctuation.section.embedded"
+                ], "settings": { "foreground": "#569CD6" } },
+                { "name": "Template expr content", "scope": ["source.js meta.template.expression", "source.ts meta.template.expression", "source.tsx meta.template.expression"], "settings": { "foreground": "#D4D4D4" } },
+
+                { "name": "Imports/exports", "scope": [
+                    "source.js keyword.control.import", "source.js keyword.control.export",
+                    "source.ts keyword.control.import", "source.ts keyword.control.export",
+                    "source.tsx keyword.control.import", "source.tsx keyword.control.export",
+                    "source.jsx keyword.control.import", "source.jsx keyword.control.export"
+                ], "settings": { "foreground": "#C586C0" } },
                 {
-                    "scope": "variable.legacy.builtin.python",
-                    "settings": {
-                        "foreground": "#D4D4D4"
-                    }
-                }
+                    "name": "Function calls → white (JS/TS/TSX/JSX)",
+                    "scope": [
+                      "source.js meta.function-call entity.name.function",
+                      "source.ts meta.function-call entity.name.function",
+                      "source.tsx meta.function-call entity.name.function",
+                      "source.jsx meta.function-call entity.name.function",
+                      "source.js meta.method-call entity.name.function",
+                      "source.ts meta.method-call entity.name.function",
+                      "source.tsx meta.method-call entity.name.function",
+                      "source.jsx meta.method-call entity.name.function",
+                      "source.js meta.function-call variable.function",
+                      "source.ts meta.function-call variable.function",
+                      "source.tsx meta.function-call variable.function",
+                      "source.jsx meta.function-call variable.function",
+                      "source.js support.function",
+                      "source.ts support.function",
+                      "source.tsx support.function",
+                      "source.jsx support.function"
+                    ],
+                    "settings": { "foreground": "#D4D4D4" }
+                  },
+                  {
+                    "name": "TS non-primitive type refs → white",
+                    "scope": [
+                      "source.ts meta.type.annotation entity.name.type",
+                      "source.tsx meta.type.annotation entity.name.type",
+                      "source.ts meta.type.parameters entity.name.type",
+                      "source.tsx meta.type.parameters entity.name.type"
+                    ],
+                    "settings": { "foreground": "#D4D4D4" }
+                  },
+                  {
+                    "name": "Variables (read/write) → white",
+                    "scope": [
+                      "source.js variable.other.readwrite",
+                      "source.jsx variable.other.readwrite",
+                      "source.ts variable.other.readwrite",
+                      "source.tsx variable.other.readwrite",
+                      "source.js meta.definition.variable variable.other.readwrite",
+                      "source.jsx meta.definition.variable variable.other.readwrite",
+                      "source.ts meta.definition.variable variable.other.readwrite",
+                      "source.tsx meta.definition.variable variable.other.readwrite"
+                    ],
+                    "settings": { "foreground": "#D4D4D4" }
+                  },
+                  {
+                    "name": "JSX/TSX attribute names → white",
+                    "scope": [
+                      "entity.other.attribute-name.tsx",
+                      "entity.other.attribute-name.jsx",
+                      "source.tsx entity.other.attribute-name",
+                      "source.jsx entity.other.attribute-name"
+                    ],
+                    "settings": { "foreground": "#D4D4D4" }
+                  },
+                  {
+                    "name": "Object literal keys → white",
+                    "scope": [
+                      "source.tsx meta.object-literal.key",
+                      "source.ts meta.object-literal.key",
+                      "source.jsx meta.object-literal.key",
+                      "source.js meta.object-literal.key"
+                    ],
+                    "settings": { "foreground": "#D4D4D4" }
+                  },
+                  {
+                    "name": "Const variables → white",
+                    "scope": [
+                      "source.js variable.other.constant",
+                      "source.jsx variable.other.constant",
+                      "source.ts variable.other.constant",
+                      "source.tsx variable.other.constant",
+                      "source.js meta.definition.variable variable.other.constant",
+                      "source.jsx meta.definition.variable variable.other.constant",
+                      "source.ts meta.definition.variable variable.other.constant",
+                      "source.tsx meta.definition.variable variable.other.constant"
+                    ],
+                    "settings": { "foreground": "#D4D4D4" }
+                  },
+                  {
+                    "name": "Object vars and properties → white",
+                    "scope": [
+                      "source.tsx variable.other.property",
+                      "source.tsx variable.other.object",
+                      "source.ts variable.other.property",
+                      "source.ts variable.other.object",
+                      "source.jsx variable.other.property",
+                      "source.jsx variable.other.object",
+                      "source.js variable.other.property",
+                      "source.js variable.other.object"
+                    ],
+                    "settings": { "foreground": "#D4D4D4" }
+                  },
+                  {
+                    "name": "Enum members → white",
+                    "scope": [
+                      "source.tsx variable.other.enummember",
+                      "source.ts variable.other.enummember",
+                      "source.jsx variable.other.enummember",
+                      "source.js variable.other.enummember",
+                      "source.tsx meta.enum.declaration variable.other.enummember",
+                      "source.ts meta.enum.declaration variable.other.enummember"
+                    ],
+                    "settings": { "foreground": "#D4D4D4" }
+                  },
+                  {
+                    "name": "Built-in property names (length etc.) → white",
+                    "scope": [
+                      "source.tsx support.variable.property",
+                      "source.ts support.variable.property",
+                      "source.jsx support.variable.property",
+                      "source.js support.variable.property",
+                      "source.tsx support.variable.property.dom",
+                      "source.ts support.variable.property.dom",
+                      "source.jsx support.variable.property.dom",
+                      "source.js support.variable.property.dom"
+                    ],
+                    "settings": { "foreground": "#D4D4D4" }
+                  },
+                  {
+                    "name": "TS return type refs → white",
+                    "scope": [
+                      "source.ts meta.return.type entity.name.type",
+                      "source.tsx meta.return.type entity.name.type",
+                      "source.ts meta.type.arguments entity.name.type",
+                      "source.tsx meta.type.arguments entity.name.type"
+                    ],
+                    "settings": { "foreground": "#D4D4D4" }
+                  },
+                  {
+                    "name": "Interface names (declarations) → white",
+                    "scope": [
+                      "source.tsx meta.interface entity.name.type.interface",
+                      "source.ts meta.interface entity.name.type.interface"
+                    ],
+                    "settings": { "foreground": "#D4D4D4" }
+                  },
+                  {
+                    "name": "Interface property names → white",
+                    "scope": [
+                      "source.tsx meta.interface variable.object.property",
+                      "source.ts meta.interface variable.object.property"
+                    ],
+                    "settings": { "foreground": "#D4D4D4" }
+                  }
             ]
         }
     },
@@ -396,5 +619,5 @@
     },
     "cursor.composer.shouldAutoScrollToBottom": false,
     "cursor.terminal.enableAiChecks": false,
-    "diffEditor.hideUnchangedRegions.enabled": true
+    "diffEditor.hideUnchangedRegions.enabled": true,
 }
