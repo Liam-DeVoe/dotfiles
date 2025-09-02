@@ -310,6 +310,13 @@
     "editor.tokenColorCustomizations": {
         "[Default Dark+]": {
             "textMateRules": [
+                {
+                  "scope": "variable.legacy.builtin.python",
+                  "settings": {
+                      // default "nothing-special" white coloring
+                      "foreground": "#D4D4D4"
+                  }
+                },
                 { "name": "JS/TS comments", "scope": ["source.js comment", "source.ts comment", "source.tsx comment", "source.jsx comment"], "settings": { "foreground": "#6A9955" } },
 
                 { "name": "JS/TS numbers", "scope": ["source.js constant.numeric", "source.ts constant.numeric", "source.tsx constant.numeric", "source.jsx constant.numeric"], "settings": { "foreground": "#B5CEA8" } },
