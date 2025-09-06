@@ -627,4 +627,5 @@
     "cursor.composer.shouldAutoScrollToBottom": false,
     "cursor.terminal.enableAiChecks": false,
     "diffEditor.hideUnchangedRegions.enabled": true,
+    "cursorpyright.shouldImportPylanceSettings": "never",
 }
