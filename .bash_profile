@@ -31,7 +31,7 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 ## Keybinds ##
 ##############
 
-# "history substring search" - only search history starting with the current command. 
+# "history substring search" - only search history starting with the current command.
 # eg `cd <up arrow>` to view the last cd command.
 #
 # see also https://mhoffman.github.io/2015/05/21/how-to-navigate-directories-with-the-shell.html
@@ -87,7 +87,7 @@ export JAVA_HOME="/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home
 # remove annoying "please change to zsh" warning (I should probably switch to zsh at some point,
 # but a task for another day)
 export BASH_SILENCE_DEPRECATION_WARNING=1
-# remove github cli (gh) update notification https://github.com/cli/cli/issues/743#issuecomment-704948488 
+# remove github cli (gh) update notification https://github.com/cli/cli/issues/743#issuecomment-704948488
 export GH_NO_UPDATE_NOTIFIER=1
 
 
