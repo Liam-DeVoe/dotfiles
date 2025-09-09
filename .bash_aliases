@@ -45,59 +45,12 @@ alias hypofuzzdocs='open /Users/tybug/Desktop/Liam/coding/hypofuzz/src/hypofuzz/
 
 function until_failure {
 	while $1; do :; done
-} 
+}
 
 # cd shortcuts
 alias comfy='cd /Users/tybug/Desktop/Liam/Music/singles\ \(comfy\)'
 alias singles='cd /Users/tybug/Desktop/Liam/Music/singles'
 alias trance='cd /Users/tybug/Desktop/Liam/Music/singles\ \(trance\)'
-
-# git shortcuts
-function _git_alias {
-	alias $1="git ${2}"
-	# set up autocomplete
-	__git_complete $1 _git_$2
-} 
-
-function gstash {
-    case "$1" in
-        pop|show|drop|list)  
-            git stash "$@"
-            ;;
-        *)  
-            git stash --include-untracked "$@"
-            ;;
-    esac
-}
-
-_git_alias p push
-_git_alias pp "push --no-verify"
-_git_alias pu pull
-_git_alias gst status
-_git_alias gb branch
-_git_alias lg lg
-_git_alias gl lg
-_git_alias gt tag
-_git_alias gc checkout
-_git_alias gd diff
-_git_alias gcp cherry-pick
-_git_alias gfa "fetch --all"
-# short for "git undo", as my shorthand for vscode's "undo last commit" command.
-_git_alias gu "reset --soft HEAD~1"
-
-alias gs=~/bin/git_switch_warn_on_todo
-__git_complete gs _git_switch
-__git_complete gstash _git_stash
-
-# `squash` undoes the most commit, adds the working tree to the now-undone commit's changes, and re-commits with the same commit message.
-_squash() {
-    local commit_message=$(git log -1 --pretty=%B 2>/dev/null)
-    git reset --soft HEAD~1
-    git add .
-    git commit -m "$commit_message"
-}
-
-alias squash='_squash'
 
 
 ##########################
@@ -145,3 +98,87 @@ alias j='jconsole'
 ###########
 
 alias pyest=pytest
+
+
+#########
+## git ##
+#########
+
+function _git_alias {
+	alias $1="git ${2}"
+	# set up autocomplete
+	__git_complete $1 _git_$2
+}
+
+_git_alias p push
+_git_alias pp "push --no-verify"
+_git_alias pu pull
+_git_alias gst status
+_git_alias gb branch
+_git_alias lg lg
+_git_alias gl lg
+_git_alias gt tag
+_git_alias gc checkout
+_git_alias gd diff
+_git_alias gcp cherry-pick
+_git_alias gfa "fetch --all"
+# short for "git undo", as my shorthand for vscode's "undo last commit" command.
+_git_alias gu "reset --soft HEAD~1"
+
+alias gs=~/bin/git_switch_warn_on_todo
+__git_complete gs _git_switch
+
+# `squash` undoes the most commit, adds the working tree to the now-undone commit's changes, and re-commits with the same commit message.
+_squash() {
+    local commit_message=$(git log -1 --pretty=%B 2>/dev/null)
+    git reset --soft HEAD~1
+    git add .
+    git commit -m "$commit_message"
+}
+
+alias squash='_squash'
+
+
+# overriding `git` subcommands themselves with custom behavior
+gclone() {
+    command git clone "$@"
+
+    if [ $? -eq 0 ]; then
+        local repo_dir=$(basename "${@: -1}" .git)
+
+        if cd "$repo_dir" 2>/dev/null; then
+            if command git rev-parse --verify main >/dev/null 2>&1; then
+                command git symbolic-ref refs/heads/master refs/heads/main
+                echo "Created symbolic ref: master -> main"
+            fi
+
+            cd ..
+        fi
+    fi
+}
+gstash() {
+    case "$1" in
+        pop|show|drop|list)
+            command git stash "$@"
+            ;;
+        *)
+            command git stash --include-untracked "$@"
+            ;;
+    esac
+}
+git() {
+    case "$1" in
+        clone)
+            shift  # Remove 'clone' from arguments
+            gclone "$@"
+            ;;
+        stash)
+            shift  # Remove 'stash' from arguments
+            gstash "$@"
+            ;;
+        *)
+            # run all other commands normally
+            command git "$@"
+            ;;
+    esac
+}
