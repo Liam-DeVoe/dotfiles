@@ -695,8 +695,8 @@
     "remote.SSH.experimental.chat": false,
     "telemetry.feedback.enabled": false,
     "workbench.layoutControl.enabled": false,
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "update.showReleaseNotes": false,
     "workbench.secondarySideBar.defaultVisibility": "hidden",
     "terminal.integrated.stickyScroll.enabled": false,
+    "diffEditor.hideUnchangedRegions.enabled": true,
 }
