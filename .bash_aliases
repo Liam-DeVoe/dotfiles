@@ -85,6 +85,9 @@ alias pip='python3 -m pip'
 # alias pip3.11='/opt/homebrew/Cellar/python@3.11/3.11.5/bin/pip3.11'
 # alias pyinstrument='pyinstrument -r html'
 
+# https://github.com/anthropics/claude-code/issues/4260
+alias claude='claude --permission-mode acceptEdits'
+
 # others
 alias dott='dot -o output.png -T png'
 # https://raspberrypi.stackexchange.com/a/34594/110108
