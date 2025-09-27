@@ -87,6 +87,9 @@ alias pip='python3 -m pip'
 
 # https://github.com/anthropics/claude-code/issues/4260
 alias claude='claude --permission-mode acceptEdits'
+streamlit() {
+    command streamlit "$@" --server.headless true
+}
 
 # others
 alias dott='dot -o output.png -T png'
