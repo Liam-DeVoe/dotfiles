@@ -76,7 +76,6 @@ alias dla='yt-dla'
 alias dl='yt-dlp'
 alias yt-dlp='yt-dlp --recode-video "mkv>mp4/webm>mp4"'
 
-alias python3='python3.12'
 alias pytest='python3 -m pytest'
 alias python='python3'
 alias pip='python3 -m pip'
