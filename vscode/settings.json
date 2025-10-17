@@ -699,5 +699,7 @@
     "update.showReleaseNotes": false,
     "workbench.secondarySideBar.defaultVisibility": "hidden",
     "terminal.integrated.stickyScroll.enabled": false,
-    "diffEditor.hideUnchangedRegions.enabled": true,
+    "github.gitAuthentication": false,
+    "git.terminalAuthentication": false,
+    "diffEditor.hideUnchangedRegions.enabled": true
 }
