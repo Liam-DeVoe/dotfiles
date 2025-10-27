@@ -491,5 +491,10 @@
     {
         "key": "cmd+k cmd+r",
         "command": "-workbench.action.keybindingsReference"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-deleteRight",
+        "when": "textInputFocus"
     }
 ]
