@@ -177,6 +177,7 @@
         "--ignore", "PLW1510",
         "--ignore", "PLW1641",
         "--ignore", "PLR0911",
+        "--ignore", "PLR6301",
         "--ignore", "PLC0105",
         "--ignore", "PLC0415"
     ],
