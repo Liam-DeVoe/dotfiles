@@ -81,6 +81,8 @@ export PATH="/Users/tybug/.local/bin:$PATH"
 export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home" # java 17
 export JAVA_HOME="/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home" # java 17
 
+# https://code.claude.com/docs/en/data-usage
+export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 
 
 
@@ -169,3 +171,5 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 source /Users/tybug/.docker/init-bash.sh || true # Added by Docker Desktop
+
+export PATH="$HOME/.elan/bin:$PATH"

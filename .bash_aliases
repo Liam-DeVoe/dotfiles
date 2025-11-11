@@ -163,7 +163,7 @@ gclone() {
 }
 gstash() {
     case "$1" in
-        pop|show|drop|list)
+        pop|show|drop|list|apply)
             command git stash "$@"
             ;;
         *)

@@ -702,5 +702,6 @@
     "terminal.integrated.stickyScroll.enabled": false,
     "github.gitAuthentication": false,
     "git.terminalAuthentication": false,
+    "lean4.alwaysAskBeforeInstallingLeanVersions": true,
     "diffEditor.hideUnchangedRegions.enabled": true
 }
