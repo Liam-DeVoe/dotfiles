@@ -176,6 +176,7 @@
         "--ignore", "PLW0603",
         "--ignore", "PLW1510",
         "--ignore", "PLW1641",
+        "--ignore", "PLW1508",
         "--ignore", "PLR0911",
         "--ignore", "PLR6301",
         "--ignore", "PLC0105",
@@ -703,5 +704,6 @@
     "github.gitAuthentication": false,
     "git.terminalAuthentication": false,
     "lean4.alwaysAskBeforeInstallingLeanVersions": true,
-    "diffEditor.hideUnchangedRegions.enabled": true
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "claudeCode.preferredLocation": "sidebar"
 }
