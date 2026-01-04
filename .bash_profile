@@ -83,6 +83,8 @@ export JAVA_HOME="/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home
 
 # https://code.claude.com/docs/en/data-usage
 export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
+# https://github.com/Homebrew/brew/issues/1670
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 
 

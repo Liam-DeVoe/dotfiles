@@ -14,10 +14,12 @@ alias f='open -a Finder ./'
 alias bashrc='open -e /Users/tybug/.bash_profile'
 alias aliases='open -e /Users/tybug/.bash_aliases'
 alias aliases-private='open -e /Users/tybug/.bash_aliases_private'
-alias git-aliases='open -e /Users/tybug/.gitconfig'
-alias gitaliases='open -e /Users/tybug/.gitconfig'
+alias aliasesprivate='aliases-private'
 alias git-config='open -e /Users/tybug/.gitconfig'
-alias gitconfig='open -e /Users/tybug/.gitconfig'
+alias gitconfig='git-config'
+alias git-aliases='git-config'
+alias gitaliases='git-config'
+
 alias l='ls'
 alias ..='cd ../'
 alias ...='cd ../../'
@@ -74,7 +76,11 @@ alias df='df -h'
 alias yt-dla='yt-dlp --extract-audio --no-mtime --output %"(title)s.%(ext)s"'
 alias dla='yt-dla'
 alias dl='yt-dlp'
-alias yt-dlp='yt-dlp --recode-video "mkv>mp4/webm>mp4"'
+# yt-dlp defaults to bun as the js runtime, but I have node installed and not bun,
+# and didn't want to install bun just for this.
+#
+# I don't know why yt-dlp chose bun as the default.
+alias yt-dlp='yt-dlp --recode-video "mkv>mp4/webm>mp4" --js-runtime node'
 
 alias pytest='python3 -m pytest'
 alias python='python3'

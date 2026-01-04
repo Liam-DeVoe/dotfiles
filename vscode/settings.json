@@ -704,6 +704,6 @@
     "github.gitAuthentication": false,
     "git.terminalAuthentication": false,
     "lean4.alwaysAskBeforeInstallingLeanVersions": true,
-    "diffEditor.hideUnchangedRegions.enabled": true,
-    "claudeCode.preferredLocation": "sidebar"
+    "claudeCode.preferredLocation": "sidebar",
+    "diffEditor.hideUnchangedRegions.enabled": true
 }
