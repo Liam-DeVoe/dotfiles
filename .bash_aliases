@@ -82,6 +82,7 @@ alias dl='yt-dlp'
 # I don't know why yt-dlp chose bun as the default.
 alias yt-dlp='yt-dlp --recode-video "mkv>mp4/webm>mp4" --js-runtime node'
 
+alias python3='python3.13'
 alias pytest='python3 -m pytest'
 alias python='python3'
 alias pip='python3 -m pip'
