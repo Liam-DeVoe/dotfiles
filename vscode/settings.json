@@ -707,5 +707,9 @@
     "git.terminalAuthentication": false,
     "lean4.alwaysAskBeforeInstallingLeanVersions": true,
     "claudeCode.preferredLocation": "sidebar",
+    "rust-analyzer.lens.implementations.enable": false,
+    "rust-analyzer.inlayHints.parameterHints.enable": false,
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "rust-analyzer.inlayHints.closingBraceHints.enable": false,
     "diffEditor.hideUnchangedRegions.enabled": true
 }
