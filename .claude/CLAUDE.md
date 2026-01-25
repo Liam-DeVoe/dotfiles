@@ -1,0 +1,1 @@
+This machine has access to the `gh` github command line tool. Prefer using that for fetching issues, pull requests, ci jobs, etc on github, as plain web fetches are often ratelimited or gated behind authentication.
