@@ -175,3 +175,4 @@ fi
 source /Users/tybug/.docker/init-bash.sh || true # Added by Docker Desktop
 
 export PATH="$HOME/.elan/bin:$PATH"
+. "$HOME/.cargo/env"

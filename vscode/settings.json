@@ -711,5 +711,8 @@
     "rust-analyzer.inlayHints.parameterHints.enable": false,
     "rust-analyzer.inlayHints.typeHints.enable": false,
     "rust-analyzer.inlayHints.closingBraceHints.enable": false,
-    "diffEditor.hideUnchangedRegions.enabled": true
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "rust-analyzer.lens.run.enable": false,
+    "rust-analyzer.lens.debug.enable": false
 }
