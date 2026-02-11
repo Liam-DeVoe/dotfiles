@@ -80,7 +80,9 @@ alias dl='yt-dlp'
 # and didn't want to install bun just for this.
 #
 # I don't know why yt-dlp chose bun as the default.
-alias yt-dlp='yt-dlp --recode-video "mkv>mp4/webm>mp4" --js-runtime node'
+#
+# I didn't use to have `--cookies-from-browser chrome`, but then I started getting 403 errors in jan 2026, so I'm adding this as a temp workaround. might be able to remove in the future.
+alias yt-dlp='yt-dlp --recode-video "mkv>mp4/webm>mp4" --js-runtime node --cookies-from-browser chrome'
 
 alias python3='python3.13'
 alias pytest='python3 -m pytest'
@@ -103,6 +105,8 @@ alias dott='dot -o output.png -T png'
 alias findpi='arp -na | grep -i b8:27:eb'
 alias fuck='fuck --yeah'
 alias j='jconsole'
+# --delay is in tenths of a second, for whatever reason. The default is 15 (1.5 seconds).
+alias htop='htop --delay 7'
 
 
 ###########
