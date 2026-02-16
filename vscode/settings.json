@@ -40,21 +40,24 @@
     "workbench.tree.renderIndentGuides": "none",
     "workbench.tips.enabled": false,
     "files.exclude": {
-      "**/__pycache__": true,
-      "**/_deps": true,
-      "**/.classpath": true,
-      "**/.factorypath": true,
-      "**/.project": true,
-      "**/.settings": true,
-      "**/*.egg-info": true,
-      "**/*.pyc": true,
-      "**/build": true
+        "**/__pycache__": true,
+        "**/_deps": true,
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.pytest_cache": true,
+        "**/.settings": true,
+        "**/*.egg-info": true,
+        "**/*.pyc": true,
+        "**/build": true
     },
     "files.watcherExclude": {
         "**/.dolt/noms/**": true,
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
         "**/.hg/store/**": true,
+        "**/.hypothesis": true,
+        "**/.hypothesis/**": true,
         "**/node_modules/**": true
     },
     // "python.linting.pylintArgs": [
@@ -715,5 +718,9 @@
     "rust-analyzer.inlayHints.chainingHints.enable": false,
     "rust-analyzer.lens.run.enable": false,
     "rust-analyzer.lens.debug.enable": false,
-    "terminal.integrated.initialHint": false
+    "terminal.integrated.initialHint": false,
+    "search.exclude": {
+        "**/.hypothesis": true,
+        "**/.hypothesis/**": true
+    }
 }
