@@ -47,29 +47,33 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 ## Path Modifications ##
 ########################
 
+prepend_path() { export PATH="$1:$PATH"; }
+
 # java (currently java 18)
-# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# prepend_path "/opt/homebrew/opt/openjdk/bin"
 # java 17
-# export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+# prepend_path "/opt/homebrew/opt/openjdk@17/bin"
 # java 21
-export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+prepend_path "/opt/homebrew/opt/openjdk@21/bin"
 # racket + racket tools
-export PATH=/Applications/Racket\ v8.11.1/bin:$PATH
+prepend_path "/Applications/Racket v8.11.1/bin"
 # prolog + prolog tools
-export PATH=/Applications/SWI-Prolog.app/Contents/MacOS:$PATH
+prepend_path "/Applications/SWI-Prolog.app/Contents/MacOS"
 # use brew ruby
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+prepend_path "/opt/homebrew/opt/ruby/bin"
 # coq
-export PATH=/opt/homebrew/Cellar/coq/8.15.2/bin:$PATH
+prepend_path "/opt/homebrew/Cellar/coq/8.15.2/bin"
 # personal scripts
-export PATH=$HOME/bin:$PATH
+prepend_path "$HOME/bin"
 # docker
-export PATH="/Users/tybug/.docker/bin:$PATH"
+prepend_path "$HOME/.docker/bin"
 # vscode's `code` command
-export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+prepend_path "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 # codeql
-export PATH=$HOME/codeql:$PATH
-export PATH="/Users/tybug/.local/bin:$PATH"
+prepend_path "$HOME/codeql"
+prepend_path "$HOME/.local/bin"
+# uv-managed pythons
+prepend_path "$HOME/.local/share/uv/python/cpython-3.13.11-macos-aarch64-none/bin"
 
 
 ###########################
@@ -170,9 +174,8 @@ fi
 # use our current shell for this script so we can immediately add our new alias to our shell when we call this
 # https://stackoverflow.com/a/44122806
 # alias alias='. alias-permanent'
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 source /Users/tybug/.docker/init-bash.sh || true # Added by Docker Desktop
 
-export PATH="$HOME/.elan/bin:$PATH"
+prepend_path "$HOME/.elan/bin"
 . "$HOME/.cargo/env"

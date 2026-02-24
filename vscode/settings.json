@@ -20,7 +20,7 @@
     ],
     "[python]": {
         "editor.rulers": [
-            80,
+            88,
         ],
         "editor.formatOnType": false
     },
@@ -714,13 +714,14 @@
     "rust-analyzer.inlayHints.parameterHints.enable": false,
     "rust-analyzer.inlayHints.typeHints.enable": false,
     "rust-analyzer.inlayHints.closingBraceHints.enable": false,
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "rust-analyzer.inlayHints.chainingHints.enable": false,
     "rust-analyzer.lens.run.enable": false,
     "rust-analyzer.lens.debug.enable": false,
     "terminal.integrated.initialHint": false,
     "search.exclude": {
         "**/.hypothesis": true,
-        "**/.hypothesis/**": true
-    }
+        "**/.hypothesis/**": true,
+        "**/uv.lock": true
+    },
+    "diffEditor.hideUnchangedRegions.enabled": true
 }
