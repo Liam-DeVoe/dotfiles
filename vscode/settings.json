@@ -723,5 +723,7 @@
         "**/.hypothesis/**": true,
         "**/uv.lock": true
     },
-    "diffEditor.hideUnchangedRegions.enabled": true
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "python.terminal.activateEnvironment": false,
+    "python-envs.terminal.autoActivationType": "off"
 }
