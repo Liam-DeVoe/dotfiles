@@ -90,6 +90,8 @@ export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 # https://github.com/Homebrew/brew/issues/1670
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+# for hegel dev
+export HEGEL_SERVER_COMMAND=hegel
 
 
 # remove annoying "please change to zsh" warning (I should probably switch to zsh at some point,

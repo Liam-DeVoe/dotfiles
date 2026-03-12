@@ -481,14 +481,6 @@
         "when": "textInputFocus"
     },
     {
-        "key": "shift+enter",
-        "command": "workbench.action.terminal.sendSequence",
-        "args": {
-            "text": "\\\r\n"
-        },
-        "when": "terminalFocus"
-    },
-    {
         "key": "cmd+k cmd+r",
         "command": "-workbench.action.keybindingsReference"
     },
@@ -496,5 +488,13 @@
         "key": "ctrl+d",
         "command": "-deleteRight",
         "when": "textInputFocus"
+    },
+    {
+        "key": "shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u001b\r"
+        },
+        "when": "terminalFocus"
     }
 ]
