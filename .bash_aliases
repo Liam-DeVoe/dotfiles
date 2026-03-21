@@ -12,6 +12,7 @@ alias format='./build.sh format'
 alias run='python3 manage.py runserver'
 alias f='open -a Finder ./'
 alias bashrc='open -e /Users/tybug/.bashrc'
+alias bashprofile='open -e /Users/tybug/.bashrc'
 alias aliases='open -e /Users/tybug/.bash_aliases'
 alias bashaliases='aliases'
 alias aliases-private='open -e /Users/tybug/.bash_aliases_private'
@@ -94,7 +95,7 @@ alias pip='python3 -m pip'
 # alias pip3.11='/opt/homebrew/Cellar/python@3.11/3.11.5/bin/pip3.11'
 # alias pyinstrument='pyinstrument -r html'
 
-alias claude='claude --dangerously-skip-permissions'
+alias claude='claude --dangerously-skip-permissions --verbose'
 alias claudework='CLAUDE_CONFIG_DIR=~/.claude-antithesis claude'
 
 streamlit() {

@@ -37,6 +37,10 @@
         "diffEditor.wordWrap": "on",
         "editor.suggestOnTriggerCharacters": false,
     },
+    "[mdx]": {
+        "editor.wordWrap": "on",
+        "diffEditor.wordWrap": "on"
+    },
     "workbench.tree.renderIndentGuides": "none",
     "workbench.tips.enabled": false,
     "files.exclude": {
