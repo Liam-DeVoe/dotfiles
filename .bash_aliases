@@ -4,7 +4,6 @@
 
 alias t='python3 -m pytest'
 alias p8='python3 -m pytest -n 8 hypothesis-python/tests/'
-alias coverage='./build.sh check-coverage'
 # libcst and pandas take 370ms and 280ms respectively to load (under pyinstrument, at least). Ignore these on p1, where we want fast collection times.
 alias p1='python3 -m pytest hypothesis-python/tests/ --ignore=hypothesis-python/tests/codemods --ignore=hypothesis-python/tests/patching --ignore=hypothesis-python/tests/pandas'
 alias pp1='python3 -m pytest hypothesis-python/tests/'
@@ -21,6 +20,7 @@ alias git-config='open -e /Users/tybug/.gitconfig'
 alias gitconfig='git-config'
 alias git-aliases='git-config'
 alias gitaliases='git-config'
+alias orrery='just --justfile /Users/tybug/Desktop/Liam/coding/hegel/orrery/Justfile serve'
 
 alias l='ls'
 alias ..='cd ../'
