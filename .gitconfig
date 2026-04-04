@@ -22,6 +22,7 @@ children = "!bash -c 'c=${1:-HEAD}; set -- $(git rev-list --all --not \"$c\"^@ -
 	rebase = false
 [push]
 	autoSetupRemote = true
+	default = current
 [core]
 	excludesfile = /Users/tybug/.gitignore
 	autocrlf = input

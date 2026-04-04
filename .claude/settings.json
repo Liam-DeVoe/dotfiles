@@ -9,7 +9,8 @@
     "rust-analyzer-lsp@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true
   },
+  "effortLevel": "high",
   "voiceEnabled": true,
-  "skipDangerousModePermissionPrompt": true,
-  "effortLevel": "high"
+  "autoMemoryEnabled": false,
+  "skipDangerousModePermissionPrompt": true
 }
