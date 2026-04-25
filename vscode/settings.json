@@ -259,7 +259,7 @@
     // the python extension changed their default language server to pylance recently (05/10/2021), which applies
     // semantic highlighting *on top of* my normal theme. I don't like this so I've disabled it globally here, since
     // I frustratingly can't find any way to disable it for only pylance or for only my particular theme (which is
-    // "default dark +" I think?).
+    // "dark +" I think?).
     // I may decide later that I actually like some of the semantic highlighting pylance provides and want to selectively
     // enable those highlightings. This will be a process since I believe I will need to manually override pylance's
     // highlightings to reset them back to what my theme provides for highlights I don't want changed. Or it may not
@@ -311,7 +311,7 @@
     // "editor.acceptSuggestionOnEnter": "off"
 
     "workbench.colorCustomizations": {
-        "[Default Dark+]": {
+        "[Dark+]": {
             // TODO I'm 98% sure they made the red color for diff comparisons brighter
             // in the most recent update (as of 08/04/2022). I'd really like to revert
             // it to what it was, but there's annoying alpha channels I have to deal
@@ -337,7 +337,7 @@
             // macos-level color adjustment by restarting or the restarting of vscode triggered a theme update,
             // but for now I've manually selected a color that looks close to what I had before.
             // I've done the same fot the sidebar, which wasn't as egregious but still felt darker than it used to.
-            // At some point I need to fix in stone all the colors default dark+ has so I'm not at the mercy of
+            // At some point I need to fix in stone all the colors dark+ has so I'm not at the mercy of
             // theme updates.
             // - liam 10/27/2022
             "editor.background": "#252525",
@@ -357,10 +357,10 @@
     "terminal.integrated.scrollback": 20000,
 
     "editor.tokenColorCustomizations": {
-        // default dark + colors things that used to be python keywords, like "file", as light blue.
+        // dark+ colors things that used to be python keywords, like "file", as light blue.
         // I often use "file" in particular as a variable name and don't want it to have any special
         // coloring.
-        "[Default Dark+]": {
+        "[Dark+]": {
             "textMateRules": [
                 {
                     "scope": "variable.legacy.builtin.python",
@@ -673,7 +673,7 @@
     "workbench.activityBar.location": "top",
     "gitlens.ai.experimental.model": "anthropic:claude-3-opus-20240229",
     "scm.showHistoryGraph": false,
-    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorTheme": "Dark+",
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "diffEditor.renderSideBySide": true,
     "gitlens.views.scm.grouped.views": {
@@ -732,5 +732,6 @@
     },
     "python.terminal.activateEnvironment": false,
     "python-envs.terminal.autoActivationType": "off",
+    "workbench.editor.useModal": "off",
     "diffEditor.hideUnchangedRegions.enabled": true
 }

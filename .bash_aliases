@@ -20,7 +20,7 @@ alias git-config='open -e /Users/tybug/.gitconfig'
 alias gitconfig='git-config'
 alias git-aliases='git-config'
 alias gitaliases='git-config'
-alias orrery='just --justfile /Users/tybug/Desktop/Liam/coding/hegel/orrery/Justfile serve'
+alias orrery='lsof -ti:57381 | xargs kill -9 2>/dev/null; just --justfile /Users/tybug/Desktop/Liam/coding/hegel/orrery/Justfile serve'
 
 alias l='ls'
 alias ..='cd ../'
