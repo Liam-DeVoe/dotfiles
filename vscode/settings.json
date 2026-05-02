@@ -191,8 +191,6 @@
         "--ignore", "PLC0105",
         "--ignore", "PLC0415"
     ],
-
-
     "explorer.confirmDelete": false,
     "git.enableSmartCommit": true,
     "diffEditor.wordWrap": "off",

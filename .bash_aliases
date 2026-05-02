@@ -20,7 +20,7 @@ alias git-config='open -e /Users/tybug/.gitconfig'
 alias gitconfig='git-config'
 alias git-aliases='git-config'
 alias gitaliases='git-config'
-alias orrery='lsof -ti:57381 | xargs kill -9 2>/dev/null; just --justfile /Users/tybug/Desktop/Liam/coding/hegel/orrery/Justfile serve'
+alias plait='lsof -ti:57381 | xargs kill -9 2>/dev/null; just --justfile /Users/tybug/Desktop/Liam/coding/hegel/plait/justfile serve'
 
 alias l='ls'
 alias ..='cd ../'
@@ -179,6 +179,10 @@ gstash() {
     case "$1" in
         pop|show|drop|list|apply)
             command git stash "$@"
+            ;;
+        push)
+            shift
+            command git stash push --include-untracked "$@"
             ;;
         *)
             command git stash --include-untracked "$@"
