@@ -93,8 +93,11 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # for hegel dev
 export HEGEL_SERVER_COMMAND=hegel
 
-export DO_NOT_TRACK=true
+# disable telemetry
+# see also https://donottrack.sh/
+export DO_NOT_TRACK=1
 export GH_TELEMETRY=false
+export HOMEBREW_NO_ANALYTICS=1
 
 
 # remove annoying "please change to zsh" warning (I should probably switch to zsh at some point,
