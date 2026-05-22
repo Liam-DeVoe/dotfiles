@@ -20,6 +20,7 @@
     }
   },
   "effortLevel": "xhigh",
+  "tui": "default",
   "autoMemoryEnabled": false,
   "skipDangerousModePermissionPrompt": true,
   "voiceEnabled": true

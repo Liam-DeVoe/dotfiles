@@ -731,5 +731,8 @@
     "python.terminal.activateEnvironment": false,
     "python-envs.terminal.autoActivationType": "off",
     "workbench.editor.useModal": "off",
+    "workbench.openInAgents.enabled": false,
+    "workbench.browser.showInTitleBar": false,
+    "chat.disableAIFeatures": true,
     "diffEditor.hideUnchangedRegions.enabled": true
 }
