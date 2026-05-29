@@ -3,10 +3,10 @@
 #####################
 
 alias t='python3 -m pytest'
-alias p8='python3 -m pytest -n 8 hypothesis-python/tests/'
+alias p8='python3 -m pytest -n 8 hypothesis/tests/'
 # libcst and pandas take 370ms and 280ms respectively to load (under pyinstrument, at least). Ignore these on p1, where we want fast collection times.
-alias p1='python3 -m pytest hypothesis-python/tests/ --ignore=hypothesis-python/tests/codemods --ignore=hypothesis-python/tests/patching --ignore=hypothesis-python/tests/pandas'
-alias pp1='python3 -m pytest hypothesis-python/tests/'
+alias p1='python3 -m pytest hypothesis/tests/ --ignore=hypothesis/tests/codemods --ignore=hypothesis/tests/patching --ignore=hypothesis/tests/pandas'
+alias pp1='python3 -m pytest hypothesis/tests/'
 alias format='./build.sh format'
 alias run='python3 manage.py runserver'
 alias f='open -a Finder ./'
@@ -44,7 +44,7 @@ alias sha256='shasum -a 256'
 alias library='cd $HOME/Library'
 alias site-packages='open /opt/homebrew/lib/python3.12/site-packages'
 alias sitepackages=site-packages
-alias hypothesisdocs='open /Users/tybug/Desktop/Liam/coding/hypothesis/hypothesis-python/docs/_build/html/index.html'
+alias hypothesisdocs='open /Users/tybug/Desktop/Liam/coding/hypothesis/hypothesis/docs/_build/html/index.html'
 alias hypofuzzdocs='open /Users/tybug/Desktop/Liam/coding/hypofuzz/src/hypofuzz/frontend/public/docs/index.html'
 
 function until_failure {

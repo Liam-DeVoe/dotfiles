@@ -46,3 +46,6 @@ children = "!bash -c 'c=${1:-HEAD}; set -- $(git rev-list --all --not \"$c\"^@ -
 	directory = /Volumes/Backup/computer backups
 [feature]
 	manyFiles = true
+[lfs "https://github.com/"]
+	# see https://github.com/git-lfs/git-lfs/issues/2291#issuecomment-3616022453
+	locksverify = false
