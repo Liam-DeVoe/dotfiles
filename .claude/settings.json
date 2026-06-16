@@ -4,19 +4,26 @@
     "commit": "",
     "pr": ""
   },
-  "model": "fable",
+  "model": "opus[1m]",
   "enabledPlugins": {
     "pyright-lsp@claude-plugins-official": true,
     "clangd-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
-    "example-skills@anthropic-agent-skills": true
+    "example-skills@anthropic-agent-skills": true,
+    "antithesis-skills@antithesis-skills": true
   },
   "extraKnownMarketplaces": {
     "anthropic-agent-skills": {
       "source": {
         "source": "github",
         "repo": "anthropics/skills"
+      }
+    },
+    "antithesis-skills": {
+      "source": {
+        "source": "github",
+        "repo": "antithesishq/antithesis-skills"
       }
     }
   },
