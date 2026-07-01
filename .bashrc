@@ -80,10 +80,7 @@ prepend_path "$HOME/.local/share/uv/python/cpython-3.13.11-macos-aarch64-none/bi
 ## Environment Variables ##
 ###########################
 
-# see https://stackoverflow.com/a/17886334/12164878 and https://stackoverflow.com/a/1348940/12164878.
-# export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home" # java 8
-export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home" # java 17
-export JAVA_HOME="/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home" # java 17
+export JAVA_HOME="/opt/homebrew/opt/openjdk" # java 23 as of time of writing
 
 # https://code.claude.com/docs/en/data-usage
 export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
