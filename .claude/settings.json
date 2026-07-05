@@ -4,7 +4,7 @@
     "commit": "",
     "pr": ""
   },
-  "model": "opus[1m]",
+  "model": "fable",
   "enabledPlugins": {
     "pyright-lsp@claude-plugins-official": true,
     "clangd-lsp@claude-plugins-official": true,
