@@ -95,7 +95,7 @@ alias pip='python3 -m pip'
 # alias pip3.11='/opt/homebrew/Cellar/python@3.11/3.11.5/bin/pip3.11'
 # alias pyinstrument='pyinstrument -r html'
 
-alias claude='claude --dangerously-skip-permissions --verbose'
+alias claude='CLAUDE_LIAM_REWRITE_WRITING_HOOK_ENABLED=0 claude --dangerously-skip-permissions --verbose'
 alias claudework='CLAUDE_CONFIG_DIR=~/.claude-antithesis claude'
 
 streamlit() {
