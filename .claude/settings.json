@@ -1,10 +1,27 @@
 {
   "cleanupPeriodDays": 99999,
+  "env": {
+    "METR_AUTH_TOKEN": "ccmetr_K_mOEab3upQw-ucjrg98x8D2jg56jE6qPWcVAiiuBDY"
+  },
   "attribution": {
     "commit": "",
     "pr": ""
   },
-  "model": "fable",
+  "model": "opus",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/writing-rewrite.py",
+            "timeout": 300,
+            "statusMessage": "Rewriting (hook)..."
+          }
+        ]
+      }
+    ]
+  },
   "enabledPlugins": {
     "pyright-lsp@claude-plugins-official": true,
     "clangd-lsp@claude-plugins-official": true,
@@ -32,22 +49,5 @@
   "autoMemoryEnabled": false,
   "skipDangerousModePermissionPrompt": true,
   "theme": "dark",
-  "voiceEnabled": true,
-  "env": {
-    "METR_AUTH_TOKEN": "ccmetr_K_mOEab3upQw-ucjrg98x8D2jg56jE6qPWcVAiiuBDY"
-  },
-  "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 ~/.claude/hooks/writing-rewrite.py",
-            "timeout": 300,
-            "statusMessage": "Rewriting (hook)..."
-          }
-        ]
-      }
-    ]
-  }
+  "voiceEnabled": true
 }
