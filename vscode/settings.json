@@ -50,6 +50,9 @@
         "**/.factorypath": true,
         "**/.project": true,
         "**/.pytest_cache": true,
+        "**/.ruff_cache": true,
+        "**/.mypy_cache": true,
+        "**/.venv": true,
         "**/.settings": true,
         "**/*.egg-info": true,
         "**/*.pyc": true,
@@ -340,7 +343,16 @@
             // theme updates.
             // - liam 10/27/2022
             "editor.background": "#252525",
-            "sideBar.background": "#292929"
+            "sideBar.background": "#292929",
+            // claude written 08/27/22026:
+            //
+            // vscode 1.130 changed the default of tab.selectedBorderTop from tab.activeBorderTop
+            // to focusBorder (https://github.com/microsoft/vscode/pull/325367). The active tab
+            // always counts as "selected", and Dark+ defines no tab.activeBorderTop to take
+            // precedence, so every active tab suddenly grew a blue focusBorder-colored bar on top.
+            // The PR was about multi-selected tabs; the always-on bar in Dark+ looks like an
+            // unintended side effect. This transparent override hides it.
+            "tab.selectedBorderTop": "#00000000",
         },
         // "[Default Light Modern]": {
         //     // I'm currently writing my DC systems 008 "Revisiting Property-Based Testing with Typed Choices"
@@ -726,6 +738,7 @@
         "**/.hypothesis": true,
         "**/.hypothesis/**": true,
         "**/.mypy_cache/**": true,
+        "**/.ruff_cache/**": true,
         "**/target/**": true,
         "**/uv.lock": true
     },
