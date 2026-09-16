@@ -1,17 +1,38 @@
 #!/usr/bin/env python3
 
-from pathlib import Path
-import os
-import shutil
+import subprocess
+import sys
 
 # Replace discord's icon with the older, better-looking version. Will take
 # effect when discord is next opened.
-# See also https://www.sethvargo.com/replace-icons-osx
+#
+# Discord used to read its icon from Contents/Resources/electron.icns, so this
+# script used to overwrite that file. As of Discord 0.0.411 (Sep 2026) the
+# bundle ships an Assets.car asset catalog and sets CFBundleIconName in
+# Info.plist, and macOS prefers that over CFBundleIconFile. Overwriting the
+# icns no longer does anything.
+#
+# Instead, set a Finder custom icon on the bundle (the same thing as pasting
+# an icon in Get Info). Finder custom icons take precedence over anything
+# inside the bundle. This writes an "Icon\r" file into Discord.app, so the
+# terminal running this needs App Management permission in
+# System Settings > Privacy & Security, otherwise it fails with
+# "Operation not permitted".
 
-icon_current = Path("/Applications/Discord.app/Contents/Resources/electron.icns")
-icon_new = Path("/Users/tybug/Desktop/Liam/Personal/customizations/old_discord_logo.icns")
-shutil.copy(icon_new, icon_current)
+app = "/Applications/Discord.app"
+icon_new = "/Users/tybug/Desktop/Liam/Personal/customizations/old_discord_logo.icns"
+
+swift = f"""
+import AppKit
+let img = NSImage(contentsOfFile: "{icon_new}")!
+let ok = NSWorkspace.shared.setIcon(img, forFile: "{app}", options: [])
+exit(ok ? 0 : 1)
+"""
+
+result = subprocess.run(["swift", "-"], input=swift, text=True)
+if result.returncode != 0:
+    sys.exit("setting the custom icon failed (missing App Management permission?)")
 
 # app icons are cached, this apparently busts the cache and allows the new icon
 # to be applied
-os.system("touch /Applications/Discord.app")
+subprocess.run(["touch", app])
