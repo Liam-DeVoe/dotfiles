@@ -7,7 +7,7 @@
     "commit": "",
     "pr": ""
   },
-  "model": "fable",
+  "model": "opus",
   "hooks": {
     "Stop": [
       {
@@ -49,5 +49,6 @@
   "autoMemoryEnabled": false,
   "skipDangerousModePermissionPrompt": true,
   "theme": "dark",
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "defaultMode": "bypassPermissions"
 }
