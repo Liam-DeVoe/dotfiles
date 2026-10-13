@@ -748,5 +748,6 @@
     "workbench.openInAgents.enabled": false,
     "workbench.browser.showInTitleBar": false,
     "chat.disableAIFeatures": true,
-    "diffEditor.hideUnchangedRegions.enabled": true
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "workbench.experimental.modernUI": false
 }
