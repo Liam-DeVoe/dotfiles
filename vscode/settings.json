@@ -716,6 +716,7 @@
     "chat.commandCenter.enabled": false,
     "chat.agent.enabled": false,
     "remote.SSH.experimental.chat": false,
+    "remote.SSH.showLoginTerminal": true,
     "telemetry.feedback.enabled": false,
     "workbench.layoutControl.enabled": false,
     "update.showReleaseNotes": false,
@@ -748,6 +749,6 @@
     "workbench.openInAgents.enabled": false,
     "workbench.browser.showInTitleBar": false,
     "chat.disableAIFeatures": true,
-    "diffEditor.hideUnchangedRegions.enabled": true,
-    "workbench.experimental.modernUI": false
+    "workbench.experimental.modernUI": false,
+    "diffEditor.hideUnchangedRegions.enabled": true
 }
